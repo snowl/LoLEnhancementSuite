@@ -8,3 +8,5 @@ These mods are for the version `0.0.1.79`. This number wont be changed until ALL
 A patcher will be released (currently in development) so each file doesn't need to be manually modified.
 
 ![Patcher](http://puu.sh/7VkF8.png)
+
+Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
