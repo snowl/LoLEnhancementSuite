@@ -1,0 +1,76 @@
+~lib/ClientLibChampionSelectionCore.dat
+#com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew
+@@@  trait method QName(PackageNamespace(""), "selectChampion")
+  trait method QName(PackageNamespace(""), "selectChampion")
+   method
+    name ""
+    refid "com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew/instance/selectChampion"
+    param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "Champion")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 3
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "ParticipantChampionSelection")
+      setlocal2
+
+      getlocal0
+      callproperty        QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "tryToAck"), 0
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "championSelectionViewModel")
+      getproperty         QName(PackageNamespace(""), "championSelectionState")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameState")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameState")
+      getproperty         QName(PackageNamespace(""), "CHAMPION_SELECTION")
+      ifne                L46
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "championSelectionViewModel")
+      getproperty         QName(PackageNamespace(""), "championSelections")
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getSelectionByChampion"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "ParticipantChampionSelection")
+      setlocal2
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "banned")
+      not
+      iffalse             L45
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "summonOrUnsummonChampion"), 1
+      pop
+L45:
+      jump                L60
+
+L46:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "championSelectionViewModel")
+      getproperty         QName(PackageNamespace(""), "championSelectionState")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameState")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameState")
+      getproperty         QName(PackageNamespace(""), "PRE_CHAMPION_SELECTION")
+      ifne                L60
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "active")
+      iffalse             L60
+
+      getlocal0
+      getlocal1
+      callproperty        QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew"), "banChampion"), 1
+      pop
+L60:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

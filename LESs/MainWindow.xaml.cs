@@ -179,6 +179,7 @@ namespace LESs
             MessageBox.Show("LESs has been successfully patched into League of Legends!");
             RemoveLessButton.IsEnabled = true;
             PatchButton.IsEnabled = true;
+            StatusLabel.Content = "Done patching!";
         }
 
         private void Patcher(string ModName)

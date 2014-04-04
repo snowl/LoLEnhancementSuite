@@ -20,3 +20,7 @@ Select any game mode while creating a custom game. For example, playing All Rand
 * KeepMyPage
 
 Stops the client from switching back to the home page after a queue is declined.
+
+* PickWhileLocked
+
+Allows you to switch champions while locked in during normal games. Change your mind even though locked in? NP
