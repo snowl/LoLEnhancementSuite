@@ -133,7 +133,44 @@ namespace LESs
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Patcher("keepMyPage");
+            ItemCollection modCollection = null;
+            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+            {
+                modCollection = ModsListBox.Items;
+            }));
+
+            //Wait for UI thread to respond...
+            while (modCollection == null)
+                ;
+
+            foreach (var x in modCollection)
+            {
+                CheckBox box = (CheckBox)x;
+                bool? IsBoxChecked = null;
+                string BoxName = "";
+                Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+                {
+                    if ((bool)box.IsChecked)
+                    {
+                        IsBoxChecked = true;
+                        BoxName = (string)box.Content;
+                    }
+                    else
+                    {
+                        IsBoxChecked = false;
+                        BoxName = "blah";
+                    }
+                }));
+
+                //Wait for UI thread to respond...
+                while (IsBoxChecked == null || String.IsNullOrEmpty(BoxName))
+                    ;
+
+                if ((bool)IsBoxChecked)
+                {
+                    Patcher(BoxName);
+                }
+            }
         }
 
         private void worker_RunWorkerCompleted(object sender,
