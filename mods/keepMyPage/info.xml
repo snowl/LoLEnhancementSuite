@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mod>
+	<name>Keep My Page</name>
+	<description>Stops the client from switching back to the home page after a queue is declined.</description>
+</mod>

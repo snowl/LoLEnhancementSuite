@@ -1,0 +1,35 @@
+~lib/ClientLibGame.dat
+#com.riotgames.pvpnet.game.controllers.practice:PracticeGameParameters
+@@@  trait method QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers.practice:PracticeGameParameters"), "getPracticeGameTypeConfigs")
+  trait method QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers.practice:PracticeGameParameters"), "getPracticeGameTypeConfigs")
+   method
+    name ""
+    refid "com.riotgames.pvpnet.game.controllers.practice:PracticeGameParameters/instance/com.riotgames.pvpnet.game.controllers.practice:PracticeGameParameters/instance/getPracticeGameTypeConfigs"
+    returns QName(PackageNamespace("mx.collections"), "ArrayCollection")
+    body
+     maxstack 2
+     localcount 6
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.gameconfig"), "GameTypeConfig")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.gameconfig"), "GameTypeConfigManager")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.gameconfig"), "GameTypeConfigManager")
+      getproperty         QName(PackageNamespace(""), "instance")
+      callproperty        QName(PackageNamespace(""), "getPracticeGameTypeConfigs"), 0
+      coerce              QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      setlocal1
+
+      pushnull
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

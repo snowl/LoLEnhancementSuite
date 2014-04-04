@@ -1,0 +1,33 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.controllers.lobby:LobbyController
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:LobbyController/instance"), "onCancelledQueue")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:LobbyController/instance"), "onCancelledQueue")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.lobby:LobbyController/instance/com.riotgames.platform.gameclient.controllers.lobby:LobbyController/instance/onCancelledQueue"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      iffalse             L14
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "chatController")
+      callpropvoid        QName(PackageNamespace(""), "leaveMatchmakingQueueChatRoom"), 0
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "masterGameController")
+      callpropvoid        QName(PackageNamespace(""), "abortCycle"), 0
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
