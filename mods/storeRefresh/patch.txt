@@ -1,0 +1,56 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.store:StoreView
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "initializeView")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "initializeView")
+   method
+    refid "com.riotgames.platform.gameclient.views.store:StoreView/instance/com.riotgames.platform.gameclient.views.store:StoreView/initializeView"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 13
+     maxscopedepth 14
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "clientConfig")
+      getproperty         QName(PackageNamespace(""), "storeEnabled")
+      iftrue              L10
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "isUnavailableMessageLoaded")
+
+      jump                L14
+
+L10:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "isUnavailableMessageLoaded")
+      iffalse             L14
+
+      returnvoid
+
+L14:
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.provider"), "StoreProviderProxy")
+      getproperty         QName(PackageNamespace(""), "instance")
+      coerce              QName(PackageNamespace("com.riotgames.platform.common.provider"), "IStoreProvider")
+      setlocal1
+
+      getlocal1
+      callproperty        QName(Namespace("com.riotgames.platform.common.provider:IStoreProvider"), "getStoreUrlReadyChanged"), 0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "onStoreUrlReadyChangedHandler")
+      callpropvoid        QName(Namespace("blix.signals:ISignal"), "add"), 1
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.store:StoreView"), "onStoreUrlReadyChangedHandler"), 0
+
+      getlocal1
+      callpropvoid        QName(Namespace("com.riotgames.platform.common.provider:IStoreProvider"), "refreshStoreUrl"), 0
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

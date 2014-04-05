@@ -87,7 +87,6 @@ namespace LESs
 
         private void FindButton_MouseDown(object sender, RoutedEventArgs e)
         {
-            RemoveLessButton.IsEnabled = false;
             PatchButton.IsEnabled = false;
             OpenFileDialog FindLeagueDialog = new OpenFileDialog();
 
@@ -112,7 +111,6 @@ namespace LESs
                         return;
                 }
 
-                RemoveLessButton.IsEnabled = true;
                 PatchButton.IsEnabled = true;
 
                 LocationTextbox.Text = Path.Combine(VersionDirectories[0], "deploy");
@@ -123,7 +121,6 @@ namespace LESs
 
         private void PatchButton_Click(object sender, RoutedEventArgs e)
         {
-            RemoveLessButton.IsEnabled = false;
             PatchButton.IsEnabled = false;
 
             worker.DoWork += worker_DoWork;
@@ -177,7 +174,6 @@ namespace LESs
                                        RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show("LESs has been successfully patched into League of Legends!");
-            RemoveLessButton.IsEnabled = true;
             PatchButton.IsEnabled = true;
             StatusLabel.Content = "Done patching!";
         }
