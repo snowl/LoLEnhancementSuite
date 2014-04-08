@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mod>
+	<name>Appear Offline</name>
+	<description>Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.</description>
+	<files>2</files>
+</mod>

@@ -1,0 +1,22 @@
+~lib/ClientLibSystem.dat
+#com.riotgames.pvpnet.system.maestro:MaestroController
+@@@  trait method QName(PrivateNamespace("com.riotgames.pvpnet.system.maestro:MaestroController"), "onGameClientAbandoned")
+  trait method QName(PrivateNamespace("com.riotgames.pvpnet.system.maestro:MaestroController"), "onGameClientAbandoned")
+   method
+    name ""
+    refid "com.riotgames.pvpnet.system.maestro:MaestroController/instance/com.riotgames.pvpnet.system.maestro:MaestroController/instance/onGameClientAbandoned"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

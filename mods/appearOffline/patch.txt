@@ -1,0 +1,55 @@
+~mod/ser/mod_ser.dat
+#com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl
+@@@  trait method QName(PackageNamespace(""), "changePresence")
+  trait method QName(PackageNamespace(""), "changePresence")
+   method
+    refid "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance/changePresence"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace("flash.xml"), "XMLNode")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 4
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      pushnull
+      pushnull
+      pushnull
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
+      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      setlocal3
+
+      getlocal1
+      pushstring          "dnd"
+      ifne                L25
+
+      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      pushnull
+      pushnull
+      pushstring          "invisible"
+      getlocal1
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "toString"), 0
+      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
+      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      setlocal3
+
+L25:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "connection")
+      getlocal3
+      callpropvoid        QName(PackageNamespace(""), "send"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

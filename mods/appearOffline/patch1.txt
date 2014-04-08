@@ -1,0 +1,59 @@
+~lib/ClientLibChat.dat
+#com.riotgames.platform.gameclient.chat.controllers:PresenceController
+@@@  trait method QName(PackageNamespace(""), "cycleShowMode")
+  trait method QName(PackageNamespace(""), "cycleShowMode")
+   method
+    name ""
+    refid "com.riotgames.platform.gameclient.chat.controllers:PresenceController/instance/cycleShowMode"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "dnd"
+      ifne                L10
+
+      getlocal0
+      pushstring          "chat"
+      initproperty        QName(PackageNamespace(""), "currentShow")
+
+      jump                L25
+
+L10:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "away"
+      ifne                L18
+
+      getlocal0
+      pushstring          "dnd"
+      initproperty        QName(PackageNamespace(""), "currentShow")
+
+      jump                L25
+
+L18:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "chat"
+      ifne                L25
+
+      getlocal0
+      pushstring          "away"
+      initproperty        QName(PackageNamespace(""), "currentShow")
+
+L25:
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "sendPresenceUpdate"), 0
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

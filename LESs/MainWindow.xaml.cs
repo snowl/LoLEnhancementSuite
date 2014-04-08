@@ -26,7 +26,7 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string IntendedVersion = "0.0.1.79";
+        const string IntendedVersion = "0.0.1.80";
 
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
@@ -165,7 +165,31 @@ namespace LESs
 
                 if ((bool)IsBoxChecked)
                 {
-                    Patcher(BoxName);
+                    int AmountOfPatches = 1;
+
+                    using (XmlReader reader = XmlReader.Create(Path.Combine("mods", BoxName, "info.xml")))
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader.IsStartElement())
+                            {
+                                switch (reader.Name)
+                                {
+                                    case "files":
+                                        reader.Read();
+                                        AmountOfPatches = Convert.ToInt32(reader.Value);
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                    
+                    for (int i = 0; i < AmountOfPatches; i++)
+                    {
+                        Directory.CreateDirectory("temp");
+                        Patcher(BoxName, i);
+                        DeletePathWithLongFileNames(Path.GetFullPath("temp"));
+                    }
                 }
             }
         }
@@ -178,11 +202,13 @@ namespace LESs
             StatusLabel.Content = "Done patching!";
         }
 
-        private void Patcher(string ModName)
+        private void Patcher(string ModName, int AmountOfPatches)
         {
-            Directory.CreateDirectory("temp");
+            string PatchNumber = "";
+            if (AmountOfPatches >= 1)
+                PatchNumber = AmountOfPatches.ToString();
 
-            string[] ModDetails = File.ReadAllLines(Path.Combine("mods", ModName, "patch.txt"));
+            string[] ModDetails = File.ReadAllLines(Path.Combine("mods", ModName, "patch" + PatchNumber + ".txt"));
             string FileLocation = "null";
             string TryFindClass = "null";
             string TraitToModify = "null";
@@ -371,8 +397,6 @@ namespace LESs
             }));
 
             File.Copy(Path.Combine("temp", FileName), Path.Combine(LocationText, FileLocation), true);
-
-            DeletePathWithLongFileNames(Path.GetFullPath("temp"));
         }
 
         private static void DeletePathWithLongFileNames(string path)
