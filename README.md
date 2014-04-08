@@ -7,7 +7,7 @@ These mods are for the version `0.0.1.80`. This number wont be changed until ALL
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
-![Patcher](http://puu.sh/7VkF8.png)
+![Patcher](http://puu.sh/80vfs.png)
 
 Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
