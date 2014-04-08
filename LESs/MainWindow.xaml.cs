@@ -102,7 +102,21 @@ namespace LESs
                 string RADLocation = Path.Combine(filename, "RADS", "projects", "lol_air_client", "releases");
 
                 var VersionDirectories = Directory.GetDirectories(RADLocation);
-                string Version = VersionDirectories[0].Replace(RADLocation + "\\", "");
+                string FinalDirectory = "";
+                string Version = "";
+                int VersionCompare = 0;
+                foreach (string x in VersionDirectories)
+                {
+                    string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
+                    int CompareVersion = Convert.ToInt32(Compare1.Replace(".", ""));
+
+                    if (CompareVersion > VersionCompare)
+                    {
+                        VersionCompare = CompareVersion;
+                        Version = x.Replace(RADLocation + "\\", "");
+                        FinalDirectory = x;
+                    }
+                }
 
                 if (Version != IntendedVersion)
                 {
@@ -113,7 +127,7 @@ namespace LESs
 
                 PatchButton.IsEnabled = true;
 
-                LocationTextbox.Text = Path.Combine(VersionDirectories[0], "deploy");
+                LocationTextbox.Text = Path.Combine(FinalDirectory, "deploy");
 
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
             }
