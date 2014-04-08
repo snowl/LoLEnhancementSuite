@@ -9,6 +9,8 @@ The offical LESs patcher will patch all mods into your League of Legends client.
 
 ![Patcher](http://puu.sh/80vfs.png)
 
+## Downloads
+
 Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
 ## Mods
