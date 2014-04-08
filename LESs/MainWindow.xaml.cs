@@ -262,7 +262,7 @@ namespace LESs
                 StatusLabel.Content = "Dissasembling patch (" + ModName + ")";
             }));
 
-            string[] ABCFiles = Directory.GetFiles("temp");
+            string[] ABCFiles = Directory.GetFiles("temp", "*.abc");
             foreach (string s in ABCFiles)
             {
                 ProcessStartInfo Disassemble = new ProcessStartInfo();
