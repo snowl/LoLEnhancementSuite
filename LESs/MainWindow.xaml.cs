@@ -35,6 +35,13 @@ namespace LESs
             InitializeComponent();
             FindButton.AddHandler(Button.MouseDownEvent, new RoutedEventHandler(FindButton_MouseDown), true);
             LeagueVersionLabel.Content = IntendedVersion;
+            if (File.Exists("debug.log"))
+                File.Delete("debug.log");
+
+            File.Create("debug.log");
+
+            if (Directory.Exists("temp"))
+                Directory.Delete("temp", true);
         }
 
         private void MainGrid_Loaded(object sender, RoutedEventArgs e)
@@ -51,6 +58,8 @@ namespace LESs
                 CheckBox Check = new CheckBox();
                 Check.IsChecked = true;
                 Check.Content = Mod.Replace("mods\\", "");
+                if (File.Exists(Path.Combine(Mod, "disabled")))
+                    Check.IsChecked = false;
                 ModsListBox.Items.Add(Check);
             }
         }
@@ -101,6 +110,8 @@ namespace LESs
                 string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "");
                 string RADLocation = Path.Combine(filename, "RADS", "projects", "lol_air_client", "releases");
 
+                File.AppendAllText("debug.log", filename + Environment.NewLine + RADLocation + Environment.NewLine);
+
                 var VersionDirectories = Directory.GetDirectories(RADLocation);
                 string FinalDirectory = "";
                 string Version = "";
@@ -108,7 +119,7 @@ namespace LESs
                 foreach (string x in VersionDirectories)
                 {
                     string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
-                    int CompareVersion = Convert.ToInt32(Compare1.Replace(".", ""));
+                    int CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
 
                     if (CompareVersion > VersionCompare)
                     {
@@ -116,6 +127,8 @@ namespace LESs
                         Version = x.Replace(RADLocation + "\\", "");
                         FinalDirectory = x;
                     }
+
+                    File.AppendAllText("debug.log", x + Environment.NewLine + CompareVersion + Environment.NewLine);
                 }
 
                 if (Version != IntendedVersion)
@@ -136,6 +149,8 @@ namespace LESs
         private void PatchButton_Click(object sender, RoutedEventArgs e)
         {
             PatchButton.IsEnabled = false;
+
+            File.AppendAllText("debug.log", "Starting patch" + Environment.NewLine);
 
             worker.DoWork += worker_DoWork;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
@@ -242,6 +257,8 @@ namespace LESs
                 }
             }
 
+            File.AppendAllText("debug.log", "Patching " + ModName + PatchNumber + Environment.NewLine);
+
             string[] FilePart = FileLocation.Split('/');
             string FileName = FilePart[FilePart.Length - 1];
 
@@ -265,6 +282,8 @@ namespace LESs
                 StatusLabel.Content = "Exporting patch " + ModName;
             }));
 
+            File.AppendAllText("debug.log", "Running abcexport" + Environment.NewLine);
+
             ProcessStartInfo Export = new ProcessStartInfo();
             Export.FileName = "abcexport.exe";
             Export.Arguments = Path.Combine("temp", FileName);
@@ -277,6 +296,9 @@ namespace LESs
             }));
 
             string[] ABCFiles = Directory.GetFiles("temp", "*.abc");
+
+            File.AppendAllText("debug.log", "Got " + ABCFiles.Length + " files" + Environment.NewLine);
+
             foreach (string s in ABCFiles)
             {
                 ProcessStartInfo Disassemble = new ProcessStartInfo();
@@ -290,6 +312,7 @@ namespace LESs
 
             if (TryFindClass.IndexOf(':') == 0)
             {
+                File.AppendAllText("debug.log", "INVALID MOD!!!" + Environment.NewLine);
                 throw new Exception("Invalid mod " + ModName);
             }
 
@@ -314,6 +337,7 @@ namespace LESs
 
             if (FoundDirectories.Count == 0)
             {
+                File.AppendAllText("debug.log", "No class matching " + SearchFor + " for mod " + ModName + Environment.NewLine);
                 throw new Exception("No class matching " + SearchFor + " for mod " + ModName);
             }
 
@@ -383,7 +407,7 @@ namespace LESs
             while (!ReAsmProc.StandardError.EndOfStream)
             {
                 string line = ReAsmProc.StandardError.ReadLine();
-                // do something with line
+                File.AppendAllText("debug.log", line + Environment.NewLine);
             }
             ReAsmProc.WaitForExit();
 
@@ -401,7 +425,7 @@ namespace LESs
             while (!FinalPatchProc.StandardError.EndOfStream)
             {
                 string line = FinalPatchProc.StandardError.ReadLine();
-                // do something with line
+                File.AppendAllText("debug.log", line + Environment.NewLine);
             }
             FinalPatchProc.WaitForExit();
 

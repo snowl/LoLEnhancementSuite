@@ -17,7 +17,7 @@
 
       getlocal0
       getproperty         QName(PackageNamespace(""), "currentShow")
-      pushstring          "dnd"
+      pushstring          "xa"
       ifne                L10
 
       getlocal0
@@ -33,7 +33,7 @@ L10:
       ifne                L18
 
       getlocal0
-      pushstring          "dnd"
+      pushstring          "xa"
       initproperty        QName(PackageNamespace(""), "currentShow")
 
       jump                L25
