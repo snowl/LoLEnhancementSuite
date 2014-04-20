@@ -1,0 +1,4 @@
+~lib/ClientLibDomain.dat
+#com.riotgames.platform.gameclient.domain:BotParticipant
+@+@  trait slot QName(PrivateNamespace("com.riotgames.platform.gameclient.domain:BotParticipant"), "_1431766121champion") type QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "Champion") end
+  trait slot QName(PackageNamespace(""), "lastSelectedSkinIndex") type QName(PackageNamespace(""), "int") value Integer(1) end
