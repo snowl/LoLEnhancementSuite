@@ -119,7 +119,16 @@ namespace LESs
                 foreach (string x in VersionDirectories)
                 {
                     string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
-                    int CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
+                    int CompareVersion;
+                    try
+                    {
+                        CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
+                    }
+                    catch (ArgumentOutOfRangeException)//fix for version numbers < 0.0.1.10
+                    {
+                        //Ignore
+                        CompareVersion = 0;
+                    }
 
                     if (CompareVersion > VersionCompare)
                     {
@@ -212,7 +221,7 @@ namespace LESs
                             }
                         }
                     }
-                    
+
                     for (int i = 0; i < AmountOfPatches; i++)
                     {
                         Directory.CreateDirectory("temp");
@@ -241,6 +250,7 @@ namespace LESs
             string FileLocation = "null";
             string TryFindClass = "null";
             string TraitToModify = "null";
+            bool IsNewTrait = false;
             foreach (string s in ModDetails)
             {
                 if (s.StartsWith("#"))
@@ -250,6 +260,11 @@ namespace LESs
                 else if (s.StartsWith("@@@"))
                 {
                     TraitToModify = s.Substring(3);
+                }
+                else if (s.StartsWith("@+@"))//Insert the new trait above this one
+                {
+                    TraitToModify = s.Substring(3);
+                    IsNewTrait = true;
                 }
                 else if (s.StartsWith("~"))
                 {
@@ -355,6 +370,17 @@ namespace LESs
             }
 
             string[] ClassModifier = File.ReadAllLines(Path.Combine(FinalDirectory, Class + ".class.asasm"));
+
+            //return if the new trait already exists
+            if (IsNewTrait)
+            {
+                foreach (string l in ClassModifier)
+                {
+                    if (l == ModDetails[3])
+                        return;
+                }
+            }
+
             int TraitStartPosition = 0;
             int TraitEndLocation = 0;
             //Get location of trait
@@ -366,29 +392,43 @@ namespace LESs
                     break;
                 }
             }
-
-            //Get end location of trait
-            for (int i = TraitStartPosition; i < ClassModifier.Length; i++)
+            if (!IsNewTrait)
             {
-                if (ClassModifier[i].Trim() == "end ; trait")
+
+                //Get end location of trait
+                for (int i = TraitStartPosition; i < ClassModifier.Length; i++)
                 {
-                    TraitEndLocation = i + 1;
-                    break;
+                    if (ClassModifier[i].Trim() == "end ; trait")
+                    {
+                        TraitEndLocation = i + 1;
+                        break;
+                    }
                 }
+
+                string[] StartTrait = new string[TraitStartPosition];
+                Array.Copy(ClassModifier, StartTrait, TraitStartPosition);
+                string[] AfterTrait = new string[ClassModifier.Length - TraitEndLocation];
+                Array.Copy(ClassModifier, TraitEndLocation, AfterTrait, 0, ClassModifier.Length - TraitEndLocation);
+
+                string[] FinalClass = new string[StartTrait.Length + (ModDetails.Length - 3) + AfterTrait.Length];
+                Array.Copy(StartTrait, FinalClass, TraitStartPosition);
+                Array.Copy(ModDetails, 3, FinalClass, TraitStartPosition, (ModDetails.Length - 3));
+                Array.Copy(AfterTrait, 0, FinalClass, TraitStartPosition + (ModDetails.Length - 3), AfterTrait.Length);
+
+                File.Delete(Path.Combine(FinalDirectory, Class + ".class.asasm"));
+                File.WriteAllLines(Path.Combine(FinalDirectory, Class + ".class.asasm"), FinalClass);
             }
+            else
+            {
+                string[] FinalClass = new string[ClassModifier.Length + (ModDetails.Length - 3)];
+                Array.Copy(ClassModifier, 0, FinalClass, 0, TraitStartPosition);
+                Array.Copy(ModDetails, 3, FinalClass, TraitStartPosition, ModDetails.Length - 3);
+                Array.Copy(ClassModifier, TraitStartPosition, FinalClass, TraitStartPosition + ModDetails.Length - 3, ClassModifier.Length - TraitStartPosition);
 
-            string[] StartTrait = new string[TraitStartPosition];
-            Array.Copy(ClassModifier, StartTrait, TraitStartPosition);
-            string[] AfterTrait = new string[ClassModifier.Length - TraitEndLocation];
-            Array.Copy(ClassModifier, TraitEndLocation, AfterTrait, 0, ClassModifier.Length - TraitEndLocation);
+                File.Delete(Path.Combine(FinalDirectory, Class + ".class.asasm"));
+                File.WriteAllLines(Path.Combine(FinalDirectory, Class + ".class.asasm"), FinalClass);
 
-            string[] FinalClass = new string[StartTrait.Length + (ModDetails.Length - 3) + AfterTrait.Length];
-            Array.Copy(StartTrait, FinalClass, TraitStartPosition);
-            Array.Copy(ModDetails, 3, FinalClass, TraitStartPosition, (ModDetails.Length - 3));
-            Array.Copy(AfterTrait, 0, FinalClass, TraitStartPosition + (ModDetails.Length - 3), AfterTrait.Length);
-
-            File.Delete(Path.Combine(FinalDirectory, Class + ".class.asasm"));
-            File.WriteAllLines(Path.Combine(FinalDirectory, Class + ".class.asasm"), FinalClass);
+            }
 
             string ReAssembleLocation = FinalDirectory.Substring(0, FinalDirectory.IndexOf("com")).Replace("temp\\", "");
             string AbcNumber = ReAssembleLocation.Substring(ReAssembleLocation.IndexOf('-')).Replace("-", "").Replace("\\", "");
@@ -441,7 +481,7 @@ namespace LESs
         {
             var tmpPath = @"\\?\" + path;
             Scripting.FileSystemObject fso = new Scripting.FileSystemObject() as Scripting.FileSystemObject;
-            fso.DeleteFolder(tmpPath, true); 
+            fso.DeleteFolder(tmpPath, true);
         }
     }
 }
