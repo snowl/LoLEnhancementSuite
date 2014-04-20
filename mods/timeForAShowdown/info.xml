@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mod>
+	<name>Time for a Showdown</name>
+	<description>Enables showdown games when Howling Abyss games are created with a teamsize less than 3. By Antropod</description>
+</mod>

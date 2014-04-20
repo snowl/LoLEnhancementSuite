@@ -99,57 +99,78 @@ namespace LESs
             PatchButton.IsEnabled = false;
             OpenFileDialog FindLeagueDialog = new OpenFileDialog();
 
-            FindLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Riot Games", "League of Legends");
+            if (!Directory.Exists(Path.Combine("C:\\", "Riot Games", "League of Legends")))
+            {
+                //Gagarena
+                FindLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Program Files (x86)", "GarenaLoL", "GameData", "Apps", "LoL");
+            }
+            else
+            {
+                FindLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Riot Games", "League of Legends");
+            }
             FindLeagueDialog.DefaultExt = ".exe";
-            FindLeagueDialog.Filter = "League of Legends Launcher|lol.launcher.exe";
+            FindLeagueDialog.Filter = "League of Legends Launcher|lol.launcher*.exe|Garena Launcher|lol.exe";
 
             Nullable<bool> result = FindLeagueDialog.ShowDialog();
 
             if (result == true)
             {
                 string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "");
-                string RADLocation = Path.Combine(filename, "RADS", "projects", "lol_air_client", "releases");
-
-                File.AppendAllText("debug.log", filename + Environment.NewLine + RADLocation + Environment.NewLine);
-
-                var VersionDirectories = Directory.GetDirectories(RADLocation);
-                string FinalDirectory = "";
-                string Version = "";
-                int VersionCompare = 0;
-                foreach (string x in VersionDirectories)
+                if (filename.Contains("lol.exe"))
                 {
-                    string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
-                    int CompareVersion;
-                    try
-                    {
-                        CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
-                    }
-                    catch (ArgumentOutOfRangeException)//fix for version numbers < 0.0.1.10
-                    {
-                        //Ignore
-                        CompareVersion = 0;
-                    }
+                    //Ga ga ga garena
 
-                    if (CompareVersion > VersionCompare)
-                    {
-                        VersionCompare = CompareVersion;
-                        Version = x.Replace(RADLocation + "\\", "");
-                        FinalDirectory = x;
-                    }
+                    PatchButton.IsEnabled = true;
 
-                    File.AppendAllText("debug.log", x + Environment.NewLine + CompareVersion + Environment.NewLine);
+                    filename = filename.Replace("lol.exe", "");
+
+                    LocationTextbox.Text = Path.Combine(filename, "Air");
                 }
-
-                if (Version != IntendedVersion)
+                else
                 {
-                    MessageBoxResult versionMismatchResult = MessageBox.Show("This version of LESs is intended for " + IntendedVersion + ". Your current version of League of Legends is " + Version + ". Continue? This could harm your installation.", "Invalid Version", MessageBoxButton.YesNo);
-                    if (versionMismatchResult == MessageBoxResult.No)
-                        return;
+                    string RADLocation = Path.Combine(filename, "RADS", "projects", "lol_air_client", "releases");
+
+                    File.AppendAllText("debug.log", filename + Environment.NewLine + RADLocation + Environment.NewLine);
+
+                    var VersionDirectories = Directory.GetDirectories(RADLocation);
+                    string FinalDirectory = "";
+                    string Version = "";
+                    int VersionCompare = 0;
+                    foreach (string x in VersionDirectories)
+                    {
+                        string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
+                        int CompareVersion;
+                        try
+                        {
+                            CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
+                        }
+                        catch (ArgumentOutOfRangeException)//fix for version numbers < 0.0.1.10
+                        {
+                            //Ignore
+                            CompareVersion = 0;
+                        }
+
+                        if (CompareVersion > VersionCompare)
+                        {
+                            VersionCompare = CompareVersion;
+                            Version = x.Replace(RADLocation + "\\", "");
+                            FinalDirectory = x;
+                        }
+
+                        File.AppendAllText("debug.log", x + Environment.NewLine + CompareVersion + Environment.NewLine);
+                    }
+
+                    if (Version != IntendedVersion)
+                    {
+                        MessageBoxResult versionMismatchResult = MessageBox.Show("This version of LESs is intended for " + IntendedVersion + ". Your current version of League of Legends is " + Version + ". Continue? This could harm your installation.", "Invalid Version", MessageBoxButton.YesNo);
+                        if (versionMismatchResult == MessageBoxResult.No)
+                            return;
+                    }
+
+                    PatchButton.IsEnabled = true;
+
+                    LocationTextbox.Text = Path.Combine(FinalDirectory, "deploy");
                 }
-
-                PatchButton.IsEnabled = true;
-
-                LocationTextbox.Text = Path.Combine(FinalDirectory, "deploy");
 
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
             }
