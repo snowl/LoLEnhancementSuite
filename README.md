@@ -38,3 +38,15 @@ LoLClient.exe making your League of Legends lag? This removes the call to close 
 * StoreRefresh
 
 Always getting those Session Expired messages in store? This patch allows you to refresh the store simply by reclicking the store button.
+
+* SecretsKeptOurAramsWasted
+
+Reveals the enemy team's champions in the ARAM queue.
+
+* SkinnyBots
+
+Gives a random skin to the bots in custom games.
+
+* TimeForAShowdown
+
+Enables custom showdown games on any map.
