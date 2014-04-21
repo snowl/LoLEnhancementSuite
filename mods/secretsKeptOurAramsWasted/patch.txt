@@ -1,0 +1,453 @@
+~lib/ClientLibChampionSelectionCore.dat
+#com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand
+@@@  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "updatePlayerRosterForTeam")
+  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "updatePlayerRosterForTeam")
+   method
+    name ""
+    refid "com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand/updatePlayerRosterForTeam"
+    param QName(PackageNamespace("mx.collections"), "ArrayCollection")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 10
+     localcount 20
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "IParticipant")
+      setlocal            5
+
+      pushnull
+      coerce_s
+      setlocal            6
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            7
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            8
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      setlocal            9
+
+      pushbyte            0
+      setlocal            10
+
+      pushfalse
+      convert_b
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      constructprop       QName(PackageNamespace(""), "Array"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace(""), "Array")
+      constructprop       QName(PackageNamespace(""), "Array"), 0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            4
+
+      pushbyte            0
+      setlocal            11
+
+      getlocal1
+      coerce_a
+      setlocal            12
+
+      jump                L231
+
+L36:
+      label
+      getlocal            12
+      getlocal            11
+      nextvalue
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "IParticipant")
+      setlocal            5
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+      istypelate
+      iffalse             L52
+
+      getlocal            4
+      getlocal            5
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+      pop
+      jump                L231
+
+L52:
+      pushstring          "1"
+      coerce_s
+      setlocal            6
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      istypelate
+      iffalse             L80
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getlocal            5
+      callproperty        QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            8
+
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "accountId")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      coerce_s
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "playerRoster")
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("UpdatePlayerRosterCommand.as$206"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.commands"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.game.commands"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.common.commands:CommandBase"), StaticProtectedNs("com.riotgames.platform.common.responder:Responder"), StaticProtectedNs("Object")])
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      astypelate
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            7
+
+      jump                L144
+
+L80:
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      istypelate
+      iffalse             L135
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      constructprop       QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant"), 0
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            7
+
+      getlocal            7
+      getlocal            5
+      callproperty        QName(Namespace("com.riotgames.platform.gameclient.domain:IParticipant"), "getPickMode"), 0
+      setproperty         QName(PackageNamespace(""), "pickMode")
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      astypelate
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      setlocal            9
+
+      getlocal            7
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "gameUniqueId")
+      setproperty         QName(PackageNamespace(""), "accountId")
+
+      getlocal            7
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "clientInSynch")
+      setproperty         QName(PackageNamespace(""), "clientInSynch")
+
+      getlocal            7
+      findpropstrict      QName(PackageNamespace("mx.resources"), "ResourceManager")
+      getproperty         QName(PackageNamespace("mx.resources"), "ResourceManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 0
+      pushstring          "resources"
+      pushstring          "championSelection_player_summoner_anonymous"
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "gameUniqueId")
+      newarray            1
+      callproperty        QName(Namespace("mx.resources:IResourceManager"), "getString"), 3
+      setproperty         QName(PackageNamespace(""), "summonerInternalName")
+
+      getlocal            7
+      getlocal0
+      getlocal1
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "gameUniqueId")
+      callproperty        QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "getSummonerName"), 2
+      setproperty         QName(PackageNamespace(""), "summonerName")
+
+      getlocal            7
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "badges")
+      setproperty         QName(PackageNamespace(""), "badges")
+
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "gameUniqueId")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+      coerce_s
+      setlocal            6
+
+      jump                L144
+
+L135:
+      findpropstrict      QName(ProtectedNamespace("com.riotgames.platform.common.commands:CommandBase"), "onError")
+      pushstring          "updatePlayerRosterAndChampionSelections(): Handled game participant of unknown type "
+      findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+      getlocal            5
+      callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+      add
+      callproperty        QName(ProtectedNamespace("com.riotgames.platform.common.commands:CommandBase"), "onError"), 1
+      pop
+      jump                L231
+
+L144:
+      getlocal            7
+      pushnull
+      ifne                L158
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "playerRoster")
+      getlocal            6
+      getlocal            5
+      setproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("UpdatePlayerRosterCommand.as$206"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.commands"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.game.commands"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.common.commands:CommandBase"), StaticProtectedNs("com.riotgames.platform.common.responder:Responder"), StaticProtectedNs("Object")])
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getlocal            5
+      callproperty        QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            7
+
+      jump                L186
+
+L158:
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      istypelate
+      convert_b
+      dup
+      convert_b
+      iffalse             L175
+
+      pop
+      getlocal            7
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      astypelate
+      callproperty        QName(PackageNamespace(""), "equals"), 1
+      not
+      convert_b
+L175:
+      iffalse             L186
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "playerRoster")
+      getlocal            6
+      getlocal            5
+      setproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("UpdatePlayerRosterCommand.as$206"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.commands"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.game.commands"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.common.commands:CommandBase"), StaticProtectedNs("com.riotgames.platform.common.responder:Responder"), StaticProtectedNs("Object")])
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getlocal            5
+      callproperty        QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      setlocal            7
+
+L186:
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "summonerName")
+      pushstring          ""
+      ifne                L207
+
+      getlocal1
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "getItemIndex"), 1
+      pushbyte            1
+      add
+      convert_i
+      setlocal            10
+
+      getlocal            7
+      findpropstrict      QName(PackageNamespace("mx.resources"), "ResourceManager")
+      getproperty         QName(PackageNamespace("mx.resources"), "ResourceManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 0
+      pushstring          "resources"
+      pushstring          "championSelection_player_summoner_anonymous"
+      getlocal            10
+      newarray            1
+      callproperty        QName(Namespace("mx.resources:IResourceManager"), "getString"), 3
+      setproperty         QName(PackageNamespace(""), "summonerName")
+
+L207:
+      getlocal            7
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "gameOwnerAccountId")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "accountId")
+      equals
+      setproperty         QName(PackageNamespace(""), "isGameOwner")
+
+      getlocal            7
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "accountId")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "accountId")
+      equals
+      setproperty         QName(PackageNamespace(""), "isMe")
+
+      getlocal3
+      getlocal            7
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+      pop
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "isMe")
+      iffalse             L231
+
+      pushtrue
+      convert_b
+      setlocal2
+
+L231:
+      hasnext2            12, 11
+      iftrue              L36
+
+      kill                12
+      kill                11
+      
+      ;----------------New Code--------------------------------------------------local start 13
+      ;local  1: (ArrayCollection) currentTeam
+      ;local  2: (boolean) isMyTeam
+      ;local  3: (Array) enemyTeam as PlayerParticipants
+      ;local 14: (ArrayCollection) myTeam original
+      ;local 16: (ArrayCollection) enemyTeam original
+      ;local 17: (int) loop counter1
+      ;local 18: (int) loop counter2
+      ;local 19: (int) current enemy counter1
+      
+      ;if(isMyTeam) return
+      getlocal 2 
+      iftrue AEND
+      
+      ;if(this.game.teamOne==param1) 
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "teamOne")
+      getlocal 1
+      ifeq A2
+      
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "teamTwo")
+      setlocal 16
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "teamOne")
+      setlocal 14
+      jump A3
+      
+A2:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "teamOne")
+      setlocal 16
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "teamTwo")
+      setlocal 14
+      
+A3:
+      getlocal 16
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte 0
+      ifeq AEND ;end if enemy team length is 0
+      
+      getlocal 16
+      pushbyte 0
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ObfuscatedParticipant")
+      istypelate
+      iffalse AEND ;end if enemies are not obfuscated
+      
+      pushbyte 0 ;obligatory comment here
+      setlocal 17
+      pushbyte 0
+      setlocal 19
+      jump AL1H
+      
+AL1B: ;loop body
+      label
+      pushbyte 0
+      setlocal 18
+      jump AL2H
+      
+AL2B: ;loop2 body
+      label
+      getlocal 14
+      getlocal 18
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getproperty         QName(PackageNamespace(""), "summonerInternalName")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "playerChampionSelections")
+      getlocal 17
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerChampionSelectionDTO")
+      getproperty         QName(PackageNamespace(""), "summonerInternalName")
+      ifeq AL1BE
+      
+      
+      inclocal 18
+AL2H: ;loop2 head
+      getlocal 18
+      getlocal 14
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt AL2B
+      
+      getlocal 3
+      getlocal 19
+      getproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("UpdatePlayerRosterCommand.as$206"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.commands"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.game.commands"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.common.commands:CommandBase"), StaticProtectedNs("com.riotgames.platform.common.responder:Responder"), StaticProtectedNs("Object")])
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "playerChampionSelections")
+      getlocal 17
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerChampionSelectionDTO")
+      getproperty         QName(PackageNamespace(""), "summonerInternalName")
+      setlocal 13
+      getlocal 13
+      setproperty         QName(PackageNamespace(""), "summonerInternalName")
+      getlocal 3
+      getlocal 19
+      getproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("UpdatePlayerRosterCommand.as$206"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.commands"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.game.commands"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), StaticProtectedNs("com.riotgames.platform.common.commands:CommandBase"), StaticProtectedNs("com.riotgames.platform.common.responder:Responder"), StaticProtectedNs("Object")])
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+      getlocal 13
+      setproperty         QName(PackageNamespace(""), "summonerName")
+      inclocal 19
+      
+      
+AL1BE: ;loop 1 body end
+      inclocal 17
+AL1H: ;loop head
+      getlocal 17
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "game")
+      getproperty         QName(PackageNamespace(""), "playerChampionSelections")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt AL1B
+      
+AEND:
+      ;-------------------------------------------------------------------------
+      
+      getlocal1
+      getlocal3
+      getlocal            4
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "concat"), 1
+      setproperty         QName(PackageNamespace(""), "source")
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "refresh"), 0
+      pop
+      getlocal2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.commands:UpdatePlayerRosterCommand"), "updatePlayerRosterForTeam")
