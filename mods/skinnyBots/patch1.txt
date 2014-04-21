@@ -1,9 +1,10 @@
 ~mod/ser/mod_ser.dat
 #com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl
-@@@    trait method QName(PackageNamespace(""), "selectBotChampion")
+@@@  trait method QName(PackageNamespace(""), "selectBotChampion")
   trait method QName(PackageNamespace(""), "selectBotChampion")
    method
-    refid "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/selectBotChampion"
+    name ""
+    refid "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance/selectBotChampion"
     param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "Champion")
     param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
     param QName(PackageNamespace(""), "Function")

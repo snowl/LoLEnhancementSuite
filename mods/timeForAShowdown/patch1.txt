@@ -1,9 +1,9 @@
 ~mod/man/mod_man.dat
 #com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController
-@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController#0"), "isFeaturedGameEnabledForPickId")
-  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController#0"), "isFeaturedGameEnabledForPickId")
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "isFeaturedGameEnabledForPickId")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "isFeaturedGameEnabledForPickId")
    method
-    refid "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/isFeaturedGameEnabledForPickId"
+    refid "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/isFeaturedGameEnabledForPickId"
     param QName(PackageNamespace(""), "String")
     returns QName(PackageNamespace(""), "Boolean")
     body
