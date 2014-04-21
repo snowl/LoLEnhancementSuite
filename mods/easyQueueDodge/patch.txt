@@ -1,0 +1,40 @@
+~mod/cs/mod_cs.dat
+#com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView
+@@@  trait method QName(ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView"), "setQuitButtonState")
+  trait method QName(ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView"), "setQuitButtonState")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView:setQuitButtonState"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 13
+     maxscopedepth 14
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "quitTutorialButton")
+      iffalse             L52
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "quitTutorialButton")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "quitTutorialButton")
+      pushtrue
+      dup
+      setlocal1
+
+      setproperty         QName(PackageNamespace(""), "includeInLayout")
+
+      getlocal1
+      kill                1
+      setproperty         QName(PackageNamespace(""), "visible")
+
+L52:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
