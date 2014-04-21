@@ -42,6 +42,9 @@ namespace LESs
 
             if (Directory.Exists("temp"))
                 Directory.Delete("temp", true);
+
+            worker.DoWork += worker_DoWork;
+            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
         }
 
         private void MainGrid_Loaded(object sender, RoutedEventArgs e)
@@ -115,7 +118,7 @@ namespace LESs
 
             if (result == true)
             {
-                string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "");
+                string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "").Replace("lol.launcher.admin.exe", ""); ;
                 if (filename.Contains("lol.exe"))
                 {
                     //Ga ga ga garena
@@ -182,8 +185,6 @@ namespace LESs
 
             File.AppendAllText("debug.log", "Starting patch" + Environment.NewLine);
 
-            worker.DoWork += worker_DoWork;
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             worker.RunWorkerAsync();
         }
 
