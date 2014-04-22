@@ -1,9 +1,8 @@
 ~mod/ser/mod_ser.dat
 #com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl
-@@@  trait method QName(PackageNamespace(""), "selectBotChampion")
+@@@    trait method QName(PackageNamespace(""), "selectBotChampion")
   trait method QName(PackageNamespace(""), "selectBotChampion")
    method
-    name ""
     refid "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance/selectBotChampion"
     param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "Champion")
     param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
@@ -12,7 +11,7 @@
     param QName(PackageNamespace(""), "Function")
     returns QName(PackageNamespace(""), "void")
     body
-     maxstack 10
+     maxstack 7
      localcount 7
      initscopedepth 5
      maxscopedepth 6
@@ -32,23 +31,9 @@
       getlocal            6
       getlex              QName(PackageNamespace("com.riotgames.platform.gameclient.exception"), "GameException")
       getlocal            5
-      setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl#1"), PackageNamespace("com.riotgames.platform.gameclient.module.services.lcds"), PackageInternalNs("com.riotgames.platform.gameclient.module.services.lcds"), ProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:BaseLcdsService"), StaticProtectedNs("Object")])
+      setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance#1"), PackageNamespace("com.riotgames.platform.gameclient.module.services.lcds"), PackageInternalNs("com.riotgames.platform.gameclient.module.services.lcds"), ProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:BaseLcdsService"), StaticProtectedNs("Object")])
 
 L13:
-      getlocal2
-      findpropstrict      QName(PackageNamespace(""), "Math")
-      getproperty         QName(PackageNamespace(""), "Math")
-      callproperty        QName(PackageNamespace(""), "random"), 0
-      getlocal1
-      getproperty         QName(PackageNamespace(""), "championSkins")
-      getproperty         QName(PackageNamespace(""), "length")
-      pushbyte 2
-      subtract
-      multiply
-      pushbyte 1
-      add_i
-      setproperty         QName(PackageNamespace(""), "lastSelectedSkinIndex")
-
       findpropstrict      QName(PackageNamespace(""), "invokeServiceWithoutSession")
       pushstring          "gameService"
       pushstring          "selectBotChampion"
