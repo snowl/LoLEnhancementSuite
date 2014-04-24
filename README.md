@@ -7,7 +7,7 @@ These mods are for the version `0.0.1.83`. This number wont be changed until ALL
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
-![Patcher](http://puu.sh/80vfs.png)
+![Patcher](http://puu.sh/8iF6w.png)
 
 ## Downloads
 
@@ -21,7 +21,7 @@ Select any game mode while creating a custom game. For example, playing All Rand
 
 * AppearOffline
 
-Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.
+The away status dot will make you appear offline to other users.
 
 * KeepMyPage
 
