@@ -118,12 +118,14 @@ namespace LESs
 
             if (result == true)
             {
-                string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "").Replace("lol.launcher.admin.exe", ""); ;
+                File.AppendAllText("debug.log", FindLeagueDialog.FileName);
+                string filename = FindLeagueDialog.FileName.Replace("lol.launcher.exe", "").Replace("lol.launcher.admin.exe", "");
                 if (filename.Contains("lol.exe"))
                 {
                     //Ga ga ga garena
 
                     PatchButton.IsEnabled = true;
+                    RemoveButton.IsEnabled = false; //Can't automatically remove on garena installations!
 
                     filename = filename.Replace("lol.exe", "");
 
@@ -171,6 +173,7 @@ namespace LESs
                     }
 
                     PatchButton.IsEnabled = true;
+                    RemoveButton.IsEnabled = true;
 
                     LocationTextbox.Text = Path.Combine(FinalDirectory, "deploy");
                 }
@@ -186,6 +189,16 @@ namespace LESs
             File.AppendAllText("debug.log", "Starting patch" + Environment.NewLine);
 
             worker.RunWorkerAsync();
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(Path.Combine(LocationTextbox.Text.Substring(0, LocationTextbox.Text.Length - 7), "S_OK")))
+            {
+                File.Delete(Path.Combine(LocationTextbox.Text.Substring(0, LocationTextbox.Text.Length - 7), "S_OK"));
+                MessageBox.Show("LESs will be removed next time League of Legends launches!");
+                StatusLabel.Content = "Removed LESs";
+            }
         }
 
         private void worker_DoWork(object sender, DoWorkEventArgs e)
@@ -420,7 +433,7 @@ namespace LESs
                 //Get end location of trait
                 for (int i = TraitStartPosition; i < ClassModifier.Length; i++)
                 {
-                    if (ClassModifier[i].Trim() == "end ; trait")
+                    if (ClassModifier[i].Trim() == "end ; trait" || ClassModifier[i].Trim() == "end ; method")
                     {
                         TraitEndLocation = i + 1;
                         break;

@@ -1,0 +1,136 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView
+@@@ instance QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "ConfirmStartChampionSelectView")
+ instance QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "ConfirmStartChampionSelectView")
+  extends QName(PackageNamespace("mx.core"), "UIComponent")
+  implements Multiname("ICancelableDialog", [PackageNamespace("com.riotgames.platform.gameclient.views.game.common")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView")
+  iinit
+   refid "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance/init"
+   param QName(PackageNamespace("com.riotgames.rust.context"), "RustContext")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 5
+    localcount 3
+    initscopedepth 11
+    maxscopedepth 12
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("blix.signals"), "Signal")
+     constructprop       QName(PackageNamespace("blix.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_onClosed")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("blix.signals"), "Signal")
+     constructprop       QName(PackageNamespace("blix.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_onAccepted")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("blix.signals"), "Signal")
+     constructprop       QName(PackageNamespace("blix.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_onDeclined")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushint             40000
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "cleanupTimer")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           2000
+     pushbyte            1
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "delayedClosedTimer")
+
+     getlocal0
+     getlex              QName(PackageNamespace("mx.logging"), "Log")
+     findpropstrict      QName(PackageNamespace("flash.utils"), "getQualifiedClassName")
+     getlocal0
+     callproperty        QName(PackageNamespace("flash.utils"), "getQualifiedClassName"), 1
+     getlex              QName(PackageNamespace(""), "RegExp")
+     pushstring          "::"
+     construct           1
+     pushstring          "."
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "replace"), 2
+     callproperty        QName(PackageNamespace(""), "getLogger"), 1
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "logger")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("blix.assets.proxy"), "SpriteProxy")
+     getlocal1
+     getlocal0
+     constructprop       QName(PackageNamespace("blix.assets.proxy"), "SpriteProxy"), 2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectWrapper")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "EnterChampionSelectView")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectWrapper")
+     getlocal2
+     constructprop       QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "EnterChampionSelectView"), 2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectWrapper")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     pushstring          "acceptButtonClicked"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "onAcceptButtonClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     pushstring          "declineButtonClicked"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "onDeclineButtonClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     pushstring          "cancelButtonClicked"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "onCancelButtonClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     pushstring          "noButtonClicked"
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "onAcceptButtonClicked")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "_confirmChampionSelectBlixView")
+     callpropvoid        QName(PackageNamespace(""), "initializeView"), 0
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "cleanupTimer")
+     getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+     getproperty         QName(PackageNamespace(""), "TIMER")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "onCleanupTimer")
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView/instance"), "cleanupTimer")
+     callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
