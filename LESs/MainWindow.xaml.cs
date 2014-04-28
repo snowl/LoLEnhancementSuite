@@ -433,9 +433,16 @@ namespace LESs
                 //Get end location of trait
                 for (int i = TraitStartPosition; i < ClassModifier.Length; i++)
                 {
-                    if (ClassModifier[i].Trim() == "end ; trait" || ClassModifier[i].Trim() == "end ; method")
+                    if (ClassModifier[i].Trim() == "end ; method")
                     {
-                        TraitEndLocation = i + 1;
+                        if (ClassModifier[i + 1].Trim() == "end ; trait")
+                        {
+                            TraitEndLocation = i + 2;
+                        }
+                        else
+                        {
+                            TraitEndLocation = i + 1;
+                        }
                         break;
                     }
                 }
