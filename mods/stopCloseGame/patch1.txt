@@ -1,0 +1,213 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.game.common.ingame:InGameView
+@@@  trait method QName(ProtectedNamespace("com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "commitProperties") flag OVERRIDE
+  trait method QName(ProtectedNamespace("com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "commitProperties") flag OVERRIDE
+   method
+    refid "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView/instance/com.riotgames.platform.gameclient.views.game.common.ingame:InGameView:commitProperties"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 1
+     initscopedepth 13
+     maxscopedepth 14
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "applicationController")
+      not
+      dup
+      iftrue              L11
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shellDispatcher")
+      not
+L11:
+      iffalse             L13
+
+      returnvoid
+
+L13:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+      getlex              QName(PackageNamespace(""), "currentState")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers"), "InGameController")
+      getproperty         QName(PackageNamespace(""), "PLAYING_CONNECTED")
+      ifne                L65
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shellDispatcher")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.maestro"), "MaestroController")
+      getproperty         QName(PackageNamespace(""), "GAME_COMPLETED")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "onGameCompleted")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "practiceGame_inGame_statusTitle"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "headerText")
+
+      getlex              QName(PackageNamespace("com.riotgames.platform.common"), "AppConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "otherGameInProgress")
+      iffalse             L53
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "practiceGame_inGame_otherAccount_statusLabel"
+      pushnull
+      getlex              QName(PackageNamespace("com.riotgames.platform.common"), "AppConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "otherAccountGameInProgressSummonerName")
+      newarray            1
+      callproperty        QName(PackageNamespace(""), "getString"), 3
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "bodyText")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "allowCancel")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+      jump                L64
+
+L53:
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "practiceGame_inGame_statusLabel"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "bodyText")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "allowCancel")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+L64:
+      jump                L149
+
+L65:
+      getlex              QName(PackageNamespace(""), "currentState")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers"), "InGameController")
+      getproperty         QName(PackageNamespace(""), "PLAYING_DISCONNECTED")
+      ifne                L93
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shellDispatcher")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.maestro"), "MaestroController")
+      getproperty         QName(PackageNamespace(""), "GAME_COMPLETED")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "onGameCompleted")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameAbandonedTitle"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "headerText")
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameAbandonedMessage"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "bodyText")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "allowCancel")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+      jump                L149
+
+L93:
+      getlex              QName(PackageNamespace(""), "currentState")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers"), "InGameController")
+      getproperty         QName(PackageNamespace(""), "PLAYING_CRASHED")
+      ifne                L121
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shellDispatcher")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.maestro"), "MaestroController")
+      getproperty         QName(PackageNamespace(""), "GAME_COMPLETED")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "onGameCompleted")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameCrashedTitle"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "headerText")
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameCrashedMessage"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "bodyText")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "allowCancel")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+      jump                L149
+
+L121:
+      getlex              QName(PackageNamespace(""), "currentState")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers"), "InGameController")
+      getproperty         QName(PackageNamespace(""), "PLAYING_SPECTATOR_DISCONNECT")
+      ifne                L149
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shellDispatcher")
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.maestro"), "MaestroController")
+      getproperty         QName(PackageNamespace(""), "GAME_COMPLETED")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "onGameCompleted")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameAbandonedTitleSpectator"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "headerText")
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "maestro_GameAbandonedMessageSpectator"
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "bodyText")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "allowCancel")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView"), "showReconnect")
+
+      jump                L149
+
+L149:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
