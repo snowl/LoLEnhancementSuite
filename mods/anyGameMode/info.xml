@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mod>
 	<name>Any Game Mode</name>
-	<description>Select any game mode while creating a custom game. For example, playing Tournament Draft Ultra Rapid Fire.</description>
+	<description>Unlock any game type while playing on a featured game mode. A featured game mode must be enabled server side for this to work!</description>
 </mod>
