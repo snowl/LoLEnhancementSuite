@@ -9,7 +9,7 @@
         <TextBox x:Name="LocationTextbox" Padding="3,0,0,0" VerticalContentAlignment="Center" HorizontalAlignment="Stretch" Height="30" Margin="10,30,130,0" TextWrapping="NoWrap" VerticalAlignment="Top" FontSize="14" IsReadOnly="True"/>
         <Button x:Name="FindButton" Content="Locate" HorizontalAlignment="Right" Margin="0,30,20,0" VerticalAlignment="Top" Width="100" Height="30" FontSize="14"/>
 
-        <ListBox x:Name="ModsListBox" HorizontalAlignment="Left" Margin="10,75,0,30" VerticalAlignment="Stretch" Width="200" SelectionChanged="ModsListBox_SelectionChanged">
+        <ListBox x:Name="ModsListBox" HorizontalAlignment="Left" Margin="10,75,0,30" VerticalAlignment="Stretch" Width="230" SelectionChanged="ModsListBox_SelectionChanged">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -25,10 +25,11 @@
             </ListBox.ItemContainerStyle>
         </ListBox>
 
-        <Label x:Name="ModNameLabel" Content="" HorizontalAlignment="Left" Margin="215,75,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <TextBox x:Name="ModDescriptionBox" HorizontalAlignment="Left" Height="125" Margin="220,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="240"/>
+        <Label x:Name="ModNameLabel" Content="" HorizontalAlignment="Left" Margin="250,75,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="ModDescriptionBox" HorizontalAlignment="Left" Height="125" Margin="250,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="220"/>
 
-        <Label x:Name="LeagueVersionLabel" Content="" HorizontalAlignment="Right" Margin="0,0,20,40" VerticalAlignment="Bottom" FontSize="14" FontStyle="Italic"/>
+        <Label x:Name="LeagueVersionLabel" Content="" HorizontalAlignment="Right" Margin="0,0,20,80" VerticalAlignment="Bottom" FontSize="14" FontStyle="Italic"/>
+        <Button x:Name="RemoveButton" Content="Remove LES" HorizontalAlignment="Right" Margin="0,0,20,50" VerticalAlignment="Bottom" Height="30" Width="100" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False" Click="RemoveButton_Click" />
         <Button x:Name="PatchButton" Content="Patch!" HorizontalAlignment="Right" Margin="0,0,20,10" VerticalAlignment="Bottom" Height="30" Width="100" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False" Click="PatchButton_Click"/>
         
         <Label x:Name="StatusLabel" Content="Waiting..." HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Bottom" FontWeight="Light" FontStyle="Italic" FontSize="14" Foreground="#FF595959"/>

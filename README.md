@@ -3,11 +3,11 @@ LoLEnhancementSuite
 
 A set of patches for the League of Legends client to enhance and fix bugs.
 
-These mods are for the version `0.0.1.80`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+These mods are for the version `0.0.1.83`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
-![Patcher](http://puu.sh/80vfs.png)
+![Patcher](http://puu.sh/8iF6w.png)
 
 ## Downloads
 
@@ -21,7 +21,7 @@ Select any game mode while creating a custom game. For example, playing All Rand
 
 * AppearOffline
 
-Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.
+The away status dot will make you appear offline to other users.
 
 * KeepMyPage
 
@@ -38,3 +38,19 @@ LoLClient.exe making your League of Legends lag? This removes the call to close 
 * StoreRefresh
 
 Always getting those Session Expired messages in store? This patch allows you to refresh the store simply by reclicking the store button.
+
+* SecretsKeptOurAramsWasted
+
+Reveals the enemy team's champions in the ARAM queue.
+
+* SkinnyBots
+
+Gives a random skin to the bots in custom games.
+
+* TimeForAShowdown
+
+Enables custom showdown games on any map.
+
+* EasyQueueDodge
+
+Adds a "Quit Game" button to the champion selection screen similar to custom games. NOTE: You will still get queue dodge penalties!
