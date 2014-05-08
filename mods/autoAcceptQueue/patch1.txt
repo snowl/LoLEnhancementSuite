@@ -1,0 +1,52 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView
+@@@ instance QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "EnterChampionSelectView")
+ instance QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "EnterChampionSelectView")
+  extends QName(PackageNamespace("blix.components.timeline"), "StatefulView")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView")
+  iinit
+   refid "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance/init"
+   param QName(PackageNamespace("blix.context"), "IContext")
+   param QName(PackageNamespace(""), "int")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 12
+    maxscopedepth 13
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushbyte            50
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "pieTimer")
+
+     getlocal0
+     getlocal1
+     constructsuper      1
+
+     findpropstrict      QName(PackageNamespace(""), "setLinkage")
+     pushstring          "EnterChampSelectPrompt"
+     callpropvoid        QName(PackageNamespace(""), "setLinkage"), 1
+
+     getlocal0
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "createEventListeners"), 0
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "_initialTimerValue")
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+     pushshort           900
+     constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voteTimer")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
