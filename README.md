@@ -7,7 +7,7 @@ These mods are for the version `0.0.1.87`. This number wont be changed until ALL
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
-![Patcher](http://puu.sh/8iF6w.png)
+![Patcher](http://puu.sh/8DXPG.png)
 
 ## Downloads
 
@@ -15,7 +15,7 @@ Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
 ## Mods
 
-* AnyGameMode
+* AnyGameType
 
 Unlock any game type while playing on a featured game mode. A featured game mode must be enabled server side for this to work!
 
