@@ -11,6 +11,8 @@ The offical LESs patcher will patch all mods into your League of Legends client.
 
 ## Downloads
 
+The only approved download sources are listed below. Other websites redistributing without my explicit permission are allowed under my chosen license (as long as they follow with the clauses), but may contain unwanted executables and modifications.
+
 Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
 ## Mods
