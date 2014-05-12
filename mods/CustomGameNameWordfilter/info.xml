@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mod>
 	<name>Ignore Custom Game Name Min length and Wordfilter</name>
-	<description>Disable the Custom Game name Wordfilter and let you create a game with 1 letter instead of the 3 letters. Dont set you anymore to busy status if you create a Custom Game. You wont get any more busy if you create a custom game. By roflxD:-) (known as Blade12629)</description>
+	<description>Disable the Custom Game name Wordfilter and let you create a game with 1 letter instead of the 3 letters. 
+	Dont set you anymore to busy status if you create a Custom Game. 
+	You wont get any more busy if you create a custom game. By roflxD:-) (known as Blade12629)</description>
 	<files>2</files>
 </mod>
