@@ -65,4 +65,3 @@ Will automatically accept the queue at the end of the queue timer instead of dec
 
 Disable the Custom Game name Wordfilter and let you create a game with 1 letter instead of the 3 letters.
 Dont set you anymore to busy status if you create a Custom Game.
-You wont get any more busy if you create a custom game.
