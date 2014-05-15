@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <mod>
 	<name>Stop Close Game</name>
-	<description>Removes the force close of League of legends when the lobby client is closed, allowing some memory to be freed up since the lobby client won't be running.</description>
+	<description>Removes the force close of League of legends when the lobby client is closed, allowing some memory to be freed up since the lobby client won't be running. Also forces reconnect to always be shown.</description>
+	<files>2</files>
 </mod>

@@ -1,0 +1,29 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "startChat")
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "startChat")
+   method
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance/startChat"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_viewMediator")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+      callproperty        QName(PackageNamespace(""), "getJID"), 0
+      pushtrue
+      callpropvoid        QName(Namespace("com.riotgames.platform.gameclient.chat.views:ChatViewMediator"), "createPersonalPopUp"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
