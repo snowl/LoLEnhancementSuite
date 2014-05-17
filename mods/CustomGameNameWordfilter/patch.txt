@@ -1,0 +1,108 @@
+~lib/ClientLibGame.dat
+#com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController
+@@@  trait method QName(PackageNamespace(""), "canCreateGame")
+  trait method QName(PackageNamespace(""), "canCreateGame")
+   method
+    name ""
+    refid "com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController/instance/canCreateGame"
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 4
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "gameName")
+      pushnull
+      equals
+      not
+      convert_b
+      dup
+      convert_b
+      iffalse             L23
+
+      pop
+      findpropstrict      QName(PackageNamespace("mx.utils"), "StringUtil")
+      getproperty         QName(PackageNamespace("mx.utils"), "StringUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "gameName")
+      callproperty        QName(PackageNamespace(""), "trim"), 1
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      greaterequals
+      convert_b
+L23:
+      dup
+      convert_b
+      iffalse             L34
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "gameMap")
+      pushnull
+      equals
+      not
+      convert_b
+L34:
+      dup
+      convert_b
+      iffalse             L44
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "maxNumPlayers")
+      pushbyte            0
+      greaterthan
+      convert_b
+L44:
+      dup
+      convert_b
+      iffalse             L65
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "maxNumPlayers")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "gameMap")
+      findpropstrict      QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "maxPracticeGameSize")
+      callproperty        QName(PackageNamespace(""), "getMaxTeamSize"), 2
+      pushbyte            2
+      multiply
+      lessequals
+      convert_b
+L65:
+      dup
+      convert_b
+      iffalse             L78
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "maxNumPlayers")
+      findpropstrict      QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "minNumPlayersForPracticeGame")
+      greaterequals
+      convert_b
+L78:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

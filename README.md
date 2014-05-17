@@ -60,3 +60,8 @@ Adds a "Quit Game" button to the champion selection screen similar to custom gam
 * AutoAcceptQueue
 
 Will automatically accept the queue at the end of the queue timer instead of declining the queue.
+
+* Ignore Custom Game Name Min length and Wordfilter
+
+Disable the Custom Game name Wordfilter and let you create a game with 1 letter instead of the 3 letters.
+Dont set you anymore to busy status if you create a Custom Game.

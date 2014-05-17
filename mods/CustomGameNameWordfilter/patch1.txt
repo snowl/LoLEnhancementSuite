@@ -1,0 +1,192 @@
+~lib/ClientLibGame.dat
+#com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController
+@@@  trait method QName(PackageNamespace(""), "createGame")
+  trait method QName(PackageNamespace(""), "createGame")
+   method
+    name ""
+    refid "com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController/instance/createGame"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 5
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "isBusy")
+
+      jump                L37
+
+L4:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace(""), "DOMINION")
+      setproperty         QName(PackageNamespace(""), "gameMode")
+
+      jump                L70
+
+L12:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace(""), "ARAM")
+      setproperty         QName(PackageNamespace(""), "gameMode")
+
+      jump                L70
+
+L20:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace(""), "ARAM")
+      setproperty         QName(PackageNamespace(""), "gameMode")
+
+      jump                L70
+
+L28:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMode")
+      getproperty         QName(PackageNamespace(""), "CLASSIC")
+      setproperty         QName(PackageNamespace(""), "gameMode")
+
+      jump                L70
+
+      jump                L70
+
+L37:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getproperty         QName(PackageNamespace(""), "gameMap")
+      getproperty         QName(PackageNamespace(""), "mapId")
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace(""), "CRYSTAL_SCAR_ID")
+      getlocal2
+      ifstrictne          L49
+
+      pushshort           0
+      jump                L68
+
+L49:
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace(""), "PROVING_GROUNDS_ARAM_ID")
+      getlocal2
+      ifstrictne          L56
+
+      pushshort           1
+      jump                L68
+
+L56:
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameMap")
+      getproperty         QName(PackageNamespace(""), "HOWLING_ABYSS")
+      getlocal2
+      ifstrictne          L63
+
+      pushshort           2
+      jump                L68
+
+L63:
+      pushfalse
+      iffalse             L67
+
+      pushshort           3
+      jump                L68
+
+L67:
+      pushshort           3
+L68:
+      kill                2
+      lookupswitch        L28, [L4, L12, L20, L28]
+
+L70:
+      findpropstrict      QName(PackageNamespace("com.riotgames.util.string"), "RiotStringUtil")
+      getproperty         QName(PackageNamespace("com.riotgames.util.string"), "RiotStringUtil")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getproperty         QName(PackageNamespace(""), "forcedGameModeId")
+      callproperty        QName(PackageNamespace(""), "isEmpty"), 1
+      not
+      iffalse             L84
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getproperty         QName(PackageNamespace(""), "forcedGameModeId")
+      setproperty         QName(PackageNamespace(""), "gameMode")
+
+L84:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getproperty         QName(PackageNamespace(""), "gameMutators")
+      pushnull
+      equals
+      not
+      convert_b
+      dup
+      convert_b
+      iffalse             L102
+
+      pop
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getproperty         QName(PackageNamespace(""), "gameMutators")
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+      convert_b
+L102:
+      iffalse             L112
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "practiceGameParameters")
+      getproperty         QName(PackageNamespace(""), "gameMutators")
+      constructprop       QName(PackageNamespace("mx.collections"), "ArrayCollection"), 1
+      setproperty         QName(PackageNamespace(""), "gameMutators")
+
+      jump                L117
+
+L112:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      findpropstrict      QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      constructprop       QName(PackageNamespace("mx.collections"), "ArrayCollection"), 0
+      setproperty         QName(PackageNamespace(""), "gameMutators")
+
+L117:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "serviceProxy")
+      getproperty         QName(PackageNamespace(""), "gameService")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "game")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController"), "onGameCreated")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController"), "onServiceRequestComplete")
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers.practice:CreatePracticeGameController"), "onServiceRequestError")
+      callproperty        QName(Namespace("com.riotgames.platform.gameclient.services:GameService"), "createGame"), 4
+      pop
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
