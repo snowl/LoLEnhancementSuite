@@ -1,84 +1,69 @@
-~mod/ser/mod_ser.dat
-#com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl
-@@@  trait method QName(PackageNamespace(""), "changePresence")
-  trait method QName(PackageNamespace(""), "changePresence")
+~lib/ClientLibChat.dat
+#com.riotgames.platform.gameclient.chat.controllers:PresenceController
+@@@  trait method QName(PackageNamespace(""), "cycleShowMode")
+  trait method QName(PackageNamespace(""), "cycleShowMode")
    method
-    refid "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance/changePresence"
-    param QName(PackageNamespace(""), "String")
-    param QName(PackageNamespace("flash.xml"), "XMLNode")
+    name ""
+    refid "com.riotgames.platform.gameclient.chat.controllers:PresenceController/instance/cycleShowMode"
     returns QName(PackageNamespace(""), "void")
     body
-     maxstack 6
-     localcount 4
-     initscopedepth 5
-     maxscopedepth 6
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
      code
       getlocal0
       pushscope
 
       getlocal0
-      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance#0"), "isInvisible")
-      iffalse             L12
-
-      getlocal1
-      pushstring          "chat"
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "xa"
       ifne                L15
 
       getlocal0
-      pushfalse
-      setproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance#0"), "isInvisible")
+      pushstring          "chat"
+      initproperty        QName(PackageNamespace(""), "currentShow")
 
-      jump                L29
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "serviceProxy")
+      getproperty         QName(PackageNamespace(""), "chatService")
+      pushstring          "chat"
+      setproperty         QName(PackageNamespace(""), "lastPresence")
 
-L12:
-      getlocal1
-      pushstring          "away"
-      ifne                L29
+      jump                L35
 
 L15:
       getlocal0
-      pushtrue
-      setproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance#0"), "isInvisible")
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "away"
+      ifne                L23
 
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      pushnull
-      pushnull
-      pushstring          "invisible"
-      getlocal1
-      getlocal2
-      callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      setlocal3
-
-      jump                L39
-
-L29:
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      pushnull
-      pushnull
-      pushnull
-      getlocal1
-      getlocal2
-      callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      setlocal3
-
-L39:
       getlocal0
-      getproperty         QName(PackageNamespace(""), "connection")
-      getlocal3
-      callpropvoid        QName(PackageNamespace(""), "send"), 1
+      pushstring          "xa"
+      initproperty        QName(PackageNamespace(""), "currentShow")
 
-      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "ServiceLogger")
-      pushstring          "chatService"
-      pushstring          "changePresence"
-      getlocal1
-      getlocal2
-      newarray            2
-      callpropvoid        QName(PackageNamespace(""), "request"), 3
+      jump                L35
 
+L23:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "currentShow")
+      pushstring          "chat"
+      ifne                L35
+
+      getlocal0
+      pushstring          "away"
+      initproperty        QName(PackageNamespace(""), "currentShow")
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "serviceProxy")
+      getproperty         QName(PackageNamespace(""), "chatService")
+      pushstring          "away"
+      setproperty         QName(PackageNamespace(""), "lastPresence")
+
+L35:
+      getlocal0
+      callproperty        QName(PackageNamespace(""), "sendPresenceUpdate"), 0
+      pop
       returnvoid
      end ; code
     end ; body

@@ -48,7 +48,10 @@ namespace LESs
 
             worker.DoWork += worker_DoWork;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-            AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
+            if (!System.Diagnostics.Debugger.IsAttached)
+            {
+                AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
+            }
         }
 
         void CurrentDomain_FirstChanceException(object sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
@@ -451,7 +454,6 @@ namespace LESs
             }
             if (!IsNewTrait)
             {
-
                 //Get end location of trait
                 for (int i = TraitStartPosition; i < ClassModifier.Length; i++)
                 {

@@ -3,7 +3,7 @@ LoLEnhancementSuite
 
 A set of patches for the League of Legends client to enhance and fix bugs.
 
-These mods are for the version `0.0.1.87`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+These mods are for the version `0.0.1.88`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
@@ -23,7 +23,7 @@ Unlock any game type while playing on a featured game mode. A featured game mode
 
 * AppearOffline
 
-The away status dot will make you appear offline to other users.
+Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.
 
 * KeepMyPage
 
@@ -60,3 +60,11 @@ Adds a "Quit Game" button to the champion selection screen similar to custom gam
 * AutoAcceptQueue
 
 Will automatically accept the queue at the end of the queue timer instead of declining the queue.
+
+* SeeTeamColor
+
+See what team color you are on in champ select
+
+* OfflineMessage
+
+Send messages to your offline friends
