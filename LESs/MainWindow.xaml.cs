@@ -29,6 +29,7 @@ namespace LESs
         const string IntendedVersion = "0.0.1.88";
 
         private readonly BackgroundWorker worker = new BackgroundWorker();
+        private bool WasPatched = true;
 
         public MainWindow()
         {
@@ -58,6 +59,7 @@ namespace LESs
         {
             Exception ex = (Exception)e.Exception;
             MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
+            WasPatched = false;
         }
 
         private void MainGrid_Loaded(object sender, RoutedEventArgs e)
@@ -284,7 +286,14 @@ namespace LESs
         private void worker_RunWorkerCompleted(object sender,
                                        RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("LESs has been successfully patched into League of Legends!");
+            if (WasPatched)
+            {
+                MessageBox.Show("LESs has been successfully patched into League of Legends!");
+            }
+            else
+            {
+                MessageBox.Show("LESs encountered errors during patching. However, some patches may still be applied.");
+            }
             PatchButton.IsEnabled = true;
             StatusLabel.Content = "Done patching!";
         }
@@ -452,6 +461,13 @@ namespace LESs
                     break;
                 }
             }
+
+            if (TraitStartPosition == 0)
+            {
+                File.AppendAllText("debug.log", "Trait start location was not found! Corrupt mod?");
+                throw new Exception("Trait start location was not found! Corrupt mod?");
+            }
+
             if (!IsNewTrait)
             {
                 //Get end location of trait
@@ -469,6 +485,12 @@ namespace LESs
                         }
                         break;
                     }
+                }
+
+                if (TraitEndLocation < TraitStartPosition)
+                {
+                    File.AppendAllText("debug.log", "Trait end location was smaller than trait start location! " + TraitEndLocation + ", " + TraitStartPosition);
+                    throw new Exception("Trait end location was smaller than trait start location! " + TraitEndLocation + ", " + TraitStartPosition);
                 }
 
                 string[] StartTrait = new string[TraitStartPosition];
