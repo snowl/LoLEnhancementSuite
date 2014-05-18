@@ -376,7 +376,7 @@ namespace LESs
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
-                StatusLabel.Content = "Dissasembling patch (" + ModName + ")";
+                StatusLabel.Content = "Disassembling patch (" + ModName + ")";
             }));
 
             string[] ABCFiles = Directory.GetFiles("temp", "*.abc");
