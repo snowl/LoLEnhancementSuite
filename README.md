@@ -3,25 +3,27 @@ LoLEnhancementSuite
 
 A set of patches for the League of Legends client to enhance and fix bugs.
 
-These mods are for the version `0.0.1.83`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+These mods are for the version `0.0.1.88`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
-![Patcher](http://puu.sh/8iF6w.png)
+![Patcher](http://puu.sh/8Qtz3.png)
 
 ## Downloads
+
+The only approved download sources are listed below. Other websites redistributing without my explicit permission are allowed under my chosen license (as long as they follow with the clauses), but may contain unwanted executables and modifications.
 
 Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
 ## Mods
 
-* AnyGameMode
+* AnyGameType
 
-Select any game mode while creating a custom game. For example, playing All Random Ultra Rapid Fire.
+Unlock any game type while playing on a featured game mode. A featured game mode must be enabled server side for this to work!
 
 * AppearOffline
 
-The away status dot will make you appear offline to other users.
+Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.
 
 * KeepMyPage
 
@@ -54,3 +56,15 @@ Enables custom showdown games on any map.
 * EasyQueueDodge
 
 Adds a "Quit Game" button to the champion selection screen similar to custom games. NOTE: You will still get queue dodge penalties!
+
+* AutoAcceptQueue
+
+Will automatically accept the queue at the end of the queue timer instead of declining the queue.
+
+* SeeTeamColor
+
+See what team color you are on in champ select
+
+* OfflineMessage
+
+Send messages to your offline friends

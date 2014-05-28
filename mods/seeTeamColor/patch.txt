@@ -1,0 +1,48 @@
+~mod/cs/mod_cs.dat
+#com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList"), "setTeamNameText")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList"), "setTeamNameText")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList/instance/com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList/setTeamNameText"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 13
+     maxscopedepth 14
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callproperty        QName(ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList"), "isMyTeam"), 0
+      convert_b
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "teamColorName")
+      getlex              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.practice"), "Team")
+      getproperty         QName(PackageNamespace(""), "TEAM_BLUE")
+      ifne                L13
+
+      pushstring          "practiceGame_champSelect_blueTeamName"
+      jump                L14
+
+L13:
+      pushstring          "practiceGame_champSelect_purpleTeamName"
+L14:
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "teamName")
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      setproperty         QName(PackageNamespace(""), "htmlText")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

@@ -1,0 +1,95 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "onVoteTimer")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "onVoteTimer")
+   method
+    refid "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance/com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance/onVoteTimer"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 12
+     maxscopedepth 13
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voteTimeRemaining")
+      pushbyte            0
+      ifngt               L18
+
+      getlocal0
+      dup
+      setlocal2
+
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voteTimeRemaining")
+      decrement_i
+      setlocal3
+
+      getlocal2
+      getlocal3
+      setproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voteTimeRemaining")
+
+      kill                3
+      kill                2
+      jump                L56
+
+L18:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voteTimeRemaining")
+      pushbyte            0
+      ifne                L56
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voted")
+      not
+      dup
+      iffalse             L33
+
+      pop
+      findpropstrict      QName(PackageNamespace(""), "getCurrentState")
+      callproperty        QName(PackageNamespace(""), "getCurrentState"), 0
+      pushstring          "showVoteResults"
+      equals
+      not
+L33:
+      iffalse             L54
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "voted")
+
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeVoteTimer"), 0
+
+      getlocal0
+      pushtrue
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "toggleVoteIndicatorVisibility"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView/instance#0"), "matchReadyText")
+      pushstring          "AutoAcceptQueue Enabled!"
+      callpropvoid        QName(PackageNamespace(""), "setText"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      pushstring          "noButtonClicked"
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlocal0
+      pushstring          "showVoteResults"
+      callpropvoid        QName(PackageNamespace(""), "setCurrentState"), 1
+
+L54:
+      getlocal0
+      callpropvoid        QName(PackageNamespace(""), "removeTimers"), 0
+
+L56:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

@@ -1,0 +1,4 @@
+~mod/ser/mod_ser.dat
+#com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl
+@+@  trait slot QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance#0"), "_inviteListener") type QName(PackageNamespace("org.jivesoftware.xiff.conference"), "InviteListener") end
+  trait slot QName(PackageNamespace(""), "lastPresence") type QName(PackageNamespace(""), "String") value Utf8("chat") end

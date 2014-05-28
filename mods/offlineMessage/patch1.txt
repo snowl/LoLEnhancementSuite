@@ -1,0 +1,184 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu
+@@@ instance QName(PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), "FriendsListMenu")
+ instance QName(PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), "FriendsListMenu")
+  extends QName(PackageNamespace("flash.display"), "NativeMenu")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu")
+  iinit
+   refid "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance/init"
+   param QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "Buddy")
+   param QName(PackageNamespace("com.riotgames.platform.gameclient.chat.views"), "ChatViewMediator")
+   body
+    maxstack 6
+    localcount 4
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     pushnull
+     coerce              QName(PackageNamespace("flash.display"), "NativeMenuItem")
+     setlocal3
+
+     getlocal0
+     findpropstrict      QName(PackageNamespace("blix.signals"), "Signal")
+     constructprop       QName(PackageNamespace("blix.signals"), "Signal"), 0
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_editNoteSelect")
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+
+     getlocal0
+     getlocal2
+     initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_viewMediator")
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemInviteToGame"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onInviteToGameMenuItemSelected")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_viewMediator")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+     callproperty        QName(Namespace("com.riotgames.platform.gameclient.chat.views:ChatViewMediator"), "canInviteBuddyToGame"), 1
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemSendMessage"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onSendMessageMenuItemSelected")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+     callproperty        QName(PackageNamespace(""), "getIsMutualFriend"), 0
+     convert_b
+     ;pushtrue
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_viewProfile"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onViewProfileMenuItemSelected")
+     getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers.lobby"), "LobbyConfig")
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemInviteToChat"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onInviteToChatMenuItemSelected")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+     callproperty        QName(PackageNamespace(""), "getIsOnline"), 0
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemRemoveBuddy"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onRemoveBuddyMenuItemSelected")
+     pushtrue
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemIgnoreBuddy"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onIgnoreBuddyMenuItemSelected")
+     pushtrue
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_viewMediator")
+     callproperty        QName(Namespace("com.riotgames.platform.gameclient.chat.views:ChatViewMediator"), "getBuddyGroups"), 0
+     callproperty        QName(Namespace("blix.ds:IListX"), "getLength"), 0
+     pushbyte            1
+     ifngt               L95
+
+     findpropstrict      QName(PackageNamespace(""), "addSubmenu")
+     getlocal0
+     callproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "createMoveBuddyToGroupSubmenu"), 0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemMoveUser"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     callpropvoid        QName(PackageNamespace(""), "addSubmenu"), 2
+
+     jump                L103
+
+L95:
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemMoveUser"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     pushnull
+     pushfalse
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+L103:
+     getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+     getproperty         QName(PackageNamespace(""), "instance")
+     getproperty         QName(PackageNamespace(""), "buddyNotesEnabled")
+     iffalse             L126
+
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemEditNote"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     pushnull
+     pushtrue
+     callproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+     coerce              QName(PackageNamespace("flash.display"), "NativeMenuItem")
+     setlocal3
+
+     getlocal3
+     getlex              QName(PackageNamespace("flash.events"), "Event")
+     getproperty         QName(PackageNamespace(""), "SELECT")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "editNoteSelectHandler")
+     pushfalse
+     pushbyte            0
+     pushtrue
+     callpropvoid        QName(PackageNamespace(""), "addEventListener"), 5
+
+L126:
+     getlocal0
+     getlocal0
+     getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+     pushstring          "BuddyListTreeRenderer_itemSpectateGame"
+     callproperty        QName(PackageNamespace(""), "getString"), 1
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "onSpectateBuddySelected")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_viewMediator")
+     getlocal0
+     getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "_buddy")
+     callproperty        QName(Namespace("com.riotgames.platform.gameclient.chat.views:ChatViewMediator"), "canDropInSpectateBuddy"), 1
+     callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu/instance"), "buildMenuItem"), 4
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
