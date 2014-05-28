@@ -1,21 +1,13 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Threading;
 using System.Xml;
 
@@ -34,7 +26,7 @@ namespace LESs
         public MainWindow()
         {
             InitializeComponent();
-            FindButton.AddHandler(Button.MouseDownEvent, new RoutedEventHandler(FindButton_MouseDown), true);
+            FindButton.AddHandler(MouseDownEvent, new RoutedEventHandler(FindButton_MouseDown), true);
             LeagueVersionLabel.Content = IntendedVersion;
             if (File.Exists("debug.log"))
                 File.Delete("debug.log");
@@ -49,7 +41,7 @@ namespace LESs
 
             worker.DoWork += worker_DoWork;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-            if (!System.Diagnostics.Debugger.IsAttached)
+            if (!Debugger.IsAttached)
             {
                 AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
             }
@@ -57,7 +49,7 @@ namespace LESs
 
         void CurrentDomain_FirstChanceException(object sender, System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs e)
         {
-            Exception ex = (Exception)e.Exception;
+            Exception ex = e.Exception;
             MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace + Environment.NewLine);
             WasPatched = false;
         }
@@ -236,7 +228,7 @@ namespace LESs
                 string BoxName = "";
                 Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
                 {
-                    if ((bool)box.IsChecked)
+                    if (box.IsChecked != null && (bool)box.IsChecked)
                     {
                         IsBoxChecked = true;
                         BoxName = (string)box.Content;
@@ -372,7 +364,10 @@ namespace LESs
             Export.FileName = "abcexport.exe";
             Export.Arguments = Path.Combine("temp", FileName);
             var ExportProc = Process.Start(Export);
-            ExportProc.WaitForExit();
+            if (ExportProc != null)
+            {
+                ExportProc.WaitForExit();
+            }
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
@@ -391,7 +386,10 @@ namespace LESs
                 Disassemble.UseShellExecute = false;
                 Disassemble.CreateNoWindow = true;
                 var DisasmProc = Process.Start(Disassemble);
-                DisasmProc.WaitForExit();
+                if (DisasmProc != null)
+                {
+                    DisasmProc.WaitForExit();
+                }
             }
 
             if (TryFindClass.IndexOf(':') == 0)
@@ -532,12 +530,15 @@ namespace LESs
             ReAsm.UseShellExecute = false;
             ReAsm.Arguments = Path.Combine("temp", ReAssembleLocation, ReAssembleLocation.Replace("\\", "") + ".main.asasm");
             var ReAsmProc = Process.Start(ReAsm);
-            while (!ReAsmProc.StandardError.EndOfStream)
+            while (ReAsmProc != null && !ReAsmProc.StandardError.EndOfStream)
             {
                 string line = ReAsmProc.StandardError.ReadLine();
                 File.AppendAllText("debug.log", line + Environment.NewLine);
             }
-            ReAsmProc.WaitForExit();
+            if (ReAsmProc != null)
+            {
+                ReAsmProc.WaitForExit();
+            }
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
@@ -550,12 +551,15 @@ namespace LESs
             DoPatch.UseShellExecute = false;
             DoPatch.Arguments = Path.Combine("temp", FileName) + " " + AbcNumber + " " + Path.Combine("temp", ReAssembleLocation, ReAssembleLocation.Replace("\\", "") + ".main.abc");
             var FinalPatchProc = Process.Start(DoPatch);
-            while (!FinalPatchProc.StandardError.EndOfStream)
+            while (FinalPatchProc != null && !FinalPatchProc.StandardError.EndOfStream)
             {
                 string line = FinalPatchProc.StandardError.ReadLine();
                 File.AppendAllText("debug.log", line + Environment.NewLine);
             }
-            FinalPatchProc.WaitForExit();
+            if (FinalPatchProc != null)
+            {
+                FinalPatchProc.WaitForExit();
+            }
 
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
@@ -568,7 +572,7 @@ namespace LESs
         private static void DeletePathWithLongFileNames(string path)
         {
             var tmpPath = @"\\?\" + path;
-            Scripting.FileSystemObject fso = new Scripting.FileSystemObject() as Scripting.FileSystemObject;
+            Scripting.FileSystemObject fso = new Scripting.FileSystemObject();
             fso.DeleteFolder(tmpPath, true);
         }
     }
