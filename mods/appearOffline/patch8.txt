@@ -1,0 +1,37 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@+@  trait slot QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_sortMode") type QName(PackageNamespace(""), "String") value Utf8("status") end
+  trait method QName(ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "isOnline")
+   method
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller:isOnline"
+    param QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "Buddy")
+    param QName(PackageNamespace(""), "int")
+    param QName(PackageNamespace(""), "Array")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 4
+     initscopedepth 12
+     maxscopedepth 13
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getStatus"), 0
+      getlex              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "Buddy")
+      getproperty         QName(PackageNamespace(""), "STATUS_ONLINE")
+      equals
+      dup
+      iffalse             L13
+
+      pop
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getIsMutualFriend"), 0
+      convert_b
+L13:
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

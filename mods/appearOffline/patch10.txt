@@ -1,0 +1,38 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel"), "onShowOfflineFriendsCheckBoxChanged")
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel"), "onShowOfflineFriendsCheckBoxChanged")
+   method
+    refid "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel/instance/com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel/onShowOfflineFriendsCheckBoxChanged"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 10
+     maxscopedepth 11
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel"), "_showOfflineFriendsCheckBox")
+      callproperty        QName(PackageNamespace(""), "getSelected"), 0
+      convert_b
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "UserPreferencesManager")
+      getproperty         QName(PackageNamespace(""), "userPrefs")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "showOfflineFriends")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel"), "_statusMessageInputText")
+      callproperty        QName(PackageNamespace(""), "getText"), 0
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel"), "requestNewStatusMessage"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

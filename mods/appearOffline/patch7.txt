@@ -1,0 +1,91 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@+@  trait slot QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_sortMode") type QName(PackageNamespace(""), "String") value Utf8("status") end
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "initializeOfflineGroup")
+   method
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/initializeOfflineGroup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 2
+     initscopedepth 12
+     maxscopedepth 13
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
+      constructprop       QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel"), 0
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      constructprop       QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup"), 0
+      setproperty         QName(PackageNamespace(""), "headerData")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      getproperty         QName(PackageNamespace(""), "headerData")
+      getlex              QName(PackageNamespace("mx.resources"), "ResourceManager")
+      callproperty        QName(PackageNamespace(""), "getInstance"), 0
+      pushstring          "resources"
+      pushstring          "chat_buddyWindow_offlineLabel"
+      callproperty        QName(Namespace("mx.resources:IResourceManager"), "getString"), 2
+      callpropvoid        Multiname("setLabel", [PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNs("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("blix.components.scroll:ScrollArea"), StaticProtectedNs("blix.components.scroll:ScrollAreaBase"), StaticProtectedNs("blix.assets.proxy:SpriteProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNs("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNs("blix.view:View"), StaticProtectedNs("blix.context:Context")]), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      newarray            0
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      pushfalse
+      setproperty         QName(PackageNamespace(""), "expanded")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup")
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_visibility")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_headerPool")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_friendRendererPool")
+      constructprop       QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup"), 5
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroupView")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroupView")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "headerPadding")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroupView")
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "itemPadding")
+
+      findpropstrict      QName(PackageNamespace("blix.layout.data"), "SizeLayoutData")
+      constructprop       QName(PackageNamespace("blix.layout.data"), "SizeLayoutData"), 0
+      coerce              QName(PackageNamespace("blix.layout.data"), "SizeLayoutData")
+      setlocal1
+
+      getlocal1
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "setWidthPercent"), 1
+
+      getlex              QName(ProtectedNamespace("blix.components.scroll:ScrollArea"), "_contents")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroupView")
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "addElement"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

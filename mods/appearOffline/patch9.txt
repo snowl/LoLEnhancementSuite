@@ -1,0 +1,102 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@+@  trait slot QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_sortMode") type QName(PackageNamespace(""), "String") value Utf8("status") end
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "updateOfflineBuddyGroup")
+   method
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/updateOfflineBuddyGroup"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 8
+     initscopedepth 12
+     maxscopedepth 13
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "Buddy")
+      setlocal3
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal1
+
+      pushbyte            0
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "buddies")
+      coerce_a
+      setlocal            5
+
+      jump                L50
+
+L18:
+      label
+      getlocal            5
+      getlocal            4
+      nextvalue
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      setlocal2
+
+      pushbyte            0
+      setlocal            6
+
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "source")
+      coerce_a
+      setlocal            7
+
+      jump                L46
+
+L31:
+      label
+      getlocal            7
+      getlocal            6
+      nextvalue
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "Buddy")
+      setlocal3
+
+      getlocal0
+      getlocal3
+      pushbyte            0
+      pushnull
+      callproperty        QName(ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "isOnline"), 3
+      iftrue              L46
+
+      getlocal1
+      getlocal3
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+L46:
+      hasnext2            7, 6
+      iftrue              L31
+
+      kill                7
+      kill                6
+L50:
+      hasnext2            5, 4
+      iftrue              L18
+
+      kill                5
+      kill                4
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "sortBuddies")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

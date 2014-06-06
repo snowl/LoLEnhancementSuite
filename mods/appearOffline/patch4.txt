@@ -1,0 +1,202 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "updateBuddyGroups")
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "updateBuddyGroups")
+   method
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/updateBuddyGroups"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 7
+     initscopedepth 12
+     maxscopedepth 13
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      setlocal1
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
+      setlocal2
+
+      pushnull
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup")
+      setlocal3
+
+      pushnull
+      coerce              QName(PackageNamespace("blix.layout.data"), "SizeLayoutData")
+      setlocal            4
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "removeOrphanedGroups"), 0
+
+      pushbyte            0
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "buddies")
+      coerce_a
+      setlocal            6
+
+      jump                L141
+
+L23:
+      label
+      getlocal            6
+      getlocal            5
+      nextvalue
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      setlocal1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "buddyGroupToGroupModel")
+      getlocal1
+      getproperty         MultinameL([PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNs("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("blix.components.scroll:ScrollArea"), StaticProtectedNs("blix.components.scroll:ScrollAreaBase"), StaticProtectedNs("blix.assets.proxy:SpriteProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNs("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNs("blix.view:View"), StaticProtectedNs("blix.context:Context")])
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
+      setlocal2
+
+      getlocal2
+      iftrue              L123
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
+      constructprop       QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel"), 0
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
+      setlocal2
+
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "headerData")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "source")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "isBuddyVisible")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "filter"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "sortBuddies")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "source")
+      getproperty         QName(PackageNamespace(""), "length")
+      setproperty         QName(PackageNamespace(""), "unfilteredSize")
+
+      getlocal1
+      getlex              QName(PackageNamespace("mx.events"), "CollectionEvent")
+      getproperty         QName(PackageNamespace(""), "COLLECTION_CHANGE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "processCollectionChange")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup")
+      getlocal0
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_visibility")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_headerPool")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_friendRendererPool")
+      constructprop       QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup"), 5
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup")
+      setlocal3
+
+      getlocal3
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "headerPadding")
+
+      getlocal3
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "itemPadding")
+
+      getlocal3
+      getlex              QName(PackageNamespace("flash.events"), "NativeDragEvent")
+      getproperty         QName(PackageNamespace(""), "NATIVE_DRAG_ENTER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "dragEnterHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal3
+      getlex              QName(PackageNamespace("flash.events"), "NativeDragEvent")
+      getproperty         QName(PackageNamespace(""), "NATIVE_DRAG_DROP")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "handleDragDrop")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal3
+      getlex              QName(PackageNamespace("flash.events"), "NativeDragEvent")
+      getproperty         QName(PackageNamespace(""), "NATIVE_DRAG_COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "handleDragComplete")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "buddyGroupToGroupModel")
+      getlocal1
+      getlocal2
+      setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNs("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("blix.components.scroll:ScrollArea"), StaticProtectedNs("blix.components.scroll:ScrollAreaBase"), StaticProtectedNs("blix.assets.proxy:SpriteProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNs("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNs("blix.view:View"), StaticProtectedNs("blix.context:Context")])
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "groupModelToGroupLayout")
+      getlocal2
+      getlocal3
+      setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNs("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("blix.components.scroll:ScrollArea"), StaticProtectedNs("blix.components.scroll:ScrollAreaBase"), StaticProtectedNs("blix.assets.proxy:SpriteProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNs("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNs("blix.view:View"), StaticProtectedNs("blix.context:Context")])
+
+      findpropstrict      QName(PackageNamespace("blix.layout.data"), "SizeLayoutData")
+      constructprop       QName(PackageNamespace("blix.layout.data"), "SizeLayoutData"), 0
+      coerce              QName(PackageNamespace("blix.layout.data"), "SizeLayoutData")
+      dup
+      setlocal            4
+
+      pushbyte            1
+      callpropvoid        QName(PackageNamespace(""), "setWidthPercent"), 1
+
+      getlex              QName(ProtectedNamespace("blix.components.scroll:ScrollArea"), "_contents")
+      getlocal3
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "addElement"), 2
+
+      jump                L141
+
+L123:
+      getlocal2
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "headerData")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "source")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "isBuddyVisible")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "filter"), 1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "sortBuddies")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlocal2
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "source")
+      getproperty         QName(PackageNamespace(""), "length")
+      setproperty         QName(PackageNamespace(""), "unfilteredSize")
+
+L141:
+      hasnext2            6, 5
+      iftrue              L23
+
+      kill                6
+      kill                5
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "updateOfflineBuddyGroup"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

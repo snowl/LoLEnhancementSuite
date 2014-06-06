@@ -1,0 +1,4 @@
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@+@  trait slot QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_sortMode") type QName(PackageNamespace(""), "String") value Utf8("status") end
+  trait slot QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroupView") type QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "VirtualizedCollapsibleVerticalGroup") end

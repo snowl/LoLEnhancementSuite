@@ -1,64 +1,54 @@
-~mod/ser/mod_ser.dat
-#com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl
-@@@  trait method QName(PackageNamespace(""), "changePresence")
-  trait method QName(PackageNamespace(""), "changePresence")
+~mod/cht2/mod_cht2.dat
+#com.riotgames.pvpnet.docked.friendlist.view:FriendScroller
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "processCollectionChange")
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "processCollectionChange")
    method
-    refid "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl/instance/changePresence"
-    param QName(PackageNamespace(""), "String")
-    param QName(PackageNamespace("flash.xml"), "XMLNode")
+    refid "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/processCollectionChange"
+    param QName(PackageNamespace("mx.events"), "CollectionEvent")
     returns QName(PackageNamespace(""), "void")
     body
-     maxstack 6
+     maxstack 3
      localcount 4
-     initscopedepth 5
-     maxscopedepth 6
+     initscopedepth 12
+     maxscopedepth 13
      code
       getlocal0
       pushscope
 
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      pushnull
-      pushnull
-      pushnull
       getlocal1
-      getlocal2
-      callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      setlocal3
+      getproperty         QName(PackageNamespace(""), "currentTarget")
+      getlex              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      astypelate
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "BuddyGroup")
+      setlocal2
 
       getlocal0
-      getproperty         QName(PackageNamespace(""), "lastPresence")
-      pushstring          "xa"
-      ifne                L17
-
-      returnvoid
-
-L17:
-      getlocal1
-      pushstring          "xa"
-      ifne                L30
-
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
-      pushnull
-      pushnull
-      pushstring          "invisible"
-      getlocal1
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "buddyGroupToGroupModel")
       getlocal2
-      callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      getproperty         MultinameL([PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNs("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNs("blix.components.scroll:ScrollArea"), StaticProtectedNs("blix.components.scroll:ScrollAreaBase"), StaticProtectedNs("blix.assets.proxy:SpriteProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNs("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNs("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNs("blix.view:View"), StaticProtectedNs("blix.context:Context")])
+      coerce              QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "GroupModel")
       setlocal3
 
-L30:
-      getlocal0
-      getproperty         QName(PackageNamespace(""), "connection")
       getlocal3
-      callpropvoid        QName(PackageNamespace(""), "send"), 1
+      iffalse             L28
 
+      getlocal3
+      getlocal2
+      getproperty         QName(PackageNamespace(""), "source")
       getlocal0
-      getlocal1
-      setproperty         QName(PackageNamespace(""), "lastPresence")
+      getproperty         QName(ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "isOnline")
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "filter"), 1
+      setproperty         QName(PackageNamespace(""), "itemData")
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "itemData")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "sortBuddies")
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "sort"), 1
+
+L28:
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "updateOfflineBuddyGroup"), 0
 
       returnvoid
      end ; code
