@@ -49,10 +49,6 @@ Reveals the enemy team's champions in the ARAM queue.
 
 Gives a random skin to the bots in custom games.
 
-* TimeForAShowdown
-
-Enables custom showdown games on any map.
-
 * EasyQueueDodge
 
 Adds a "Quit Game" button to the champion selection screen similar to custom games. NOTE: You will still get queue dodge penalties!
