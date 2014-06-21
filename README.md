@@ -3,7 +3,7 @@ LoLEnhancementSuite
 
 A set of patches for the League of Legends client to enhance and fix bugs.
 
-These mods are for the version `0.0.1.88`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+These mods are for the version `0.0.1.98`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
@@ -23,11 +23,15 @@ Unlock any game type while playing on a featured game mode. A featured game mode
 
 * AppearOffline
 
-Adds an option to appear offline in the client. The status dot has an extra option, so it rotates Online, Away, Invisible. You appear invisible to everyone, but all chat functions still remain.
+Adds an option to appear offline in the chat options. You appear invisible to everyone, but all chat functions still remain.
 
 * KeepMyPage
 
 Stops the client from switching back to the home page after a queue is declined.
+
+* ClientMatchHistory
+
+Show the old match history in the client instead of just having a picture
 
 * PickWhileLocked
 
@@ -48,10 +52,6 @@ Reveals the enemy team's champions in the ARAM queue.
 * SkinnyBots
 
 Gives a random skin to the bots in custom games.
-
-* TimeForAShowdown
-
-Enables custom showdown games on any map.
 
 * EasyQueueDodge
 
