@@ -1,0 +1,79 @@
+~mod/mhi/mod_mhi.dat
+#com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance"), "onConfigChange")
+  trait method QName(PrivateNamespace(null, "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance"), "onConfigChange")
+   method
+    refid "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance/com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance/onConfigChange"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 4
+     initscopedepth 13
+     maxscopedepth 14
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "locale")
+      pushbyte            0
+      pushbyte            2
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+      coerce_s
+      setlocal1
+
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      pushstring          "endOfGame_shareGameButton_locale"
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getString"), 2
+      coerce_s
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance"), "_matchHistoryEnabled")
+      callproperty        QName(PackageNamespace(""), "getBoolean"), 0
+      convert_b
+      dup
+      iffalse             L29
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView/instance"), "_matchHistoryUrlTemplate")
+      callproperty        QName(PackageNamespace(""), "getString"), 0
+      pushstring          ""
+      equals
+      not
+L29:
+      dup
+      iffalse             L36
+
+      pop
+      getlocal2
+      pushstring          ""
+      equals
+      not
+L36:
+      convert_b
+      setlocal3
+
+      getlocal3
+      iffalse             L44
+
+      findpropstrict      QName(PackageNamespace(""), "setCurrentState")
+      pushstring          "DefaultMatchHistory"
+      callpropvoid        QName(PackageNamespace(""), "setCurrentState"), 1
+
+      jump                L47
+
+L44:
+      findpropstrict      QName(PackageNamespace(""), "setCurrentState")
+      pushstring          "DefaultMatchHistory"
+      callpropvoid        QName(PackageNamespace(""), "setCurrentState"), 1
+
+L47:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

@@ -18,14 +18,17 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string IntendedVersion = "0.0.1.94";
+        const string IntendedVersion = "0.0.1.98";
 
         private readonly BackgroundWorker worker = new BackgroundWorker();
         private bool WasPatched = true;
 
+        private List<WorstHack> ReassembleLocations;
+
         public MainWindow()
         {
             InitializeComponent();
+            ReassembleLocations = new List<WorstHack>();
             FindButton.AddHandler(MouseDownEvent, new RoutedEventHandler(FindButton_MouseDown), true);
             LeagueVersionLabel.Content = IntendedVersion;
             if (File.Exists("debug.log"))
@@ -34,7 +37,9 @@ namespace LESs
             File.Create("debug.log");
 
             if (Directory.Exists("temp"))
-                Directory.Delete("temp", true);
+            {
+                DeletePathWithLongFileNames(Path.GetFullPath("temp"));
+            }
 
             if (Directory.Exists(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "wm")))
                 MessageBox.Show("You may have malware on your system due to getting this application from an unknown source. Please delete C:/wm/ and the file inside it and then download this application from http://da.viddiaz.com/LESs");
@@ -221,6 +226,8 @@ namespace LESs
             while (modCollection == null)
                 ;
 
+            Directory.CreateDirectory("temp");
+
             foreach (var x in modCollection)
             {
                 CheckBox box = (CheckBox)x;
@@ -267,12 +274,28 @@ namespace LESs
 
                     for (int i = 0; i < AmountOfPatches; i++)
                     {
-                        Directory.CreateDirectory("temp");
                         Patcher(BoxName, i);
-                        DeletePathWithLongFileNames(Path.GetFullPath("temp"));
                     }
                 }
             }
+
+            foreach (WorstHack s in ReassembleLocations)
+            {
+                Repackage(s);
+            }
+
+            List<string> CopiedNames = new List<string>();
+
+            foreach (WorstHack s in ReassembleLocations)
+            {
+                if (!CopiedNames.Contains(s.FileName))
+                {
+                    CopiedNames.Add(s.FileName);
+                    CopyToClient(s);
+                }
+            }
+
+            DeletePathWithLongFileNames(Path.GetFullPath("temp"));
         }
 
         private void worker_RunWorkerCompleted(object sender,
@@ -337,68 +360,75 @@ namespace LESs
             while (String.IsNullOrEmpty(LocationText))
                 ;
 
-            string n = "";
-            foreach (string s in FilePart.Take(FilePart.Length - 1))
+            if (!Directory.Exists(Path.Combine("temp", FileLocation.Replace(".dat", ""))))
             {
-                n = Path.Combine(n, s);
-                if (!Directory.Exists(Path.Combine(LocationText, "LESsBackup", IntendedVersion, n)))
+                Directory.CreateDirectory(Path.Combine("temp", FileLocation.Replace(".dat", "")));
+
+                string n = "";
+                foreach (string s in FilePart.Take(FilePart.Length - 1))
                 {
-                    Directory.CreateDirectory(Path.Combine(LocationText, "LESsBackup", IntendedVersion, n));
+                    n = Path.Combine(n, s);
+                    if (!Directory.Exists(Path.Combine(LocationText, "LESsBackup", IntendedVersion, n)))
+                    {
+                        Directory.CreateDirectory(Path.Combine(LocationText, "LESsBackup", IntendedVersion, n));
+                    }
+                }
+                if (!File.Exists(Path.Combine(LocationText, "LESsBackup", IntendedVersion, FileLocation)))
+                {
+                    File.Copy(Path.Combine(LocationText, FileLocation), Path.Combine(LocationText, "LESsBackup", IntendedVersion, FileLocation));
+                }
+
+                File.Copy(Path.Combine(LocationText, FileLocation), Path.Combine("temp", FileLocation.Replace(".dat", ""), FileName));
+
+                Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+                {
+                    StatusLabel.Content = "Exporting patch " + ModName;
+                }));
+
+                File.AppendAllText("debug.log", "Running abcexport" + Environment.NewLine);
+
+                ProcessStartInfo Export = new ProcessStartInfo();
+                Export.FileName = "abcexport.exe";
+                Export.CreateNoWindow = true;
+                Export.UseShellExecute = false;
+                Export.Arguments = Path.Combine("temp", FileLocation.Replace(".dat", ""), FileName);
+                var ExportProc = Process.Start(Export);
+                if (ExportProc != null)
+                {
+                    ExportProc.WaitForExit();
+                }
+
+                Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+                {
+                    StatusLabel.Content = "Disassembling patch (" + ModName + ")";
+                }));
+
+                string[] ABCFiles = Directory.GetFiles(Path.Combine("temp", FileLocation.Replace(".dat", "")), "*.abc");
+
+                File.AppendAllText("debug.log", "Got " + ABCFiles.Length + " files" + Environment.NewLine);
+
+                foreach (string s in ABCFiles)
+                {
+                    ProcessStartInfo Disassemble = new ProcessStartInfo();
+                    Disassemble.FileName = "rabcdasm.exe";
+                    Disassemble.Arguments = s;
+                    Disassemble.UseShellExecute = false;
+                    Disassemble.CreateNoWindow = true;
+                    var DisasmProc = Process.Start(Disassemble);
+                    if (DisasmProc != null)
+                    {
+                        DisasmProc.WaitForExit();
+                    }
                 }
             }
-            if (!File.Exists(Path.Combine(LocationText, "LESsBackup", IntendedVersion, FileLocation)))
-            {
-                File.Copy(Path.Combine(LocationText, FileLocation), Path.Combine(LocationText, "LESsBackup", IntendedVersion, FileLocation));
-            }
-
-            File.Copy(Path.Combine(LocationText, FileLocation), Path.Combine("temp", FileName));
-
-            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
-            {
-                StatusLabel.Content = "Exporting patch " + ModName;
-            }));
-
-            File.AppendAllText("debug.log", "Running abcexport" + Environment.NewLine);
-
-            ProcessStartInfo Export = new ProcessStartInfo();
-            Export.FileName = "abcexport.exe";
-            Export.Arguments = Path.Combine("temp", FileName);
-            var ExportProc = Process.Start(Export);
-            if (ExportProc != null)
-            {
-                ExportProc.WaitForExit();
-            }
-
-            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
-            {
-                StatusLabel.Content = "Disassembling patch (" + ModName + ")";
-            }));
-
-            string[] ABCFiles = Directory.GetFiles("temp", "*.abc");
-
-            File.AppendAllText("debug.log", "Got " + ABCFiles.Length + " files" + Environment.NewLine);
-
-            foreach (string s in ABCFiles)
-            {
-                ProcessStartInfo Disassemble = new ProcessStartInfo();
-                Disassemble.FileName = "rabcdasm.exe";
-                Disassemble.Arguments = s;
-                Disassemble.UseShellExecute = false;
-                Disassemble.CreateNoWindow = true;
-                var DisasmProc = Process.Start(Disassemble);
-                if (DisasmProc != null)
-                {
-                    DisasmProc.WaitForExit();
-                }
-            }
-
+            
             if (TryFindClass.IndexOf(':') == 0)
             {
                 File.AppendAllText("debug.log", "INVALID MOD!!!" + Environment.NewLine);
                 throw new Exception("Invalid mod " + ModName);
             }
 
-            List<string> directories = Directory.GetDirectories("temp", "*", SearchOption.AllDirectories).ToList();
+            List<string> directories = Directory.GetDirectories(Path.Combine("temp", FileLocation.Replace(".dat", "")), "*", SearchOption.AllDirectories).ToList();
 
             //Get all directories that match the requested class to modify
             string SearchFor = TryFindClass.Substring(0, TryFindClass.IndexOf(':'));
@@ -513,22 +543,33 @@ namespace LESs
 
                 File.Delete(Path.Combine(FinalDirectory, Class + ".class.asasm"));
                 File.WriteAllLines(Path.Combine(FinalDirectory, Class + ".class.asasm"), FinalClass);
-
             }
 
-            string ReAssembleLocation = FinalDirectory.Substring(0, FinalDirectory.IndexOf("com")).Replace("temp\\", "");
-            string AbcNumber = ReAssembleLocation.Substring(ReAssembleLocation.IndexOf('-')).Replace("-", "").Replace("\\", "");
+            WorstHack h = new WorstHack();
+            h.FileName = FileName;
+            h.LocationText = LocationText;
+            h.ReAssembleLocation = FinalDirectory.Substring(0, FinalDirectory.IndexOf("com")).Replace("temp\\", "");
+            h.FileLocation = FileLocation;
 
+            if (!ReassembleLocations.Contains(h))
+                ReassembleLocations.Add(h);
+        }
+
+        private void Repackage(WorstHack data)
+        {
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
-                StatusLabel.Content = "Repackaging " + ModName;
+                StatusLabel.Content = "Patching mods to client...";
             }));
+
+            string AbcNumber = data.ReAssembleLocation.Substring(data.ReAssembleLocation.IndexOf('-')).Replace("-", "").Replace("\\", "");
 
             ProcessStartInfo ReAsm = new ProcessStartInfo();
             ReAsm.FileName = "rabcasm.exe";
             ReAsm.RedirectStandardError = true;
             ReAsm.UseShellExecute = false;
-            ReAsm.Arguments = Path.Combine("temp", ReAssembleLocation, ReAssembleLocation.Replace("\\", "") + ".main.asasm");
+            ReAsm.CreateNoWindow = true;
+            ReAsm.Arguments = Path.Combine("temp", data.ReAssembleLocation + data.FileName.Replace(".dat", "") + "-" + AbcNumber + ".main.asasm");
             var ReAsmProc = Process.Start(ReAsm);
             while (ReAsmProc != null && !ReAsmProc.StandardError.EndOfStream)
             {
@@ -540,16 +581,12 @@ namespace LESs
                 ReAsmProc.WaitForExit();
             }
 
-            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
-            {
-                StatusLabel.Content = "Finishing touches for " + ModName;
-            }));
-
             ProcessStartInfo DoPatch = new ProcessStartInfo();
             DoPatch.FileName = "abcreplace.exe";
             DoPatch.RedirectStandardError = true;
             DoPatch.UseShellExecute = false;
-            DoPatch.Arguments = Path.Combine("temp", FileName) + " " + AbcNumber + " " + Path.Combine("temp", ReAssembleLocation, ReAssembleLocation.Replace("\\", "") + ".main.abc");
+            DoPatch.CreateNoWindow = true;
+            DoPatch.Arguments = Path.Combine("temp", data.FileLocation.Replace(".dat", ""), data.FileName) + " " + AbcNumber + " " + Path.Combine("temp", data.ReAssembleLocation + data.FileName.Replace(".dat", "") + "-" + AbcNumber + ".main.abc");
             var FinalPatchProc = Process.Start(DoPatch);
             while (FinalPatchProc != null && !FinalPatchProc.StandardError.EndOfStream)
             {
@@ -560,13 +597,16 @@ namespace LESs
             {
                 FinalPatchProc.WaitForExit();
             }
+        }
 
+        private void CopyToClient(WorstHack data)
+        {
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
-                StatusLabel.Content = "Done patching " + ModName + "!";
+                StatusLabel.Content = "Patched " + data.FileName + "!";
             }));
 
-            File.Copy(Path.Combine("temp", FileName), Path.Combine(LocationText, FileLocation), true);
+            File.Copy(Path.Combine("temp", data.FileLocation.Replace(".dat", ""), data.FileName), Path.Combine(data.LocationText, data.FileLocation), true);
         }
 
         private static void DeletePathWithLongFileNames(string path)
@@ -575,5 +615,14 @@ namespace LESs
             Scripting.FileSystemObject fso = new Scripting.FileSystemObject();
             fso.DeleteFolder(tmpPath, true);
         }
+    }
+
+    //cbf doing this properly, just do a quick thing that works just as well
+    public class WorstHack
+    {
+        public string ReAssembleLocation { get; set; }
+        public string FileName { get; set; }
+        public string LocationText { get; set; }
+        public string FileLocation { get; set; }
     }
 }
