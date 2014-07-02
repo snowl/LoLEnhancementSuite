@@ -18,7 +18,7 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string IntendedVersion = "0.0.1.98";
+        const string IntendedVersion = "0.0.1.99";
 
         private readonly BackgroundWorker worker = new BackgroundWorker();
         private bool WasPatched = true;

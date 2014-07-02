@@ -16,15 +16,15 @@
       getlocal0
       pushscope
 
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      findpropstrict      QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence")
       pushnull
       pushnull
       pushnull
       getlocal1
       getlocal2
       callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      constructprop       QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence"), 5
+      coerce              QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence")
       setlocal3
 
       getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "UserPreferencesManager")
@@ -32,15 +32,15 @@
       getproperty         QName(PackageNamespace(""), "showOfflineFriends")
       iffalse             L26
 
-      findpropstrict      QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      findpropstrict      QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence")
       pushnull
       pushnull
       pushstring          "invisible"
       getlocal1
       getlocal2
       callproperty        QName(PackageNamespace(""), "toString"), 0
-      constructprop       QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence"), 5
-      coerce              QName(PackageNamespace("org.jivesoftware.xiff.data"), "Presence")
+      constructprop       QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence"), 5
+      coerce              QName(PackageNamespace("org.igniterealtime.xiff.data"), "Presence")
       setlocal3
 
 L26:
