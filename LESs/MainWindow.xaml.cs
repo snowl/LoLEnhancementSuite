@@ -155,11 +155,11 @@ namespace LESs
                     int VersionCompare = 0;
                     foreach (string x in VersionDirectories)
                     {
-                        string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "");
+                        string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "") + " ";
                         int CompareVersion;
                         try
                         {
-                            CompareVersion = Convert.ToInt32(Compare1.Substring(0, 8).Replace(".", ""));
+                            CompareVersion = Convert.ToInt32(Compare1.Substring(0, 9).Replace(".", ""));
                         }
                         catch (ArgumentOutOfRangeException)//fix for version numbers < 0.0.1.10
                         {
