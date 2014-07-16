@@ -45,6 +45,10 @@ LoLClient.exe making your League of Legends lag? This removes the call to close 
 
 Always getting those Session Expired messages in store? This patch allows you to refresh the store simply by reclicking the store button.
 
+* JoinMultipleQueues
+
+Not sure which game mode you want to play today? Just join ALL the queues! (NOTE this mod is very experimental)
+
 * SecretsKeptOurAramsWasted
 
 Reveals the enemy team's champions in the ARAM queue.
