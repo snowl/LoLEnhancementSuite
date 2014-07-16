@@ -1,0 +1,288 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController
+@@@  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "configureQueueStep")
+  trait method QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "configureQueueStep")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/configureQueueStep"
+    param QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GamePropertiesListData")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 10
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal            5
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "nextStep")
+      getlex              QName(PackageNamespace(""), "XML")
+      astypelate
+      coerce              QName(PackageNamespace(""), "XML")
+      setlocal2
+
+      pushtrue
+      setlocal            7
+
+      pushbyte            0
+      setlocal            8
+
+      newarray            0
+      setlocal            9
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameQueueManager")
+      callpropvoid        QName(PackageNamespace(""), "updateQueuesIfNeeded"), 0
+
+      getlocal2
+      getproperty         MultinameA("soloid", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushint             1000
+      ifle                L88
+
+      getlocal2
+      getproperty         MultinameA("multiple", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      iffalse             L45
+
+      getlocal2
+      getproperty         MultinameA("multiple", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushnull
+      ifeq                L45
+
+      getlocal2
+      getproperty         MultinameA("multiple", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushstring          ""
+      ifeq                L45
+
+      getlocal2
+      getproperty         MultinameA("multiple", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushundefined
+      ifeq                L45
+
+      getlocal2
+      getproperty         MultinameA("multiple", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      coerce_s
+      pushstring          ","
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "split"), 1
+      setlocal            9
+
+L45:
+      jump                L59
+
+L46:
+      label
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameQueueManager")
+      getlocal            9
+      getlocal            8
+      getproperty         MultinameL([PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      convert_i
+      callproperty        QName(PackageNamespace(""), "getQueueForID"), 1
+      pushnull
+      ifne                L58
+
+      pushfalse
+      setlocal            7
+
+L58:
+      inclocal_i          8
+L59:
+      getlocal            8
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L46
+
+      getlocal2
+      getlex              QName(PackageNamespace(""), "PARTY_QUEUE_PARTY")
+      setproperty         MultinameA("partyQueueType", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushtrue
+      setproperty         MultinameA("soloEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushtrue
+      setproperty         MultinameA("partyEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      getlocal            7
+      setproperty         MultinameA("enabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushfalse
+      setproperty         MultinameA("showAspirationalStep", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("message", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("messageTipHeader", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("messageTipBody", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      returnvoid
+
+L88:
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameQueueManager")
+      getlocal2
+      getproperty         MultinameA("soloid", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      callproperty        QName(PackageNamespace(""), "getQueueForID"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "gameQueueManager")
+      getlocal2
+      getproperty         MultinameA("partyid", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      callproperty        QName(PackageNamespace(""), "getQueueForID"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+      setlocal            4
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("message", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("messageTipHeader", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushnull
+      setproperty         MultinameA("messageTipBody", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushfalse
+      setproperty         MultinameA("showAspirationalStep", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      pushfalse
+      setproperty         MultinameA("soloEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal3
+      iffalse             L124
+
+      getlocal0
+      getlocal1
+      getlocal3
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "configureSoloQueue"), 3
+
+L124:
+      getlocal2
+      pushfalse
+      setproperty         MultinameA("partyEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal            4
+      iffalse             L134
+
+      getlocal0
+      getlocal1
+      getlocal            4
+      getlocal2
+      callpropvoid        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "configurePartyQueue"), 3
+
+L134:
+      getlex              QName(PackageNamespace(""), "PARTY_QUEUE_PARTY")
+      coerce_s
+      setlocal            6
+
+      getlocal2
+      getproperty         MultinameA("partyEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushtrue
+      ifne                L148
+
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "teamOnly")
+      iffalse             L147
+
+      getlex              QName(PackageNamespace(""), "PARTY_QUEUE_TEAM")
+      coerce_s
+      setlocal            6
+
+L147:
+      jump                L177
+
+L148:
+      getlocal3
+      coerce_a
+      convert_b
+      dup
+      iffalse             L160
+
+      pop
+      getlocal2
+      getproperty         MultinameA("soloEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushstring          "true"
+      equals
+      coerce_a
+      convert_b
+L160:
+      dup
+      iffalse             L167
+
+      pop
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "maximumParticipantListSize")
+      pushbyte            2
+      equals
+L167:
+      iffalse             L177
+
+      getlex              QName(PackageNamespace(""), "PARTY_QUEUE_DUO")
+      coerce_s
+      setlocal            6
+
+      getlocal2
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.game.controllers.shutdown"), "ShutdownTimingTables")
+      getlocal2
+      getproperty         MultinameA("partyid", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      callproperty        QName(PackageNamespace(""), "canJoinQueueRightNow"), 1
+      setproperty         MultinameA("partyEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+L177:
+      getlocal2
+      getlocal            6
+      setproperty         MultinameA("partyQueueType", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      getlocal2
+      getlocal2
+      getproperty         MultinameA("partyEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushstring          "true"
+      equals
+      coerce_a
+      dup
+      iftrue              L194
+
+      pop
+      getlocal2
+      getproperty         MultinameA("soloEnabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushstring          "true"
+      equals
+      coerce_a
+L194:
+      dup
+      iftrue              L202
+
+      pop
+      getlocal2
+      getproperty         MultinameA("showAspirationalStep", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      pushstring          "true"
+      equals
+      coerce_a
+L202:
+      setproperty         MultinameA("enabled", [PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("com.riotgames.platform.gameclient.controllers.lobby"), PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#1"), PackageInternalNs("com.riotgames.platform.gameclient.controllers.lobby"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

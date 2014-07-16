@@ -1,0 +1,67 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController
+@@@  trait setter QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_749924207gameModeDisplayDescription")
+  trait setter QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_749924207gameModeDisplayDescription")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/_749924207gameModeDisplayDescription/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 4
+     localcount 2
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "multi_pvp"
+      ifne                L9
+
+      getlocal0
+      pushstring          "Not sure what you want to play today?\rLet the server decide what you'll play!\r\r[Any suggstions?]\r[Send an E-Mail to frostygpu:at:gmail.com]"
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+
+      returnvoid
+
+L9:
+      getlocal1
+      pushnull
+      equals
+      not
+      dup
+      iffalse             L20
+
+      pop
+      getlocal1
+      pushstring          ""
+      equals
+      not
+L20:
+      iffalse             L32
+
+      getlocal0
+      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "masterGameController")
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getproperty         QName(PackageNamespace(""), "gameMode")
+      pushstring          "_game_mode_description"
+      add
+      callproperty        QName(PackageNamespace(""), "getString"), 1
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+
+      jump                L35
+
+L32:
+      getlocal0
+      pushstring          ""
+      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+
+L35:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

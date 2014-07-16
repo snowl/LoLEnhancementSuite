@@ -1,0 +1,4 @@
+~lib/ClientLibGame.dat
+#com.riotgames.pvpnet.game.domain:GameQueueManager
+@+@  trait method QName(PackageNamespace(""), "willTrigger")
+  trait slot QName(PackageNamespace(""), "selectedGameQueues") type QName(PackageNamespace(""), "Array") end

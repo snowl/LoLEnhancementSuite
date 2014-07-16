@@ -1,0 +1,223 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand
+@@@  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
+   method
+    refid "com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand/execute"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 4
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce              QName(PackageNamespace("blix.action"), "IAction")
+      setlocal2
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getlocal            3
+      setproperty         QName(PackageNamespace(""), "selectedGameQueues")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1000
+      ifle                L107
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1001
+      ifne                L29
+
+      pushbyte            2
+      pushbyte            14
+      newarray            2
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            2
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+      jump                L87
+
+L29:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1002
+      ifne                L42
+
+      pushbyte            16
+      pushbyte            17
+      newarray            2
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            16
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+      jump                L87
+
+L42:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1003
+      ifne                L58
+
+      pushbyte            2
+      pushbyte            14
+      pushbyte            16
+      pushbyte            17
+      pushbyte            65
+      newarray            5
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            2
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+      jump                L87
+
+L58:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1004
+      ifne                L75
+
+      pushbyte            2
+      pushbyte            8
+      pushbyte            14
+      pushbyte            16
+      pushbyte            17
+      pushbyte            65
+      newarray            6
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            8
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+      jump                L87
+
+L75:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1005
+      ifne                L76
+
+      pushbyte            16
+      pushbyte            65
+      newarray            2
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            65
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+      jump                L87
+
+L76:
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      pushint             1006
+      ifne                L87
+
+      pushbyte            2
+      pushbyte            65
+      newarray            2
+      setlocal            3
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      pushbyte            2
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+L87:
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "doGameFlow"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getlocal            3
+      setproperty         QName(PackageNamespace(""), "selectedGameQueues")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getproperty         QName(PackageNamespace(""), "selectedGameQueueConfig")
+      getproperty         QName(PackageNamespace(""), "disallowFreeChampions")
+      not
+      setproperty         QName(PackageNamespace(""), "allowFreeChampions")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+      getproperty         QName(PackageNamespace(""), "masterGameViewController")
+      callpropvoid        QName(PackageNamespace(""), "handleSelectMapContinue"), 0
+
+      returnvoid
+
+L107:
+      getlocal0
+      callpropvoid        QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "doGameFlow"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      callpropvoid        QName(PackageNamespace(""), "setSelectedQueueId"), 1
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+      getproperty         QName(PackageNamespace(""), "gameModel")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getproperty         QName(PackageNamespace(""), "selectedGameQueueConfig")
+      getproperty         QName(PackageNamespace(""), "disallowFreeChampions")
+      not
+      setproperty         QName(PackageNamespace(""), "allowFreeChampions")
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+      getproperty         QName(PackageNamespace(""), "masterGameViewController")
+      callpropvoid        QName(PackageNamespace(""), "handleSelectMapContinue"), 0
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+      callproperty        QName(PackageNamespace(""), "getQueueForID"), 1
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "teamOnly")
+      iffalse             L144
+
+      getlocal0
+      getproperty         QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "inviteProvider")
+      callproperty        QName(Namespace("com.riotgames.pvpnet.invite:IInviteProvider"), "getOpenInvitePanelAction"), 0
+      coerce              QName(PackageNamespace("blix.action"), "IAction")
+      setlocal2
+
+      getlocal2
+      callpropvoid        QName(Namespace("blix.action:IAction"), "invoke"), 0
+
+L144:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

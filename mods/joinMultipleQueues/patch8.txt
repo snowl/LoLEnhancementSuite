@@ -1,0 +1,41 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController
+@@@  trait getter QName(PackageNamespace(""), "gameModeDisplayDescription")
+
+  trait getter QName(PackageNamespace(""), "gameModeDisplayDescription")
+   method
+    refid "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance/gameModeDisplayDescription/getter"
+    returns QName(PackageNamespace(""), "String")
+    body
+     maxstack 3
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+      
+      
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+      pushnull
+      ifeq L123
+      
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+      pushstring          "multi_pvp"
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+      pushbyte 0
+      iflt L123
+      
+      pushstring          "Not sure what you want to play today?\rLet the server decide what you'll play!\r\r[Any suggstions?]\r[Send an E-Mail to frostygpu:at:gmail.com]"
+      returnvalue
+       
+L123:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayDescription")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

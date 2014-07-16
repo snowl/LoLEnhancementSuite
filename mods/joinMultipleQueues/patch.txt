@@ -1,0 +1,268 @@
+~lib/ClientLibDomain.dat
+#com.riotgames.platform.gameclient.domain.game:GameOptionsList
+@@@  trait method QName(PackageNamespace(""), "addValue")
+  trait method QName(PackageNamespace(""), "addValue")
+   method
+    name ""
+    refid "com.riotgames.platform.gameclient.domain.game:GameOptionsList/addValue"
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GamePropertiesListData")
+    body
+     maxstack 5
+     localcount 9
+     initscopedepth 7
+     maxscopedepth 8
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal            6
+
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GamePropertiesListData")
+      constructprop       QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GamePropertiesListData"), 0
+      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GamePropertiesListData")
+      setlocal            5
+
+      pushbyte            0
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), "_associatedGameProperties")
+      coerce_a
+      setlocal            8
+
+      jump                L36
+
+L16:
+      label
+      getlocal            8
+      getlocal            7
+      nextvalue
+      coerce_s
+      setlocal            6
+
+      getlocal1
+      getlocal            6
+      callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "hasOwnProperty"), 1
+      iffalse             L34
+
+      getlocal            5
+      getproperty         QName(PackageNamespace(""), "modifierProperties")
+      getlocal            6
+      getlocal1
+      getlocal            6
+      getproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), PackageNamespace("com.riotgames.platform.gameclient.domain.game"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("GameOptionsList.as$408"), PackageInternalNs("com.riotgames.platform.gameclient.domain.game"), ProtectedNamespace("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), StaticProtectedNs("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), StaticProtectedNs("mx.collections:ArrayCollection"), StaticProtectedNs("mx.collections:ListCollectionView"), StaticProtectedNs("flash.utils:Proxy"), StaticProtectedNs("Object")])
+      setproperty         MultinameL([PrivateNamespace("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), PackageNamespace("com.riotgames.platform.gameclient.domain.game"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace("GameOptionsList.as$408"), PackageInternalNs("com.riotgames.platform.gameclient.domain.game"), ProtectedNamespace("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), StaticProtectedNs("com.riotgames.platform.gameclient.domain.game:GameOptionsList"), StaticProtectedNs("mx.collections:ArrayCollection"), StaticProtectedNs("mx.collections:ListCollectionView"), StaticProtectedNs("flash.utils:Proxy"), StaticProtectedNs("Object")])
+
+      jump                L36
+
+L34:
+      pushnull
+      returnvalue
+
+L36:
+      hasnext2            8, 7
+      iftrue              L16
+
+      kill                8
+      kill                7
+      getlocal2
+      pushstring          "game_flow_mm_pvp_multi"
+      ifne                L47
+
+      getlocal            5
+      pushstring          "Join Multiple Queues!"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      jump                L137
+
+L47:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_draft"
+      ifne                L57
+
+      getlocal            5
+      pushstring          "Normal"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L57:
+      getlocal2
+      pushstring          "game_flow_common_sr_cs_ha"
+      ifne                L67
+
+      getlocal            5
+      pushstring          "SR/CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L67:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_allq"
+      ifne                L77
+
+      getlocal            5
+      pushstring          "All 5v5 Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L77:
+      getlocal2
+      pushstring          "game_flow_common_sr_tt_cs_ha"
+      ifne                L87
+
+      getlocal            5
+      pushstring          "SR/TT/CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "3v3"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L87:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_all_3v3"
+      ifne                L97
+
+      getlocal            5
+      pushstring          "All Normal Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L97:
+      getlocal2
+      pushstring          "game_flow_common_cs_ha"
+      ifne                L107
+
+      getlocal            5
+      pushstring          "CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L107:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_random"
+      ifne                L108
+
+      getlocal            5
+      pushstring          "Dominion/ARAM Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L108:
+      getlocal2
+      pushstring          "game_flow_common_sr_ha"
+      ifne                L109
+
+      getlocal            5
+      pushstring          "SR/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L109:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_random_sr_ha"
+      ifne                L117
+
+      getlocal            5
+      pushstring          "Classic 5v5/ARAM Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L137
+
+L117:
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal2
+      pushstring          "_title"
+      add
+      getlocal2
+      pushstring          "_title"
+      add
+      callproperty        QName(PackageNamespace(""), "getString"), 2
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal2
+      pushstring          "_subtitle"
+      add
+      pushstring          ""
+      callproperty        QName(PackageNamespace(""), "getString"), 2
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+L137:
+      getlocal            5
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "baseLocaleKey")
+
+      getlocal            5
+      getlocal3
+      setproperty         QName(PackageNamespace(""), "gameMutatorViewDefinition")
+
+      getlocal            5
+      getlocal            4
+      setproperty         QName(PackageNamespace(""), "gameModeViewDefinition")
+
+      getlocal            5
+      getlocal0
+      setproperty         QName(PackageNamespace(""), "parentList")
+
+      getlocal0
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "addItem"), 1
+      pop
+      getlocal            5
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
