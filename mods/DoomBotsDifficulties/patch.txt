@@ -1,0 +1,261 @@
+~mod/man/mod_man.dat
+#com.riotgames.platform.gameclient.views.lobby:ChooseGameViewLayoutPVE
+@@@  refid "com.riotgames.platform.gameclient.views.lobby:ChooseGameViewLayoutPVE/class/init"
+  refid "com.riotgames.platform.gameclient.views.lobby:ChooseGameViewLayoutPVE/class/init"
+  body
+   maxstack 5
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_MEDIUM")
+    pushbyte            33
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_MEDIUM")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_NBOTS")
+    pushbyte            91
+    pushbyte            92
+    pushbyte            93
+    pushbyte            90
+    newarray            4
+    initproperty        QName(PackageNamespace(""), "QUEUE_NBOTS")
+
+    findproperty        QName(PackageNamespace(""), "INTERNAL_NAME")
+    pushstring          "matchmaking_modePVE"
+    initproperty        QName(PackageNamespace(""), "INTERNAL_NAME")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_MEDIUM")
+    pushbyte            36
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_MEDIUM")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_INTRO")
+    pushbyte            34
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_INTRO")
+
+    findproperty        QName(PackageNamespace(""), "viewLayout")
+    getlex              QName(PackageNamespace(""), "XML")
+    pushstring          "<option"
+    pushstring          " name=\"{INTERNAL_NAME}\" localeKey=\"game_flow_mm_pve\" properties=\"gameMode\">\r\n\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"classic_pve\" name=\"pve_classic\" localeKey=\"game_flow_mm_pve_classic\">\r\n\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;1\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift_1v1\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"INTRO\" name=\"intro_mode\" localeKey=\"game_flow_mm_pve_difficulty_intro\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_1v1_INTRO}\" partyid=\"{QUEUE_COOP_VS_AI_SR_1v1_INTRO}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_1v1_EASY}\" partyid=\"{QUEUE_COOP_VS_AI_SR_1v1_EASY}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_1v1_MEDIUM}\" partyid=\"{QUEUE_COOP_VS_AI_SR_1v1_MEDIUM}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;2\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift_2v2\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"13\" partyid=\"13\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"13\" partyid=\"13\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;5\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"INTRO\" name=\"intro_mode\" localeKey=\"game_flow_mm_pve_difficulty_intro\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 5v5 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_5v5_INTRO}\" partyid=\"{QUEUE_COOP_VS_AI_SR_5v5_INTRO}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 5v5 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_5v5_EASY}\" partyid=\"{QUEUE_COOP_VS_AI_SR_5v5_EASY}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 5v5 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"{QUEUE_COOP_VS_AI_SR_5v5_MEDIUM}\" partyid=\"{QUEUE_COOP_VS_AI_SR_5v5_MEDIUM}\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"TwistedTreeline;1\" name=\"twisted_treeline\" localeKey=\"game_flow_common_twisted_treeline_1v1\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"50\" partyid=\"50\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"50\" partyid=\"50\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"TwistedTreeline;2\" name=\"twisted_treeline\" localeKey=\"game_flow_common_twisted_treeline_2v2\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"51\" partyid=\"51\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"51\" partyid=\"51\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"TwistedTreeline;3\" name=\"twisted_treeline\" localeKey=\"game_flow_common_twisted_treeline\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 3v3 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"52\" partyid=\"52\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- TT 3v3 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"52\" partyid=\"52\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09</value>\r\n\r\n\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"dominion_pve\" name=\"pve_odin\" localeKey=\"game_flow_mm_pve_odin\">\r\n\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"CrystalScar;1\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar_1v1\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"23\" partyid=\"23\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"23\" partyid=\"23\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"CrystalScar;2\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar_2v2\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"24\" partyid=\"24\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 2v2 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"24\" partyid=\"24\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"CrystalScar;5\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 5v5 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"25\" partyid=\"25\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 5v5 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"25\" partyid=\"25\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09</value>\r\n\r\n\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"aram_pve\" name=\"pve_aram\" localeKey=\"game_flow_mm_pve_aram\">\r\n\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"ProvingGroundsARAM;1\" name=\"pve_aram\" localeKey=\"game_flow_common_proving_ground_5v5\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"EASY\" name=\"easy_mode\" localeKey=\"game_flow_mm_pve_difficulty_easy\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"67\" partyid=\"67\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<!-- SR 1v1 MMvBot-->\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"67\" partyid=\"67\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09</value>\r\n\r\n\r\n\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"featured_urf_pve\" name=\"featured_urf\" localeKey=\"game_flow_mm_pvp_featured_urf\" gameMutator=\"{GameMutator.URF}\">\r\n\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;1\" name=\"featured_cof\" localeKey=\"game_flow_featured_urf_summoners_rift_1v1\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"84\" partyid=\"-1\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;5\" name=\"featured_urf\" localeKey=\"game_flow_featured_urf_summoners_rift_5v5\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"MEDIUM\" name=\"medium_mode\" localeKey=\"game_flow_mm_pve_difficulty_medium\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"83\" partyid=\"83\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09</value>\r\n\r\n\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"featured_nbots_pve\" name=\"featured_nbots\" localeKey=\"game_flow_mm_pvp_featured_nbots\" gameMutator=\"{GameMutator.NIGHTMARE_BOTS}\">\r\n\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;1\" name=\"featured_nbots\" localeKey=\"game_flow_featured_nbots_summoners_rift_1v1\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"game_flow_mm_pve_difficulty_hard\" gameMutator=\"{GameMutator.NIGHTMARE_BOTS_1}\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"90\" partyid=\"-1\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"n_bots_debug\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"94\" partyid=\"-1\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;2\" name=\"featured_nbots\" localeKey=\"n_bots_2v2\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"n_bots_debug\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"95\" partyid=\"-1\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"SummonersRift;5\" name=\"featured_nbots\" localeKey=\"game_flow_featured_nbots_summoners_rift_5v5\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09<option"
+    add
+    pushstring          " name=\"matchmaking_difficulty\" properties=\"difficulty\" localeKey=\"game_flow_mm_pve_difficulty\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"game_flow_mm_pve_difficulty_hard\" gameMutator=\"{GameMutator.NIGHTMARE_BOTS_1}\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"91\" partyid=\"91\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"game_flow_mm_pve_difficulty_hard_2\" gameMutator=\"{GameMutator.NIGHTMARE_BOTS_2}\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"92\" partyid=\"92\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09<value"
+    add
+    pushstring          " data=\"HARD\" name=\"hard_mode\" localeKey=\"game_flow_mm_pve_difficulty_hard_3\" gameMutator=\"{GameMutator.NIGHTMARE_BOTS_3}\">\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09\x09<queue"
+    add
+    pushstring          " soloid=\"93\" partyid=\"93\"/>\r\n\x09\x09\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09\x09\x09</option>\r\n\x09\x09\x09\x09\x09</value>\r\n\x09\x09\x09\x09</option>"
+    add
+    construct           1
+    initproperty        QName(PackageNamespace(""), "viewLayout")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_INTRO")
+    pushbyte            31
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_INTRO")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_EASY")
+    pushbyte            32
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_5v5_EASY")
+
+    findproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_EASY")
+    pushbyte            35
+    initproperty        QName(PackageNamespace(""), "QUEUE_COOP_VS_AI_SR_1v1_EASY")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
