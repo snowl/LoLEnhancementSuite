@@ -1,0 +1,180 @@
+~mod/ser/mod_ser.dat
+#com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl
+@@@  trait method QName(PackageNamespace(""), "selectChampionSkin")
+  trait method QName(PackageNamespace(""), "selectChampionSkin")
+   method
+    refid "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance/selectChampionSkin"
+    param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "ChampionSkin")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Function")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 9
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Dictionary")
+      constructprop       QName(PackageNamespace("flash.utils"), "Dictionary"), 0
+      coerce              QName(PackageNamespace("flash.utils"), "Dictionary")
+      setlocal            5
+
+      pushnull
+      coerce              QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      setlocal            6
+
+      pushbyte            0
+      convert_i
+      setlocal            7
+
+      getlocal            4
+      pushnull
+      ifeq                L19
+
+      getlocal            5
+      getlex              QName(PackageNamespace("com.riotgames.platform.gameclient.exception"), "GameException")
+      getlocal            4
+      setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl/instance#1"), PackageNamespace("com.riotgames.platform.gameclient.module.services.lcds"), PackageInternalNs("com.riotgames.platform.gameclient.module.services.lcds"), ProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNs("com.riotgames.platform.gameclient.module.services.lcds:BaseLcdsService"), StaticProtectedNs("Object")])
+
+L19:
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skinId")
+      pushshort           1000
+      modulo
+      pushshort           999
+      ifne                L114
+
+      findpropstrict      QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      constructprop       QName(PackageNamespace("mx.collections"), "ArrayCollection"), 0
+      coerce              QName(PackageNamespace("mx.collections"), "ArrayCollection")
+      setlocal            6
+
+      pushbyte            0
+      convert_i
+      setlocal            7
+
+      jump                L49
+
+L33:
+      label
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getChampion"), 0
+      getproperty         QName(PackageNamespace(""), "championSkins")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      callproperty        QName(PackageNamespace(""), "isAvailable"), 0
+      iffalse             L48
+
+      getlocal            6
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getChampion"), 0
+      getproperty         QName(PackageNamespace(""), "championSkins")
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      callpropvoid        QName(PackageNamespace(""), "addItem"), 1
+
+L48:
+      inclocal_i          7
+L49:
+      getlocal            7
+      getlocal1
+      callproperty        QName(PackageNamespace(""), "getChampion"), 0
+      getproperty         QName(PackageNamespace(""), "championSkins")
+      getproperty         QName(PackageNamespace(""), "length")
+      iflt                L33
+
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      ifne                L71
+
+      getlocal0
+      pushstring          "gameService"
+      pushstring          "selectChampionSkin"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "championId")
+      pushbyte            0
+      newarray            2
+      getlocal2
+      getlocal3
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "invokeServiceWithoutSession"), 6
+
+      returnvoid
+
+L71:
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            1
+      ifne                L90
+
+      getlocal0
+      pushstring          "gameService"
+      pushstring          "selectChampionSkin"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "championId")
+      getlocal            6
+      pushbyte            0
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      getproperty         QName(PackageNamespace(""), "skinId")
+      newarray            2
+      getlocal2
+      getlocal3
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "invokeServiceWithoutSession"), 6
+
+      jump                L113
+
+L90:
+      getlex              QName(PackageNamespace(""), "Math")
+      dup
+      callproperty        QName(PackageNamespace(""), "random"), 0
+      getlocal            6
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_d
+      multiply
+      callproperty        QName(PackageNamespace(""), "floor"), 1
+      setlocal            7
+
+      getlocal0
+      pushstring          "gameService"
+      pushstring          "selectChampionSkin"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "championId")
+      getlocal            6
+      getlocal            7
+      callproperty        QName(PackageNamespace(""), "getItemAt"), 1
+      getproperty         QName(PackageNamespace(""), "skinId")
+      newarray            2
+      getlocal2
+      getlocal3
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "invokeServiceWithoutSession"), 6
+
+L113:
+      jump                L126
+
+L114:
+      getlocal0
+      pushstring          "gameService"
+      pushstring          "selectChampionSkin"
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "championId")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "skinId")
+      newarray            2
+      getlocal2
+      getlocal3
+      getlocal            5
+      callpropvoid        QName(PackageNamespace(""), "invokeServiceWithoutSession"), 6
+
+L126:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait

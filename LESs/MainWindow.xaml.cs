@@ -152,19 +152,27 @@ namespace LESs
                     var VersionDirectories = Directory.GetDirectories(RADLocation);
                     string FinalDirectory = "";
                     string Version = "";
-                    int VersionCompare = 0;
+                    uint VersionCompare = 0;
                     foreach (string x in VersionDirectories)
                     {
-                        string Compare1 = x.Substring(x.IndexOf("releases\\")).Replace("releases\\", "") + " ";
-                        int CompareVersion;
+                        string Compare1 = x.Substring(x.LastIndexOfAny(new char[] { '\\', '/' }) + 1);
+
+                        string[] VersionParts = Compare1.Split(new char[] { '.' });
+
+                        if (!Compare1.Contains(".")||VersionParts.Length!=4)
+                        {
+                            continue;
+                        }
+
+                        uint CompareVersion;
                         try
                         {
-                            CompareVersion = Convert.ToInt32(Compare1.Substring(0, 9).Replace(".", ""));
+                            //versions have the format "x.x.x.x" where every x can be a value between 0 and 255 
+                            CompareVersion = Convert.ToUInt32(VersionParts[0]) << 24 | Convert.ToUInt32(VersionParts[1]) << 16 | Convert.ToUInt32(VersionParts[2]) << 8 | Convert.ToUInt32(VersionParts[3]);
                         }
-                        catch (ArgumentOutOfRangeException)//fix for version numbers < 0.0.1.10
+                        catch (FormatException) //can happen for directories like "0.0.0.asasd"
                         {
-                            //Ignore
-                            CompareVersion = 0;
+                            continue;
                         }
 
                         if (CompareVersion > VersionCompare)
