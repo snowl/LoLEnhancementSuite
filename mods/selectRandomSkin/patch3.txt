@@ -1,4 +1,4 @@
-~lib/ClientLibChampionSelecttionCore.dat
+~lib/ClientLibChampionSelectionCore.dat
 #com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer
 @@@  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), "updateSkinImage")
   trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), "updateSkinImage")

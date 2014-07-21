@@ -1,4 +1,4 @@
-~lib/ClientLibChampionSelecttionCore.dat
+~lib/ClientLibChampionSelectionCore.dat
 #com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector
 @@@  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "createSkinProvider")
   trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "createSkinProvider")
