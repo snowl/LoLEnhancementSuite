@@ -25,6 +25,10 @@ Unlock any game type while playing on a featured game mode. A featured game mode
 
 Adds an option to appear offline in the chat options. You appear invisible to everyone, but all chat functions still remain.
 
+* DoomBotsDifficulties
+
+Unlocks all Difficulties at the GameMode Doom Bots.
+
 * KeepMyPage
 
 Stops the client from switching back to the home page after a queue is declined.
