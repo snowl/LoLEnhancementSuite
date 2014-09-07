@@ -3,7 +3,7 @@ LoLEnhancementSuite
 
 A set of patches for the League of Legends client to enhance and fix bugs.
 
-These mods are for the version `0.0.1.101`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+These mods are for the version `0.0.1.105`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
 
 The offical LESs patcher will patch all mods into your League of Legends client.
 
@@ -16,10 +16,6 @@ The only approved download sources are listed below. Other websites redistributi
 Binaries and a changelog can be found here: http://da.viddiaz.com/LESs/
 
 ## Mods
-
-* AnyGameType
-
-Unlock any game type while playing on a featured game mode. A featured game mode must be enabled server side for this to work!
 
 * AppearOffline
 
@@ -37,10 +33,6 @@ Stops the client from switching back to the home page after a queue is declined.
 
 Show the old match history in the client instead of just having a picture
 
-* PickWhileLocked
-
-Allows you to switch champions while locked in during normal games. Change your mind even though locked in? NP
-
 * StopCloseGame
 
 LoLClient.exe making your League of Legends lag? This removes the call to close the game when the lobby is closed, allowing extra performance gains for those potato machines.
@@ -52,10 +44,6 @@ Always getting those Session Expired messages in store? This patch allows you to
 * JoinMultipleQueues
 
 Not sure which game mode you want to play today? Just join ALL the queues! (NOTE this mod is very experimental)
-
-* SecretsKeptOurAramsWasted
-
-Reveals the enemy team's champions in the ARAM queue.
 
 * SkinnyBots
 
@@ -80,3 +68,21 @@ See what team color you are on in champ select
 * OfflineMessage
 
 Send messages to your offline friends
+
+##Riot request removal
+
+Any mods under here have been requested to be removed from the suite by Riot. The commit that brings the suite to Riot standards is located here: https://github.com/Snowl/LoLEnhancementSuite/commit/576d7c0b230e7d51357fa28e58523829f0e53892
+
+All files have been deleted and will not be re-instated in the default distribution under any circumstances.
+
+* AnyGameType
+
+Unlock any game type while playing on a featured game mode. A featured game mode must be enabled server side for this to work!
+
+* PickWhileLocked
+
+Allows you to switch champions while locked in during normal games. Change your mind even though locked in? NP
+
+* SecretsKeptOurAramsWasted
+
+Reveals the enemy team's champions in the ARAM queue.
