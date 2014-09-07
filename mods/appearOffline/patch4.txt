@@ -108,11 +108,11 @@ L23:
       setlocal3
 
       getlocal3
-      pushbyte            1
+      pushbyte            0
       setproperty         QName(PackageNamespace(""), "headerPadding")
 
       getlocal3
-      pushbyte            1
+      pushbyte            0
       setproperty         QName(PackageNamespace(""), "itemPadding")
 
       getlocal3

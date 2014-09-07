@@ -61,9 +61,13 @@
      initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_headerPool")
 
      getlocal0
-     findpropstrict      QName(PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), "FriendListRendererFactory")
+     findpropstrict      QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "DefaultRendererPool")
+     findpropstrict      QName(PackageNamespace("blix.factory"), "ClassPool")
+     getlex              QName(PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), "FriendListRenderer")
      getlocal0
-     constructprop       QName(PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), "FriendListRendererFactory"), 1
+     newarray            1
+     constructprop       QName(PackageNamespace("blix.factory"), "ClassPool"), 2
+     constructprop       QName(PackageNamespace("com.riotgames.rust.components.grouplist"), "DefaultRendererPool"), 1
      initproperty        QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "_friendRendererPool")
 
      getlocal0
@@ -102,6 +106,10 @@
      getlex              QName(PackageNamespace("blix.components.scroll"), "ScrollPolicy")
      getproperty         QName(PackageNamespace(""), "ON")
      callpropvoid        QName(PackageNamespace(""), "setVScrollPolicy"), 1
+
+     findpropstrict      QName(PackageNamespace(""), "setScrollBarsAutoPosition")	
+     pushfalse			
+     callpropvoid        QName(PackageNamespace(""), "setScrollBarsAutoPosition"), 1
 
      findpropstrict      QName(PackageNamespace(""), "setLinkage")
      pushstring          "chat.FriendList"

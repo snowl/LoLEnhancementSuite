@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<mod>
-	<name>Pick While Locked</name>
-	<description>Allows you to pick a champion while locked in in blind pick as long as not all players are locked in.</description>
-	<enabled>false</enabled>
-</mod>

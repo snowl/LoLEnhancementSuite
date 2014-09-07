@@ -17,43 +17,29 @@
 
       getlocal1
       pushstring          "multi_pvp"
-      ifne                L18
+      ifne                L9
 
-      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
-      getproperty         QName(PackageNamespace(""), "instance")
-      getproperty         QName(PackageNamespace(""), "locale")
-      pushstring          "vi_VN"
-      ifne                L14
-
-      getlocal0
-      pushstring          "Đấu Trường Đẫm Máu!"
-      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
-
-      jump                L17
-
-L14:
       getlocal0
       pushstring          "Join Multiple Queues!"
       initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
 
-L17:
       returnvoid
 
-L18:
+L9:
       getlocal1
       pushnull
       equals
       not
       dup
-      iffalse             L29
+      iffalse             L20
 
       pop
       getlocal1
       pushstring          ""
       equals
       not
-L29:
-      iffalse             L38
+L20:
+      iffalse             L29
 
       getlocal0
       getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
@@ -63,18 +49,18 @@ L29:
       callproperty        QName(PackageNamespace(""), "getString"), 1
       initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
 
-      jump                L41
+      jump                L32
 
-L38:
+L29:
       getlocal0
       pushstring          ""
       initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
 
-L41:
+L32:
       getlocal0
       getproperty         QName(PackageNamespace(""), "masterGameController")
       getproperty         QName(PackageNamespace(""), "gameMap")
-      iffalse             L51
+      iffalse             L42
 
       getlocal0
       getlocal0
@@ -83,7 +69,7 @@ L41:
       getproperty         QName(PackageNamespace(""), "displayName")
       initproperty        QName(PackageNamespace(""), "gameMapDisplayName")
 
-L51:
+L42:
       returnvoid
      end ; code
     end ; body

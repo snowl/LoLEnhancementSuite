@@ -18,7 +18,7 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string IntendedVersion = "0.0.1.101";
+        const string IntendedVersion = "0.0.1.105";
 
         private readonly BackgroundWorker worker = new BackgroundWorker();
         private bool WasPatched = true;
@@ -33,6 +33,8 @@ namespace LESs
             LeagueVersionLabel.Content = IntendedVersion;
             if (File.Exists("debug.log"))
                 File.Delete("debug.log");
+
+            File.Create("debug.log").Dispose();
 
             if (Directory.Exists("temp"))
             {
