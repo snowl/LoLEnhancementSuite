@@ -296,8 +296,7 @@ namespace LESs
             DeletePathWithLongFileNames(Path.GetFullPath("temp"));
         }
 
-        private void worker_RunWorkerCompleted(object sender,
-            RunWorkerCompletedEventArgs e)
+        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             MessageBox.Show(_wasPatched
                 ? "LESs has been successfully patched into League of Legends!"
@@ -609,7 +608,7 @@ namespace LESs
 
         private static void DeletePathWithLongFileNames(string path)
         {
-            string tmpPath = @"\\?\" + path;
+            var tmpPath = @"\\?\" + path;
             var fso = new FileSystemObject();
             fso.DeleteFolder(tmpPath, true);
         }
