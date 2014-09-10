@@ -4,7 +4,7 @@
   trait method QName(PackageNamespace(""), "addValue")
    method
     name ""
-    refid "com.riotgames.platform.gameclient.domain.game:GameOptionsList/addValue"
+    refid "com.riotgames.platform.gameclient.domain.game:GameOptionsList/instance/addValue"
     param QName(PackageNamespace(""), "Object")
     param QName(PackageNamespace(""), "String")
     param QName(PackageNamespace(""), "String")
@@ -71,152 +71,158 @@ L36:
 
       kill                8
       kill                7
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "locale")
+      pushstring          "vi_VN"
+      ifne                L163
+
       getlocal2
       pushstring          "game_flow_mm_pvp_multi"
-      ifne                L47
+      ifne                L52
 
       getlocal            5
-      pushstring          "Join Multiple Queues!"
+      pushstring          "Đấu Trường Đẫm Máu!"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
-      jump                L137
+      jump                L162
 
-L47:
+L52:
       getlocal2
       pushstring          "game_flow_mm_pvp_normal_blind_n_draft"
-      ifne                L57
+      ifne                L62
 
       getlocal            5
-      pushstring          "Normal"
+      pushstring          "Thường"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
-      pushstring          "Blind/Draft"
+      pushstring          "Chọn Ẩn/Cấm&Chọn"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L57:
+L62:
       getlocal2
       pushstring          "game_flow_common_sr_cs_ha"
-      ifne                L67
+      ifne                L72
 
       getlocal            5
-      pushstring          "SR/CS/HA"
+      pushstring          "SR/CS/ARAM"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
       pushstring          "5v5"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L67:
+L72:
       getlocal2
       pushstring          "game_flow_mm_pvp_normal_allq"
-      ifne                L77
+      ifne                L82
 
       getlocal            5
-      pushstring          "All 5v5 Queues"
+      pushstring          "5v5 Ngẫu Nhiên"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
-      pushstring          "Blind/Draft/All Random"
+      pushstring          "Chọn Ẩn/Cấm&Chọn/Ngẫu Nhiên"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L77:
+L82:
       getlocal2
       pushstring          "game_flow_common_sr_tt_cs_ha"
-      ifne                L87
+      ifne                L92
 
       getlocal            5
-      pushstring          "SR/TT/CS/HA"
+      pushstring          "SR/TT/CS/ARAM"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
       pushstring          "3v3"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L87:
+L92:
       getlocal2
       pushstring          "game_flow_mm_pvp_normal_all_3v3"
-      ifne                L97
+      ifne                L102
 
       getlocal            5
-      pushstring          "All Normal Queues"
+      pushstring          "Đấu Thường"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
-      pushstring          "Blind/Draft/All Random"
+      pushstring          "Chọn Ẩn/Cấm&Chọn/Ngẫu Nhiên"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L97:
+L102:
       getlocal2
       pushstring          "game_flow_common_cs_ha"
-      ifne                L107
+      ifne                L112
 
       getlocal            5
-      pushstring          "CS/HA"
+      pushstring          "CS/ARAM"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
       pushstring          "5v5"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L107:
+L112:
       getlocal2
       pushstring          "game_flow_mm_pvp_normal_blind_n_random"
-      ifne                L108
+      ifne                L122
 
       getlocal            5
-      pushstring          "Dominion/ARAM Queues"
+      pushstring          "Cướp Cờ/ARAM "
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
-      pushstring          "Blind/All Random"
+      pushstring          "Chọn Ẩn/Ngẫu Nhiên"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L108:
+L122:
       getlocal2
       pushstring          "game_flow_common_sr_ha"
-      ifne                L109
+      ifne                L132
 
       getlocal            5
-      pushstring          "SR/HA"
+      pushstring          "SR/ARAM"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
       pushstring          "5v5"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L109:
+L132:
       getlocal2
       pushstring          "game_flow_mm_pvp_normal_blind_n_random_sr_ha"
-      ifne                L117
+      ifne                L142
 
       getlocal            5
-      pushstring          "Classic 5v5/ARAM Queues"
+      pushstring          "Đấu Thường/ARAM"
       setproperty         QName(PackageNamespace(""), "displayTitle")
 
       getlocal            5
-      pushstring          "Blind/All Random"
+      pushstring          "Chọn Ẩn/Ngẫu Nhiên"
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-      jump                L137
+      jump                L162
 
-L117:
+L142:
       getlocal            5
       findpropstrict      QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
       getproperty         QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
@@ -239,7 +245,185 @@ L117:
       callproperty        QName(PackageNamespace(""), "getString"), 2
       setproperty         QName(PackageNamespace(""), "subTitle")
 
-L137:
+L162:
+      jump                L285
+
+L163:
+      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
+      getproperty         QName(PackageNamespace(""), "instance")
+      getproperty         QName(PackageNamespace(""), "locale")
+      pushstring          "vi_VN"
+      ifeq                L285
+
+      getlocal2
+      pushstring          "game_flow_mm_pvp_multi"
+      ifne                L175
+
+      getlocal            5
+      pushstring          "Join Multiple Queues!"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      jump                L285
+
+L175:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_draft"
+      ifne                L185
+
+      getlocal            5
+      pushstring          "Normal"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L185:
+      getlocal2
+      pushstring          "game_flow_common_sr_cs_ha"
+      ifne                L195
+
+      getlocal            5
+      pushstring          "SR/CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L195:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_allq"
+      ifne                L205
+
+      getlocal            5
+      pushstring          "All 5v5 Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L205:
+      getlocal2
+      pushstring          "game_flow_common_sr_tt_cs_ha"
+      ifne                L215
+
+      getlocal            5
+      pushstring          "SR/TT/CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "3v3"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L215:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_all_3v3"
+      ifne                L225
+
+      getlocal            5
+      pushstring          "All Normal Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/Draft/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L225:
+      getlocal2
+      pushstring          "game_flow_common_cs_ha"
+      ifne                L235
+
+      getlocal            5
+      pushstring          "CS/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L235:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_random"
+      ifne                L245
+
+      getlocal            5
+      pushstring          "Dominion/ARAM Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L245:
+      getlocal2
+      pushstring          "game_flow_common_sr_ha"
+      ifne                L255
+
+      getlocal            5
+      pushstring          "SR/HA"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "5v5"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L255:
+      getlocal2
+      pushstring          "game_flow_mm_pvp_normal_blind_n_random_sr_ha"
+      ifne                L265
+
+      getlocal            5
+      pushstring          "Classic 5v5/ARAM Queues"
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      pushstring          "Blind/All Random"
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+      jump                L285
+
+L265:
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal2
+      pushstring          "_title"
+      add
+      getlocal2
+      pushstring          "_title"
+      add
+      callproperty        QName(PackageNamespace(""), "getString"), 2
+      setproperty         QName(PackageNamespace(""), "displayTitle")
+
+      getlocal            5
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+      getlocal2
+      pushstring          "_subtitle"
+      add
+      pushstring          ""
+      callproperty        QName(PackageNamespace(""), "getString"), 2
+      setproperty         QName(PackageNamespace(""), "subTitle")
+
+L285:
       getlocal            5
       getlocal2
       setproperty         QName(PackageNamespace(""), "baseLocaleKey")
