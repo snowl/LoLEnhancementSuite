@@ -61,21 +61,23 @@ namespace LESs
 
         private void MainGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            if (!Directory.Exists("mods"))
+            if (Directory.Exists("mods"))
+            {
+                var ModList = Directory.GetDirectories("mods");
+
+                foreach (string Mod in ModList)
+                {
+                    CheckBox Check = new CheckBox();
+                    Check.IsChecked = true;
+                    Check.Content = Mod.Replace("mods\\", "");
+                    if (File.Exists(Path.Combine(Mod, "disabled")))
+                        Check.IsChecked = false;
+                    ModsListBox.Items.Add(Check);
+                }
+            }
+            else
             {
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
-            }
-
-            var ModList = Directory.GetDirectories("mods");
-
-            foreach (string Mod in ModList)
-            {
-                CheckBox Check = new CheckBox();
-                Check.IsChecked = true;
-                Check.Content = Mod.Replace("mods\\", "");
-                if (File.Exists(Path.Combine(Mod, "disabled")))
-                    Check.IsChecked = false;
-                ModsListBox.Items.Add(Check);
             }
         }
 
