@@ -8,7 +8,7 @@
 		{
 			"Swf": "mod/cs/mod_cs.dat",
 			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView",
-			"Action": "replace_trait",
+			"Action": "replace_instance_trait",
 			"Code": "patch1.asasm"
 		}
 	]
