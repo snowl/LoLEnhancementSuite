@@ -75,6 +75,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ClassNotFoundException.cs" />
+    <Compile Include="ErrorLevel.cs" />
     <Compile Include="TraitNotFoundException.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

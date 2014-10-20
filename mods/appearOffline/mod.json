@@ -1,6 +1,7 @@
 {
 	"Name": "Appear Offline",
 	"Description": "Adds an option to appear offline in the chat options. You appear invisible to everyone, but all chat functions still remain.",
+	"Author": "Snowl",
 	"Library": "AbcSharp",
 	"DisabledByDefault": false,
 	"Patches":

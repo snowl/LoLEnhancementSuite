@@ -13,6 +13,8 @@ using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace LESs
 {
@@ -24,7 +26,7 @@ namespace LESs
         private const string INTENDED_VERSION = "0.0.1.113";
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
-        private bool _wasPatched = true;
+        private ErrorLevel _errorLevel = ErrorLevel.NoError;
         private Dictionary<CheckBox, LessMod> _lessMods = new Dictionary<CheckBox, LessMod>();
 
         public MainWindow()
@@ -39,7 +41,7 @@ namespace LESs
         {
             Exception Error = e.Exception;
             MessageBox.Show(Error.Message + Environment.NewLine + Error.StackTrace + Environment.NewLine);
-            _wasPatched = false;
+            
         }
 
         /// <summary>
@@ -104,6 +106,11 @@ namespace LESs
 
             ModNameLabel.Content = lessMod.Name;
             ModDescriptionBox.Text = lessMod.Description;
+            //see if our mod has an author and display it
+            if (!string.IsNullOrEmpty(lessMod.Author))
+                ModAuthorLabel.Content = "Author: " + lessMod.Author;
+            else
+                ModAuthorLabel.Content = "Author: Dark Voodoo Magicks";
         }
 
         /// <summary>
@@ -237,6 +244,7 @@ namespace LESs
         /// </summary>
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            _errorLevel = ErrorLevel.NoError;
             Directory.CreateDirectory("temp");
 
             //Gets the list of mods
@@ -246,6 +254,7 @@ namespace LESs
                 modCollection = ModsListBox.Items;
             }));
 
+            SetStatusLabelAsync("Gathering mods...");
             //Gets the list of mods that have been checked.
             List<LessMod> modsToPatch = new List<LessMod>();
             foreach (var x in modCollection)
@@ -274,6 +283,7 @@ namespace LESs
             foreach (var lessMod in modsToPatch)
             {
                 Debug.Assert(lessMod.Patches.Length > 0);
+                SetStatusLabelAsync("Patching mod: " + lessMod.Name);
                 foreach (var patch in lessMod.Patches)
                 {
                     if (!swfs.ContainsKey(patch.Swf))
@@ -370,16 +380,26 @@ namespace LESs
                     }
 
                     if (!classFound)
+                    {
+                        _errorLevel = ErrorLevel.UnableToPatch;
                         throw new ClassNotFoundException(string.Format("Class {0} not found in file {1}", patch.Class, patch.Swf));
+                    }
                 }
             }
+            return;
 
-            foreach (var PatchedSWF in swfs)
+            foreach (var patchedSwf in swfs)
             {
-                string swfLoc = Path.Combine(lolLocation, PatchedSWF.Key);
-                Debug.WriteLine("output: " + swfLoc);
-
-                SwfFile.WriteFile(PatchedSWF.Value, swfLoc);
+                try
+                {
+                    SetStatusLabelAsync("Applying mods: " + patchedSwf.Key);
+                    string swfLoc = Path.Combine(lolLocation, patchedSwf.Key);
+                    SwfFile.WriteFile(patchedSwf.Value, swfLoc);
+                }
+                catch
+                {
+                    _errorLevel = ErrorLevel.GoodJobYourInstallationIsProbablyCorruptedNow;
+                }
             }
         }
 
@@ -388,16 +408,22 @@ namespace LESs
         /// </summary>
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (_wasPatched)
+            switch (_errorLevel)
             {
-                MessageBox.Show("LESs has been successfully patched into League of Legends!");
-            }
-            else
-            {
-                MessageBox.Show("LESs encountered errors during patching. However, some patches may still be applied.");
+                case ErrorLevel.NoError:
+                    StatusLabel.Content = "Done patching!";
+                    MessageBox.Show("LESs has been successfully patched into League of Legends!");
+                    break;
+                case ErrorLevel.UnableToPatch:
+                    SetStatusLabelAsync("[Error] Please check debug.log for more information.");
+                    MessageBox.Show("LESs encountered errors during patching. No mods have been applied.");
+                    break;
+                case ErrorLevel.GoodJobYourInstallationIsProbablyCorruptedNow:
+                    SetStatusLabelAsync("[Critical Error] Please check debug.log for more information.");
+                    MessageBox.Show("LESs encountered errors during patching.\nIt is possible your client is corrupted.\nPlease repair before trying again.");
+                    break;
             }
             PatchButton.IsEnabled = true;
-            StatusLabel.Content = "Done patching!";
         }
 
         /// <summary>
@@ -407,5 +433,19 @@ namespace LESs
         {
             File.AppendAllText("debug.log", string.Format("[{0}] {1}{2}", subject, message, Environment.NewLine));
         }
+
+        /// <summary>
+        /// Sets the text of the status label
+        /// </summary>
+        private void SetStatusLabelAsync(string text)
+        {
+
+            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
+            {
+                StatusLabel.Content = text;
+            }));
+        }
+
+
     }
 }

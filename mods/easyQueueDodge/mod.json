@@ -1,14 +1,15 @@
 {
-	"Name":"Easy Queue Dodge",
-	"Description":"Adds a \"Quit Game\" button to the champion selection screen similar to custom games. NOTE: You will still get queue dodge penalties!! By Antropod",
-	"Library":"AbcSharp",
-	"DisabledByDefault":true,
+	"Name": "Easy Queue Dodge",
+	"Description": "Adds a \"Quit Game\" button to the champion selection screen similar to custom games. NOTE: You will still get queue dodge penalties!!",
+	"Author": "Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": true,
 	"Patches":
 	[
 		{
 			"Swf": "mod/cs/mod_cs.dat",
 			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectionView",
-			"Action": "replace_instance_trait",
+			"Action": "replace_trait",
 			"Code": "patch1.asasm"
 		}
 	]
