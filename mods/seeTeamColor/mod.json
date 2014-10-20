@@ -1,0 +1,16 @@
+{
+	"Name": "See Team Color",
+	"Description": "Shows what color team you are on (blue/red).",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/cs/mod_cs.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSelectPlayerList",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}
