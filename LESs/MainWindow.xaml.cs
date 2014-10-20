@@ -21,11 +21,11 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string IntendedVersion = "0.0.1.113";
+        private const string INTENDED_VERSION = "0.0.1.113";
 
-        private readonly BackgroundWorker worker = new BackgroundWorker();
-        private bool WasPatched = true;
-        private Dictionary<CheckBox, LessMod> LessMods = new Dictionary<CheckBox, LessMod>();
+        private readonly BackgroundWorker _worker = new BackgroundWorker();
+        private bool _wasPatched = true;
+        private Dictionary<CheckBox, LessMod> _lessMods = new Dictionary<CheckBox, LessMod>();
 
         public MainWindow()
         {
@@ -39,7 +39,7 @@ namespace LESs
         {
             Exception Error = e.Exception;
             MessageBox.Show(Error.Message + Environment.NewLine + Error.StackTrace + Environment.NewLine);
-            WasPatched = false;
+            _wasPatched = false;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace LESs
         /// </summary>
         private void MainGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            LeagueVersionLabel.Content = IntendedVersion;
+            LeagueVersionLabel.Content = INTENDED_VERSION;
 
             //Create the debug log. Delete it if it already exists.
             if (File.Exists("debug.log"))
@@ -56,8 +56,8 @@ namespace LESs
             File.Create("debug.log").Dispose();
 
             //Set the events for the worker when the patching starts.
-            worker.DoWork += worker_DoWork;
-            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
+            _worker.DoWork += worker_DoWork;
+            _worker.RunWorkerCompleted += worker_RunWorkerCompleted;
 
             //Enable exception logging if the debugger ISNT attached.
             if (!Debugger.IsAttached)
@@ -67,25 +67,25 @@ namespace LESs
             if (!Directory.Exists("mods"))
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
 
-            var ModList = Directory.GetDirectories("mods");
+            var modList = Directory.GetDirectories("mods");
 
             //Add each mod to the mod list.
-            foreach (string Mod in ModList)
+            foreach (string mod in modList)
             {
-                string modJsonFile = Path.Combine(Mod, "mod.json");
+                string modJsonFile = Path.Combine(mod, "mod.json");
 
                 if (File.Exists(modJsonFile))
                 {
                     JavaScriptSerializer s = new JavaScriptSerializer();
                     LessMod lessMod = s.Deserialize<LessMod>(File.ReadAllText(modJsonFile));
-                    lessMod.Directory = Mod;
+                    lessMod.Directory = mod;
 
                     CheckBox Check = new CheckBox();
                     Check.IsChecked = !lessMod.DisabledByDefault;
                     Check.Content = lessMod.Name;
                     ModsListBox.Items.Add(Check);
 
-                    LessMods.Add(Check, lessMod);
+                    _lessMods.Add(Check, lessMod);
                 }
             }
         }
@@ -100,7 +100,7 @@ namespace LESs
             if (box == null)
                 return;
 
-            LessMod lessMod = LessMods[box];
+            LessMod lessMod = _lessMods[box];
 
             ModNameLabel.Content = lessMod.Name;
             ModDescriptionBox.Text = lessMod.Description;
@@ -116,25 +116,25 @@ namespace LESs
             RemoveButton.Visibility = Visibility.Collapsed;
 
             //Create a file dialog for the user to locate their league of legends installation.
-            OpenFileDialog FindLeagueDialog = new OpenFileDialog();
+            OpenFileDialog findLeagueDialog = new OpenFileDialog();
             
             //If they don't have League of Legends in the default path, look for Garena.
             if (!Directory.Exists(Path.Combine("C:\\", "Riot Games", "League of Legends")))
-                FindLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Program Files (x86)", "GarenaLoL", "GameData", "Apps", "LoL");
+                findLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Program Files (x86)", "GarenaLoL", "GameData", "Apps", "LoL");
             else
-                FindLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Riot Games", "League of Legends");
+                findLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Riot Games", "League of Legends");
 
-            FindLeagueDialog.DefaultExt = ".exe";
-            FindLeagueDialog.Filter = "League of Legends Launcher|lol.launcher*.exe|Garena Launcher|lol.exe";
+            findLeagueDialog.DefaultExt = ".exe";
+            findLeagueDialog.Filter = "League of Legends Launcher|lol.launcher*.exe|Garena Launcher|lol.exe";
 
-            bool? FoundLeague = FindLeagueDialog.ShowDialog();
+            bool? foundLeague = findLeagueDialog.ShowDialog();
 
-            if (FoundLeague == true)
+            if (foundLeague == true)
             {
-                LogToFile("Selected Location", FindLeagueDialog.FileName);
+                LogToFile("Selected Location", findLeagueDialog.FileName);
 
                 //Remove the executable from the location
-                Uri Location = new Uri(FindLeagueDialog.FileName);
+                Uri Location = new Uri(findLeagueDialog.FileName);
                 string SelectedLocation = Location.LocalPath.Replace(Location.Segments.Last(), string.Empty);
 
                 //Get the executable name to check for Garena
@@ -150,46 +150,46 @@ namespace LESs
                     RemoveButton.Visibility = Visibility.Visible;
 
                     //Check each RADS installation to find the latest installation
-                    string RADLocation = Path.Combine(SelectedLocation, "RADS", "projects", "lol_air_client", "releases");
+                    string radsLocation = Path.Combine(SelectedLocation, "RADS", "projects", "lol_air_client", "releases");
 
-                    LogToFile("RADS Location", RADLocation);
+                    LogToFile("RADS Location", radsLocation);
 
-                    var VersionDirectories = Directory.GetDirectories(RADLocation);
-                    string FinalDirectory = "";
-                    string Version = "";
-                    uint VersionCompare = 0;
-                    foreach (string x in VersionDirectories)
+                    var versionDirectories = Directory.GetDirectories(radsLocation);
+                    string finalDirectory = "";
+                    string version = "";
+                    uint versionCompare = 0;
+                    foreach (string x in versionDirectories)
                     {
-                        string Compare1 = x.Substring(x.LastIndexOfAny(new char[] { '\\', '/' }) + 1);
+                        string compare1 = x.Substring(x.LastIndexOfAny(new char[] { '\\', '/' }) + 1);
 
-                        string[] VersionParts = Compare1.Split(new char[] { '.' });
+                        string[] versionParts = compare1.Split(new char[] { '.' });
 
-                        if (!Compare1.Contains(".") || VersionParts.Length != 4)
+                        if (!compare1.Contains(".") || versionParts.Length != 4)
                             continue;
 
                         uint CompareVersion;
                         try //versions have the format "x.x.x.x" where every x can be a value between 0 and 255 
                         {
-                            CompareVersion = Convert.ToUInt32(VersionParts[0]) << 24 | Convert.ToUInt32(VersionParts[1]) << 16 | Convert.ToUInt32(VersionParts[2]) << 8 | Convert.ToUInt32(VersionParts[3]);
+                            CompareVersion = Convert.ToUInt32(versionParts[0]) << 24 | Convert.ToUInt32(versionParts[1]) << 16 | Convert.ToUInt32(versionParts[2]) << 8 | Convert.ToUInt32(versionParts[3]);
                         }
                         catch (FormatException) //can happen for directories like "0.0.0.asasd"
                         {
                             continue;
                         }
 
-                        if (CompareVersion > VersionCompare)
+                        if (CompareVersion > versionCompare)
                         {
-                            VersionCompare = CompareVersion;
-                            Version = x.Replace(RADLocation + "\\", "");
-                            FinalDirectory = x;
+                            versionCompare = CompareVersion;
+                            version = x.Replace(radsLocation + "\\", "");
+                            finalDirectory = x;
                         }
 
                         LogToFile("Version Found", CompareVersion.ToString());
                     }
 
-                    if (Version != IntendedVersion)
+                    if (version != INTENDED_VERSION)
                     {
-                        string Message = string.Format("This version of LESs is intended for {0}. Your current version of League of Legends is {1}. Continue? This could harm your installation.", IntendedVersion, Version);
+                        string Message = string.Format("This version of LESs is intended for {0}. Your current version of League of Legends is {1}. Continue? This could harm your installation.", INTENDED_VERSION, version);
                         MessageBoxResult versionMismatchResult = MessageBox.Show(Message, "Invalid Version", MessageBoxButton.YesNo);
                         if (versionMismatchResult == MessageBoxResult.No)
                             return;
@@ -198,11 +198,11 @@ namespace LESs
                     PatchButton.IsEnabled = true;
                     RemoveButton.IsEnabled = true;
 
-                    LocationTextbox.Text = Path.Combine(FinalDirectory, "deploy");
+                    LocationTextbox.Text = Path.Combine(finalDirectory, "deploy");
                 }
 
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
-                Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", IntendedVersion));
+                Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", INTENDED_VERSION));
             }
         }
 
@@ -213,7 +213,7 @@ namespace LESs
         {
             PatchButton.IsEnabled = false;
             LogToFile("Patch", "Patching started");
-            worker.RunWorkerAsync();
+            _worker.RunWorkerAsync();
         }
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace LESs
 
                 if (isBoxChecked)
                 {
-                    modsToPatch.Add(LessMods[box]);
+                    modsToPatch.Add(_lessMods[box]);
                 }
             }
 
@@ -388,7 +388,7 @@ namespace LESs
         /// </summary>
         private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (WasPatched)
+            if (_wasPatched)
             {
                 MessageBox.Show("LESs has been successfully patched into League of Legends!");
             }
@@ -403,9 +403,9 @@ namespace LESs
         /// <summary>
         /// Outputs debug information to a file.
         /// </summary>
-        private void LogToFile(string Subject, string Message)
+        private void LogToFile(string subject, string message)
         {
-            File.AppendAllText("debug.log", string.Format("[{0}] {1}{2}", Subject, Message, Environment.NewLine));
+            File.AppendAllText("debug.log", string.Format("[{0}] {1}{2}", subject, message, Environment.NewLine));
         }
     }
 }
