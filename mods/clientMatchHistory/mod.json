@@ -1,0 +1,16 @@
+{
+	"Name": "Client Match History",
+	"Description": "Show the old match history in the client instead of just having a picture.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/mhi/mod_mhi.dat",
+			"Class": "com.riotgames.pvpnet.matchhistoryiron.ironviews:MatchHistoryIronView",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}

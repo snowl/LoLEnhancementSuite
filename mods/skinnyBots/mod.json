@@ -1,0 +1,22 @@
+{
+	"Name": "Skinny Bots",
+	"Description": "Gives a random skin to the bots in custom games.",
+	"Author": "Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain:BotParticipant",
+			"Action": "add_instance_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/ser/mod_ser.dat",
+			"Class": "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		}
+	]
+}

@@ -23,11 +23,13 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string INTENDED_VERSION = "0.0.1.113";
+        private const string INTENDED_VERSION = "0.0.1.114";
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
         private ErrorLevel _errorLevel = ErrorLevel.NoError;
         private Dictionary<CheckBox, LessMod> _lessMods = new Dictionary<CheckBox, LessMod>();
+
+        private string _modsDirectory="mods";
 
         public MainWindow()
         {
@@ -65,11 +67,17 @@ namespace LESs
             if (!Debugger.IsAttached)
                 AppDomain.CurrentDomain.FirstChanceException += OnFirstChanceException;
 
+            //try to find the mods in the base directory of the solution when the debugger is attached
+            if (Debugger.IsAttached && !Directory.Exists(_modsDirectory) && Directory.Exists("../../../mods"))
+            {
+                _modsDirectory = "../../../mods";
+            }
+
             //Make sure that the mods exist in the directory. Warn the user if they dont.
-            if (!Directory.Exists("mods"))
+            if (!Directory.Exists(_modsDirectory))
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
 
-            var modList = Directory.GetDirectories("mods");
+            var modList = Directory.GetDirectories(_modsDirectory);
 
             //Add each mod to the mod list.
             foreach (string mod in modList)
@@ -245,7 +253,6 @@ namespace LESs
         private void worker_DoWork(object sender, DoWorkEventArgs e)
         {
             _errorLevel = ErrorLevel.NoError;
-            Directory.CreateDirectory("temp");
 
             //Gets the list of mods
             ItemCollection modCollection = null;
@@ -386,7 +393,7 @@ namespace LESs
                     }
                 }
             }
-            return;
+            //return;
 
             foreach (var patchedSwf in swfs)
             {
@@ -396,9 +403,11 @@ namespace LESs
                     string swfLoc = Path.Combine(lolLocation, patchedSwf.Key);
                     SwfFile.WriteFile(patchedSwf.Value, swfLoc);
                 }
-                catch
+                catch(Exception ex)
                 {
                     _errorLevel = ErrorLevel.GoodJobYourInstallationIsProbablyCorruptedNow;
+                    if (Debugger.IsAttached)
+                        throw;
                 }
             }
         }
