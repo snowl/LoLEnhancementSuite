@@ -1,0 +1,76 @@
+{
+	"Name": "Appear Offline",
+	"Description": "Adds an option to appear offline in the chat options. You appear invisible to everyone, but all chat functions still remain.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/ser/mod_ser.dat",
+			"Class": "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "replace_iinit",
+			"Code": "patch3.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "replace_trait",
+			"Code": "patch4.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "replace_trait",
+			"Code": "patch5.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "add_instance_trait",
+			"Code": "patch6.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "add_instance_trait",
+			"Code": "patch7.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "add_instance_trait",
+			"Code": "patch8.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "add_instance_trait",
+			"Code": "patch9.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
+			"Action": "add_instance_trait",
+			"Code": "patch10.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
+			"Action": "replace_trait",
+			"Code": "patch11.asasm"
+		}
+	]
+}

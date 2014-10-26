@@ -1,0 +1,28 @@
+{
+	"Name": "Auto Accept Queue",
+	"Description": "Will automatically accept the queue at the end of the queue timer instead of declining the queue.",
+	"Author": "Kilua and Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": true,
+	"Patches":
+	[
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.game.common:ConfirmStartChampionSelectView",
+			"Action": "replace_iinit",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView",
+			"Action": "replace_iinit",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.game.common:EnterChampionSelectView",
+			"Action": "replace_trait",
+			"Code": "patch3.asasm"
+		}
+	]
+}

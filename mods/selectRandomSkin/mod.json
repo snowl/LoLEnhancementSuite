@@ -1,0 +1,40 @@
+{
+	"Name": "Select Random Skin",
+	"Description": "Adds a random-skincard to the Champion Selection.",
+	"Author": "Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "lib/ClientLibChampionSelectionCore.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibChampionSelectionCore.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibChampionSelectionCore.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector",
+			"Action": "replace_trait",
+			"Code": "patch3.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibChampionSelectionCore.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer",
+			"Action": "replace_trait",
+			"Code": "patch4.asasm"
+		},
+		{
+			"Swf": "mod/ser/mod_ser.dat",
+			"Class": "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl",
+			"Action": "replace_trait",
+			"Code": "patch5.asasm"
+		}
+	]
+}

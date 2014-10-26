@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<mod>
-	<name>Appear Offline</name>
-	<description>Adds an option to appear offline in the chat options. You appear invisible to everyone, but all chat functions still remain.</description>
-	<files>11</files>
-</mod>

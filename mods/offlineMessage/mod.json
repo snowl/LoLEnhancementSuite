@@ -1,0 +1,28 @@
+{
+	"Name": "Offline Message",
+	"Description": "Send messages to offline friends.",
+	"Author": "anjo2 and Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendListRenderer",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu",
+			"Action": "replace_iinit",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "mod/cht2/mod_cht2.dat",
+			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu",
+			"Action": "replace_trait",
+			"Code": "patch3.asasm"
+		}
+	]
+}

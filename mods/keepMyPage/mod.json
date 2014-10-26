@@ -1,0 +1,16 @@
+{
+	"Name": "Keep My Page",
+	"Description": "Stops the client from switching back to the home page after a queue is declined.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:LobbyController",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}
