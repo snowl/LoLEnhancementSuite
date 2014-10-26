@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<mod>
-	<name>Auto Accept Queue</name>
-	<description>Will automatically accept the queue at the end of the queue timer instead of declining the queue. By Kilua and Snowl</description>
-	<files>3</files>
-</mod>
