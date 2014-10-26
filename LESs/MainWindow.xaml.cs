@@ -23,11 +23,12 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string INTENDED_VERSION = "0.0.1.114";
+        private const string INTENDED_VERSION = "0.0.1.115";
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
         private ErrorLevel _errorLevel = ErrorLevel.NoError;
         private Dictionary<CheckBox, LessMod> _lessMods = new Dictionary<CheckBox, LessMod>();
+        private Stopwatch Stahpwatch;
 
         private string _modsDirectory="mods";
 
@@ -286,7 +287,7 @@ namespace LESs
             }));
 
             Dictionary<string, SwfFile> swfs = new Dictionary<string, SwfFile>();
-
+            Stahpwatch = Stopwatch.StartNew();
             foreach (var lessMod in modsToPatch)
             {
                 Debug.Assert(lessMod.Patches.Length > 0);
@@ -410,6 +411,7 @@ namespace LESs
                         throw;
                 }
             }
+            Stahpwatch.Stop();
         }
 
         /// <summary>
@@ -421,7 +423,7 @@ namespace LESs
             {
                 case ErrorLevel.NoError:
                     StatusLabel.Content = "Done patching!";
-                    MessageBox.Show("LESs has been successfully patched into League of Legends!");
+                    MessageBox.Show("LESs has been successfully patched into League of Legends!\n(In " + Stahpwatch.ElapsedMilliseconds + "ms)");
                     break;
                 case ErrorLevel.UnableToPatch:
                     SetStatusLabelAsync("[Error] Please check debug.log for more information.");
