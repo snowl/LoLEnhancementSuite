@@ -1,0 +1,16 @@
+{
+	"Name": "Store Refresh",
+	"Description": "Allows refreshing of the store by clicking the store button to stop the pesky session expired screen.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.store:StoreView",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}

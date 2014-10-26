@@ -1,0 +1,22 @@
+{
+	"Name": "Stop Close Game",
+	"Description": "Removes the force close of League of legends when the lobby client is closed, allowing some memory to be freed up since the lobby client won't be running. Also forces reconnect to always be shown.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "lib/ClientLibSystem.dat",
+			"Class": "com.riotgames.pvpnet.system.maestro:MaestroController",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.game.common.ingame:InGameView",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		}
+	]
+}
