@@ -1,6 +1,3 @@
-~mod/man/mod_man.dat
-#com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand
-@@@  trait method QName(PackageNamespace(""), "execute") flag OVERRIDE
   trait method QName(PackageNamespace(""), "execute") flag Override
    method
     returns QName(PackageNamespace(""), "void")

@@ -404,7 +404,7 @@ namespace LESs
                     string swfLoc = Path.Combine(lolLocation, patchedSwf.Key);
                     SwfFile.WriteFile(patchedSwf.Value, swfLoc);
                 }
-                catch(Exception ex)
+                catch
                 {
                     _errorLevel = ErrorLevel.GoodJobYourInstallationIsProbablyCorruptedNow;
                     if (Debugger.IsAttached)
