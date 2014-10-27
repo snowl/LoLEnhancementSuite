@@ -297,8 +297,24 @@ namespace LESs
                     if (!swfs.ContainsKey(patch.Swf))
                     {
                         string fullPath = Path.Combine(lolLocation, patch.Swf);
-                        if (!swfs.ContainsKey(patch.Swf))
-                            swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));
+
+                        //Backup the SWF
+                        string CurrentLocation = "";
+                        string[] FileLocation = patch.Swf.Split('/');
+                        foreach (string s in FileLocation.Take(FileLocation.Length - 1))
+                        {
+                            CurrentLocation = Path.Combine(CurrentLocation, s);
+                            if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation)))
+                            {
+                                Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation));
+                            }
+                        }
+                        if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                        {
+                            File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf));
+                        }
+
+                        swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));
                     }
 
                     SwfFile swf = swfs[patch.Swf];
