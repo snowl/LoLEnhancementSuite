@@ -65,6 +65,24 @@
 			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
 			"Action": "replace_trait",
 			"Code": "patch10.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch11.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch12.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch13.asasm"
 		}
 	]
 }

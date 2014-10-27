@@ -1,0 +1,32 @@
+  trait method QName(PackageNamespace(""),"getGameFlowColor")
+   method
+    name ""
+	returns QName(PackageNamespace(""),"uint")
+    body
+     maxstack 2
+     localcount 9
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+	  
+	  pushstring "TagTeam"
+	  getlocal0
+	  getproperty QName(PrivateNamespace("com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",""), "keyGameMutator")
+	  ifne L1
+	  
+	  pushint 2489847
+	  returnvalue
+	  
+	  L1:
+	  
+	  findpropstrict QName(PackageInternalNamespace("com.riotgames.pvpnet.game.variants"),"FeaturedGameFlowConstants")
+	  getproperty QName(PackageInternalNamespace("com.riotgames.pvpnet.game.variants"),"FeaturedGameFlowConstants")
+	  getproperty QName(PackageNamespace(""),"COLOR_FEATURED_TEXT")
+	  returnvalue
+	  
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
