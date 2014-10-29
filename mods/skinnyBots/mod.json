@@ -1,6 +1,6 @@
 {
 	"Name": "Skinny Bots",
-	"Description": "Let's you choose a skin for bots in custom games.",
+	"Description": "Lets you choose a skin for bots in custom games.",
 	"Author": "Antropod",
 	"Library": "AbcSharp",
 	"DisabledByDefault": false,
