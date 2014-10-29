@@ -332,6 +332,7 @@ namespace LESs
             }
 
             string lolLocation = null;
+            bool overwrite = true;
             Dispatcher.Invoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 lolLocation = LocationTextbox.Text;
@@ -347,6 +348,14 @@ namespace LESs
                 {
                     // Store the date in another file. It will be used in LESs removing.
                     File.Copy(versionLocation, Path.Combine(lolRootLocation.LocalPath, "LESs_recent.version"), true);
+                }
+                if(Directory.Exists(Path.Combine(lolLocation, "LESsBackup")))
+                {
+                    MessageBoxResult diagRst = MessageBox.Show("We found that you already have backup files. Overwriting it may result in you losing your original files." + Environment.NewLine + "Would you like to overwrite your old files?", "You already have backup files", MessageBoxButton.YesNo);
+                    if (diagRst == MessageBoxResult.No)
+                    {
+                        overwrite = false;
+                    }
                 }
             }
             Dictionary<string, SwfFile> swfs = new Dictionary<string, SwfFile>();
@@ -375,7 +384,7 @@ namespace LESs
                                 }
                                 if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
                                 {
-                                    File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
+                                    if(overwrite) File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
                                 }
                             }
                             else
