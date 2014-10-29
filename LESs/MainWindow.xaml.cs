@@ -373,6 +373,10 @@ namespace LESs
                                 {
                                     Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", CurrentLocation));
                                 }
+                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                                {
+                                    File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
+                                }
                             }
                             else
                             {
@@ -380,11 +384,11 @@ namespace LESs
                                 {
                                     Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation));
                                 }
+                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                                {
+                                    File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf));
+                                }
                             }                            
-                        }
-                        if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
-                        {
-                            File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
                         }
 
                         swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));
