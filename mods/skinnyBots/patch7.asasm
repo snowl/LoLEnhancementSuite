@@ -1,0 +1,65 @@
+trait method QName(PackageNamespace(""), "removeAndAddBot")
+	method
+		flag HasOptional
+		param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+		param QName(PackageNamespace(""), "String")
+		param QName(PackageNamespace(""), "int")
+		param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "Champion")
+		param QName(PackageNamespace(""), "Function")
+		param QName(PackageNamespace(""), "int")
+		returns QName(PackageNamespace(""), "void")
+		optional Int(0)
+		body
+			maxstack 5
+			localcount 7
+			initscopedepth 5
+			maxscopedepth 6
+			code
+				getlocal0               
+				pushscope               
+				getlocal0               
+				getlocal                5
+				setproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "proxiedErrorHandler")
+				getlocal0               
+				pushtrue                
+				setproperty             QName(PackageNamespace(""), "isBusy")
+				getlocal0               
+				findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+				getlocal                4
+				constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant"), 1
+				setproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "newBotParticipant")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "newBotParticipant")
+				getlocal3               
+				setproperty             QName(PackageNamespace(""), "botSkillLevel")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "newBotParticipant")
+				getlocal                6
+				setproperty             QName(PackageNamespace(""), "lastSelectedSkinIndex")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "newBotParticipant")
+				findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.practice"), "Team")
+				getproperty             QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.practice"), "Team")
+				getlocal2               
+				callproperty            QName(PackageNamespace(""), "getBotTeamId"), 1
+				callproperty            QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toString"), 0
+				setproperty             QName(PackageNamespace(""), "teamId")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "newBotParticipant")
+				callproperty            QName(PackageNamespace(""), "updateInternalName"), 0
+				pop                     
+				getlocal0               
+				getlocal1               
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "onBotRemovedSuccess")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "onBotRemoveComplete")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "onServiceRequestError")
+				callproperty            QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:TeamSelectionController", "3"), "internalRemoveBot"), 4
+				pop                     
+				returnvoid              
+			end ;code
+		end ;body
+	end ;method
+end ;trait

@@ -30,19 +30,6 @@
       setproperty         MultinameL([PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl#0"), PackageNamespace(""), Namespace("http://adobe.com/AS3/2006/builtin"), PrivateNamespace(null, "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl#1"), PackageNamespace("com.riotgames.platform.gameclient.module.services.lcds"), PackageInternalNamespace("com.riotgames.platform.gameclient.module.services.lcds"), ProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl"), StaticProtectedNamespace("com.riotgames.platform.gameclient.module.services.lcds:BaseLcdsService"), StaticProtectedNamespace("Object")])
 
 L13:
-      getlocal2
-      findpropstrict      QName(PackageNamespace(""), "Math")
-      getproperty         QName(PackageNamespace(""), "Math")
-      callproperty        QName(PackageNamespace(""), "random"), 0
-      getlocal1
-      getproperty         QName(PackageNamespace(""), "championSkins")
-      getproperty         QName(PackageNamespace(""), "length")
-      pushbyte 2
-      subtract
-      multiply
-      pushbyte 1
-      add_i
-      setproperty         QName(PackageNamespace(""), "lastSelectedSkinIndex")
 
       findpropstrict      QName(PackageNamespace(""), "invokeServiceWithoutSession")
       pushstring          "gameService"

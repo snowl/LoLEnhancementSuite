@@ -1,0 +1,1 @@
+trait slot QName(PackageNamespace(""), "botSkin_cb") type QName(PackageNamespace("com.riotgames.platform.gameclient.components.comboBox"), "SoundComboBox") end

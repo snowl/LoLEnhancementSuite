@@ -1,0 +1,63 @@
+trait method QName(PrivateNamespace("", "50"), "onBotSelectionChanged")
+	method
+		returns QName(PackageNamespace(""), "void")
+		body
+			maxstack 8
+			localcount 4
+			initscopedepth 13
+			maxscopedepth 14
+			code
+				getlocal0               
+				pushscope               
+				getlocal0               
+				getproperty             QName(PackageNamespace(""), "botDifficulty_cb")
+				getproperty             QName(PackageNamespace(""), "selectedIndex")
+				convert_i               
+				setlocal1               
+				getlocal0               
+				getproperty             QName(PackageNamespace(""), "botDifficulty_cb")
+				getproperty             QName(PackageNamespace(""), "selectedIndex")
+				pushbyte                255
+				ifne                    L27
+				pushbyte                0
+				setlocal1               
+				L27:
+				getlocal0               
+				getproperty             QName(PackageNamespace(""), "botChampions_cb")
+				getproperty             QName(PackageNamespace(""), "selectedItem")
+				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "ParticipantChampionSelection")
+				astypelate              
+				coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "ParticipantChampionSelection")
+				setlocal2               
+				getlocal2               
+				iftrue                  L48
+				returnvoid              
+				L48:
+				getlocal0               
+				getproperty             QName(PrivateNamespace("", "50"), "participant")
+				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+				astypelate              
+				coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+				setlocal3               
+				getlocal0               
+				getproperty             QName(PackageNamespace(""), "teamSelectionController")
+				getlocal3               
+				getlocal0               
+				getproperty             QName(PrivateNamespace("", "50"), "slot")
+				getproperty             QName(PackageNamespace(""), "type")
+				getlocal1               
+				getlocal2               
+				getproperty             QName(PackageNamespace(""), "champion")
+				getlocal0               
+				getproperty             QName(PrivateNamespace("", "50"), "onBotSelectionError")
+				getlocal0               
+				getproperty             QName(PackageNamespace(""), "botSkin_cb")
+				getproperty             QName(PackageNamespace(""), "selectedIndex")
+				pushbyte                1
+				add                     
+				callpropvoid            QName(PackageNamespace(""), "removeAndAddBot"), 6
+				returnvoid              
+			end ;code
+		end ;body
+	end ;method
+end ;trait

@@ -1,0 +1,1200 @@
+iinit
+	body
+		maxstack 6
+		localcount 1
+		initscopedepth 13
+		maxscopedepth 14
+		code
+			getlocal0               
+			pushscope               
+			getlocal0               
+			findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+			pushstring              "type"
+			getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+			pushstring              "propertiesFactory"
+			newfunction             
+			inlinemethod
+				flag NeedActivation
+				returns QName(PackageNamespace(""), "Object")
+				body
+					maxstack 20
+					localcount 2
+					initscopedepth 14
+					maxscopedepth 15
+					code
+						newactivation           
+						dup                     
+						setlocal1               
+						pushscope               
+						pushstring              "childDescriptors"
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.controls"), "Image")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Image1"
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 10
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									pushstring              "x"
+									pushbyte                0
+									pushstring              "y"
+									pushbyte                0
+									pushstring              "maintainAspectRatio"
+									pushfalse               
+									pushstring              "smoothBitmapContent"
+									pushfalse               
+									pushstring              "source"
+									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
+									newobject               5
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               4
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.controls"), "Image")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Image2"
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("horizontalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 6
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									pushstring              "maintainAspectRatio"
+									pushfalse               
+									pushstring              "smoothBitmapContent"
+									pushfalse               
+									pushstring              "source"
+									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
+									newobject               3
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               4
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Canvas2"
+						pushstring              "events"
+						pushstring              "toolTipCreate"
+						pushstring              "___TeamMemberRenderer2_Canvas2_toolTipCreate"
+						pushstring              "toolTipHide"
+						pushstring              "___TeamMemberRenderer2_Canvas2_toolTipHide"
+						pushstring              "toolTipShow"
+						pushstring              "___TeamMemberRenderer2_Canvas2_toolTipShow"
+						newobject               3
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "8"
+									setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							flag NeedActivation
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 21
+								localcount 2
+								initscopedepth 15
+								maxscopedepth 16
+								code
+									newactivation           
+									dup                     
+									setlocal1               
+									pushscope               
+									pushstring              "width"
+									pushbyte                48
+									pushstring              "height"
+									pushbyte                48
+									pushstring              "toolTip"
+									pushstring              "unused"
+									pushstring              "horizontalScrollPolicy"
+									pushstring              "off"
+									pushstring              "verticalScrollPolicy"
+									pushstring              "off"
+									pushstring              "childDescriptors"
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerIcon")
+									pushstring              "id"
+									pushstring              "_TeamMemberRenderer2_SummonerIcon1"
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 4
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "width"
+												pushbyte                48
+												pushstring              "height"
+												pushbyte                48
+												newobject               2
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               3
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+									pushstring              "id"
+									pushstring              "_TeamMemberRenderer2_Canvas3"
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "-5"
+												setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "-5"
+												setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										flag NeedActivation
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 16
+											localcount 2
+											initscopedepth 16
+											maxscopedepth 17
+											code
+												newactivation           
+												dup                     
+												setlocal1               
+												pushscope               
+												pushstring              "width"
+												pushbyte                26
+												pushstring              "height"
+												pushbyte                22
+												pushstring              "styleName"
+												pushstring              "teamMemberLevelInset"
+												pushstring              "childDescriptors"
+												findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+												pushstring              "type"
+												getlex                  QName(PackageNamespace("mx.controls"), "Label")
+												pushstring              "id"
+												pushstring              "_TeamMemberRenderer2_Label1"
+												pushstring              "stylesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "void")
+													body
+														maxstack 2
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															getlocal0               
+															pushstring              "5"
+															setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+															getlocal0               
+															pushstring              "0"
+															setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+															getlocal0               
+															pushstring              "center"
+															setproperty             Multiname("textAlign", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+															getlocal0               
+															pushstring              "-2"
+															setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+															returnvoid              
+														end ;code
+													end ;body
+												end ;inlinemethod
+												pushstring              "propertiesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "Object")
+													body
+														maxstack 2
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															pushstring              "styleName"
+															pushstring              "teamMemberLevelInsetLabel"
+															newobject               1
+															returnvalue             
+														end ;code
+													end ;body
+												end ;inlinemethod
+												newobject               4
+												constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+												newarray                1
+												newobject               4
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									newarray                2
+									newobject               6
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               5
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Canvas4"
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							flag NeedActivation
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 13
+								localcount 2
+								initscopedepth 15
+								maxscopedepth 16
+								code
+									newactivation           
+									dup                     
+									setlocal1               
+									pushscope               
+									pushstring              "childDescriptors"
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("mx.controls"), "Image")
+									pushstring              "id"
+									pushstring              "gameOwner_img"
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "6"
+												setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "64"
+												setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 4
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "height"
+												pushbyte                26
+												pushstring              "width"
+												pushbyte                26
+												newobject               2
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("mx.controls"), "Label")
+									pushstring              "id"
+									pushstring              "playerName_txt"
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "50"
+												setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "6"
+												setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "teamMemberName"
+												newobject               1
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("mx.containers"), "HBox")
+									pushstring              "id"
+									pushstring              "optionsButtons"
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "64"
+												setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "5"
+												setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushbyte                2
+												setproperty             Multiname("horizontalGap", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										flag NeedActivation
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 14
+											localcount 2
+											initscopedepth 16
+											maxscopedepth 17
+											code
+												newactivation           
+												dup                     
+												setlocal1               
+												pushscope               
+												pushstring              "childDescriptors"
+												findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+												pushstring              "type"
+												getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+												pushstring              "id"
+												pushstring              "kickBan_btn"
+												pushstring              "events"
+												pushstring              "click"
+												pushstring              "__kickBan_btn_click"
+												pushstring              "addedToStage"
+												pushstring              "__kickBan_btn_addedToStage"
+												newobject               2
+												pushstring              "propertiesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "Object")
+													body
+														maxstack 12
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															pushstring              "x"
+															pushbyte                0
+															pushstring              "height"
+															pushbyte                26
+															pushstring              "width"
+															pushbyte                26
+															pushstring              "styleName"
+															pushstring              "removeButton"
+															pushstring              "useHandCursor"
+															pushtrue                
+															pushstring              "buttonMode"
+															pushtrue                
+															newobject               6
+															returnvalue             
+														end ;code
+													end ;body
+												end ;inlinemethod
+												newobject               4
+												constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+												findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+												pushstring              "type"
+												getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+												pushstring              "id"
+												pushstring              "addFriend_btn"
+												pushstring              "events"
+												pushstring              "click"
+												pushstring              "__addFriend_btn_click"
+												newobject               1
+												pushstring              "propertiesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "Object")
+													body
+														maxstack 10
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															pushstring              "height"
+															pushbyte                26
+															pushstring              "width"
+															pushbyte                26
+															pushstring              "styleName"
+															pushstring              "addButton"
+															pushstring              "useHandCursor"
+															pushtrue                
+															pushstring              "buttonMode"
+															pushtrue                
+															newobject               5
+															returnvalue             
+														end ;code
+													end ;body
+												end ;inlinemethod
+												newobject               4
+												constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+												findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+												pushstring              "type"
+												getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+												pushstring              "id"
+												pushstring              "viewProfile_btn"
+												pushstring              "events"
+												pushstring              "click"
+												pushstring              "__viewProfile_btn_click"
+												newobject               1
+												pushstring              "propertiesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "Object")
+													body
+														maxstack 10
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															pushstring              "height"
+															pushbyte                26
+															pushstring              "width"
+															pushbyte                26
+															pushstring              "styleName"
+															pushstring              "viewProfileButton"
+															pushstring              "useHandCursor"
+															pushtrue                
+															pushstring              "buttonMode"
+															pushtrue                
+															newobject               5
+															returnvalue             
+														end ;code
+													end ;body
+												end ;inlinemethod
+												newobject               4
+												constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+												findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+												pushstring              "type"
+												getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+												pushstring              "id"
+												pushstring              "delegateInvitePowerBtn"
+												pushstring              "events"
+												pushstring              "change"
+												pushstring              "__delegateInvitePowerBtn_change"
+												pushstring              "addedToStage"
+												pushstring              "__delegateInvitePowerBtn_addedToStage"
+												newobject               2
+												pushstring              "propertiesFactory"
+												newfunction             
+												inlinemethod
+													returns QName(PackageNamespace(""), "Object")
+													body
+														maxstack 8
+														localcount 1
+														initscopedepth 16
+														maxscopedepth 16
+														code
+															pushstring              "height"
+															pushbyte                26
+															pushstring              "width"
+															pushbyte                26
+															pushstring              "toggle"
+															pushtrue                
+															pushstring              "styleName"
+															pushstring              "delegateInvitePower"
+															newobject               4
+															returnvalue             
+														end ;code
+													end ;body
+												end ;inlinemethod
+												newobject               4
+												constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+												newarray                4
+												newobject               1
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("mx.controls"), "Text")
+									pushstring              "id"
+									pushstring              "participantStatsText"
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "5"
+												setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "0"
+												setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "right"
+												setproperty             Multiname("textAlign", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 6
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "width"
+												pushshort               300
+												pushstring              "styleName"
+												pushstring              "practiceGameStats"
+												pushstring              "selectable"
+												pushfalse               
+												newobject               3
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									newarray                4
+									newobject               1
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               4
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Canvas5"
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							flag NeedActivation
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 13
+								localcount 2
+								initscopedepth 15
+								maxscopedepth 16
+								code
+									newactivation           
+									dup                     
+									setlocal1               
+									pushscope               
+									pushstring              "childDescriptors"
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+									pushstring              "id"
+									pushstring              "takeSlot_btn"
+									pushstring              "events"
+									pushstring              "click"
+									pushstring              "__takeSlot_btn_click"
+									newobject               1
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "0"
+												setproperty             Multiname("horizontalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "0"
+												setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "longButtonBlue"
+												newobject               1
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               5
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+									pushstring              "id"
+									pushstring              "addBot_btn"
+									pushstring              "events"
+									pushstring              "click"
+									pushstring              "__addBot_btn_click"
+									newobject               1
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "5"
+												setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "0"
+												setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "s1FormButton"
+												newobject               1
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               5
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									newarray                2
+									newobject               1
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               4
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+						pushstring              "type"
+						getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
+						pushstring              "id"
+						pushstring              "_TeamMemberRenderer2_Canvas6"
+						pushstring              "stylesFactory"
+						newfunction             
+						inlinemethod
+							returns QName(PackageNamespace(""), "void")
+							body
+								maxstack 2
+								localcount 1
+								initscopedepth 14
+								maxscopedepth 14
+								code
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									getlocal0               
+									pushstring              "0"
+									setproperty             Multiname("bottom", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+									returnvoid              
+								end ;code
+							end ;body
+						end ;inlinemethod
+						pushstring              "propertiesFactory"
+						newfunction             
+						inlinemethod
+							flag NeedActivation
+							returns QName(PackageNamespace(""), "Object")
+							body
+								maxstack 20
+								localcount 2
+								initscopedepth 15
+								maxscopedepth 16
+								code
+									newactivation           
+									dup                     
+									setlocal1               
+									pushscope               
+									pushstring              "childDescriptors"
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.comboBox"), "SoundComboBox")
+									pushstring              "id"
+									pushstring              "botChampions_cb"
+									pushstring              "events"
+									pushstring              "change"
+									pushstring              "__botChampions_cb_change"
+									pushstring              "click"
+									pushstring              "__botChampions_cb_click"
+									newobject               2
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "5"
+												setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "80"
+												setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 8
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "botSelectComboBox"
+												pushstring              "width"
+												pushshort               170
+												pushstring              "itemRenderer"
+												findpropstrict          QName(PrivateNamespace("", "50"), "_TeamMemberRenderer2_ClassFactory1_c")
+												callproperty            QName(PrivateNamespace("", "50"), "_TeamMemberRenderer2_ClassFactory1_c"), 0
+												pushstring              "dropdownFactory"
+												findpropstrict          QName(PrivateNamespace("", "50"), "_TeamMemberRenderer2_ClassFactory2_c")
+												callproperty            QName(PrivateNamespace("", "50"), "_TeamMemberRenderer2_ClassFactory2_c"), 0
+												newobject               4
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               5
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.comboBox"), "SoundComboBox")
+									pushstring              "id"
+									pushstring              "botDifficulty_cb"
+									pushstring              "events"
+									pushstring              "change"
+									pushstring              "__botDifficulty_cb_change"
+									newobject               1
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "272"
+												setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "21"
+												setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 4
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "botSelectComboBox"
+												pushstring              "width"
+												pushshort               140
+												newobject               2
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               5
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.comboBox"), "SoundComboBox")
+									pushstring              "id"
+									pushstring              "botSkin_cb"
+									pushstring              "events"
+									pushstring              "change"
+									pushstring              "__botDifficulty_cb_change"
+									newobject               1
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "80"
+												setproperty             Multiname("left", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "35"
+												setproperty             Multiname("top", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 4
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "botSelectComboBox"
+												pushstring              "width"
+												pushshort               170
+												newobject               2
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               5
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									findpropstrict          QName(PackageNamespace("mx.core"), "UIComponentDescriptor")
+									pushstring              "type"
+									getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.button"), "SoundEffectButton")
+									pushstring              "events"
+									pushstring              "click"
+									pushstring              "___TeamMemberRenderer2_SoundEffectButton7_click"
+									newobject               1
+									pushstring              "stylesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "void")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												getlocal0               
+												pushstring              "5"
+												setproperty             Multiname("right", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												getlocal0               
+												pushstring              "0"
+												setproperty             Multiname("verticalCenter", [PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+												returnvoid              
+											end ;code
+										end ;body
+									end ;inlinemethod
+									pushstring              "propertiesFactory"
+									newfunction             
+									inlinemethod
+										returns QName(PackageNamespace(""), "Object")
+										body
+											maxstack 2
+											localcount 1
+											initscopedepth 15
+											maxscopedepth 15
+											code
+												pushstring              "styleName"
+												pushstring              "blueCloseButton"
+												newobject               1
+												returnvalue             
+											end ;code
+										end ;body
+									end ;inlinemethod
+									newobject               4
+									constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+									newarray                4
+									newobject               1
+									returnvalue             
+								end ;code
+							end ;body
+						end ;inlinemethod
+						newobject               4
+						constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+						newarray                6
+						newobject               1
+						returnvalue             
+					end ;code
+				end ;body
+			end ;inlinemethod
+			newobject               2
+			constructprop           QName(PackageNamespace("mx.core"), "UIComponentDescriptor"), 1
+			initproperty            QName(PrivateNamespace("", "50"), "_documentDescriptor_")
+			getlocal0               
+			getlex                  QName(PackageNamespace("com.riotgames.pvpnet.system.alerter"), "AlerterProviderProxy")
+			getproperty             QName(PackageNamespace(""), "instance")
+			initproperty            QName(PackageNamespace(""), "alerter")
+			getlocal0               
+			getlex                  QName(PackageNamespace("com.riotgames.platform.common.session"), "Session")
+			getproperty             QName(PackageNamespace(""), "instance")
+			initproperty            QName(PackageNamespace(""), "session")
+			getlocal0               
+			findpropstrict          QName(PackageNamespace("com.riotgames.util.logging"), "getLogger")
+			getlocal0               
+			callproperty            QName(PackageNamespace("com.riotgames.util.logging"), "getLogger"), 1
+			initproperty            QName(PrivateNamespace("", "50"), "logger")
+			getlocal0               
+			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
+			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
+			getlocal0               
+			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
+			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
+			getlocal0               
+			newarray                0
+			initproperty            QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "_bindings")
+			getlocal0               
+			newarray                0
+			initproperty            QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "_watchers")
+			getlocal0               
+			newobject               0
+			initproperty            QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "_bindingsByDestination")
+			getlocal0               
+			newobject               0
+			initproperty            QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "_bindingsBeginWithWord")
+			getlocal0               
+			constructsuper          0
+			getlex                  QName(PackageNamespace("mx.core"), "mx_internal")
+			coerce                  QName(PackageNamespace(""), "Namespace")
+			findpropstrict          RTQName("_document")
+			getlex                  QName(PackageNamespace("mx.core"), "mx_internal")
+			coerce                  QName(PackageNamespace(""), "Namespace")
+			getlocal0               
+			setproperty             RTQName("_document")
+			getlocal0               
+			pushtrue                
+			initproperty            QName(PackageNamespace(""), "cacheAsBitmap")
+			getlocal0               
+			pushstring              "off"
+			initproperty            QName(PackageNamespace(""), "horizontalScrollPolicy")
+			getlocal0               
+			pushstring              "off"
+			initproperty            QName(PackageNamespace(""), "verticalScrollPolicy")
+			getlocal0               
+			pushstring              "initialize"
+			getlocal0               
+			getproperty             QName(PackageNamespace(""), "___TeamMemberRenderer2_Canvas1_initialize")
+			callpropvoid            QName(PackageNamespace(""), "addEventListener"), 2
+			returnvoid              
+		end ;code
+	end ;body
+end ;iinit
