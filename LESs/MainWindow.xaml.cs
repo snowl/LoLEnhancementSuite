@@ -269,7 +269,7 @@ namespace LESs
                     // This LoL installation appears to be patched at least once
                     String RecentVersion = File.ReadAllText(Path.Combine(lolLocation.LocalPath, "LESs_recent.version"));
                     String CurrentVersion = File.ReadAllText(Path.Combine(lolLocation.LocalPath, "lol.version"));
-                    if(RecentVersion.Equals(CurrentVersion))
+                    if(!RecentVersion.Equals(CurrentVersion))
                     {
                         MessageBoxResult diagRst = MessageBox.Show("Current LoL version is not the same version as your backup file." + Environment.NewLine + "This can cause some damage." + Environment.NewLine + "Would you like to continue?", "Different version found!", MessageBoxButton.YesNo);
                         if(diagRst == MessageBoxResult.Yes)
