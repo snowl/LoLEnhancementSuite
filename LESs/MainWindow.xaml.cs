@@ -390,7 +390,7 @@ namespace LESs
                                 {
                                     Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", CurrentLocation));
                                 }
-                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", patch.Swf)))
                                 {
                                     if(overwrite) File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
                                 }
