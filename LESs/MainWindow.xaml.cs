@@ -283,6 +283,14 @@ namespace LESs
                             return;
                         }
                     }
+                    else
+                    {
+                        GarenaBackupWorker.RunWorkerAsync();
+                    }
+                }
+                else
+                {
+                    GarenaBackupWorker.RunWorkerAsync();
                 }
             }
             else
