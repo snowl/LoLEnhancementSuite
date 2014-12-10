@@ -1,0 +1,13 @@
+﻿<Window x:Class="LESs.RemovePopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Version Selector" Height="170" Width="270" ResizeMode="NoResize" Icon="patch.ico">
+    <Grid Background="WhiteSmoke">
+        <StackPanel Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Select the latest version of LoL" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontWeight="Light" FontStyle="Italic" FontSize="14" Foreground="#FF595959"/>
+            <ComboBox x:Name="VersionComboBox" HorizontalAlignment="Left" Margin="0,0,0,5" VerticalAlignment="Top" Width="200"/>
+            <Button x:Name="RemoveBackupButton" Content="Remove via Backups" Margin="0,0,0,5" Height="30" Width="200" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False"/>
+            <Button x:Name="RemoveRiotButton" Content="Remove via Riot Patcher" Margin="0,0,0,5" Height="30" Width="200" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>

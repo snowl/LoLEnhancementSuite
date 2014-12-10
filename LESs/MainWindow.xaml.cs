@@ -23,16 +23,15 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string INTENDED_VERSION = "0.0.1.115";
-        private bool IsGarena;
+        private const string INTENDED_VERSION = "0.0.1.120";
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
-        private readonly BackgroundWorker GarenaBackupWorker = new BackgroundWorker();
         private ErrorLevel _errorLevel = ErrorLevel.NoError;
         private Dictionary<CheckBox, LessMod> _lessMods = new Dictionary<CheckBox, LessMod>();
-        private Stopwatch Stahpwatch;
+        private Stopwatch timer;
+        private ServerType type;
 
-        private string _modsDirectory="mods";
+        private string _modsDirectory = "mods";
 
         public MainWindow()
         {
@@ -46,7 +45,6 @@ namespace LESs
         {
             Exception Error = e.Exception;
             MessageBox.Show(Error.Message + Environment.NewLine + Error.StackTrace + Environment.NewLine);
-            
         }
 
         /// <summary>
@@ -65,10 +63,6 @@ namespace LESs
             //Set the events for the worker when the patching starts.
             _worker.DoWork += worker_DoWork;
             _worker.RunWorkerCompleted += worker_RunWorkerCompleted;
-
-            //Set the events for the Garena version removing mechanism worker.
-            GarenaBackupWorker.DoWork += GarenaWorker_DoWork;
-            GarenaBackupWorker.RunWorkerCompleted += GarenaWorker_WorkCompleted;
 
             //Enable exception logging if the debugger ISNT attached.
             if (!Debugger.IsAttached)
@@ -135,16 +129,16 @@ namespace LESs
         {
             //Disable patching if the user selects another league installation.
             PatchButton.IsEnabled = false;
-            RemoveButton.Visibility = Visibility.Collapsed;
+            RemoveButton.IsEnabled = false;
 
             //Create a file dialog for the user to locate their league of legends installation.
             OpenFileDialog findLeagueDialog = new OpenFileDialog();
-            
+
             //If they don't have League of Legends in the default path, look for Garena.
-            if (!Directory.Exists(Path.Combine("C:\\", "Riot Games", "League of Legends")))
-                findLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Program Files (x86)", "GarenaLoL", "GameData", "Apps", "LoL");
+            if (!Directory.Exists(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "Riot Games", "League of Legends")))
+                findLeagueDialog.InitialDirectory = Path.GetFullPath(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "Program Files (x86)", "GarenaLoL", "GameData", "Apps", "LoL"));
             else
-                findLeagueDialog.InitialDirectory = Path.Combine("C:\\", "Riot Games", "League of Legends");
+                findLeagueDialog.InitialDirectory = Path.GetFullPath(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "Riot Games", "League of Legends"));
 
             findLeagueDialog.DefaultExt = ".exe";
             findLeagueDialog.Filter = "League of Legends Launcher|lol.launcher*.exe|Garena Launcher|lol.exe";
@@ -164,20 +158,13 @@ namespace LESs
 
                 if (!LastSegment.StartsWith("lol.launcher"))
                 {
+                    type = ServerType.GARENA;
+                    RemoveButton.IsEnabled = true;
                     PatchButton.IsEnabled = true;
                     LocationTextbox.Text = Path.Combine(SelectedLocation, "Air");
-                    this.IsGarena = true;
-                    //Enable LESs uninstalling if backup file(s) exist
-                    if(Directory.Exists(Path.Combine(LocationTextbox.Text, "LESsBackup")))
-                    {
-                        RemoveButton.Visibility = Visibility.Visible;
-                        EnableButtons();
-                    }
                 }
                 else
                 {
-                    RemoveButton.Visibility = Visibility.Visible;
-
                     //Check each RADS installation to find the latest installation
                     string radsLocation = Path.Combine(SelectedLocation, "RADS", "projects", "lol_air_client", "releases");
 
@@ -224,16 +211,15 @@ namespace LESs
                             return;
                     }
 
-                    EnableButtons();
+                    type = ServerType.NORMAL;
+                    PatchButton.IsEnabled = true;
+                    RemoveButton.IsEnabled = true;
 
                     LocationTextbox.Text = Path.Combine(finalDirectory, "deploy");
-                    IsGarena = false;
                 }
 
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
-                // We don't need this on Garena
-                if(!IsGarena)
-                    Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", INTENDED_VERSION));
+                Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", INTENDED_VERSION));
             }
         }
 
@@ -252,59 +238,15 @@ namespace LESs
         /// </summary>
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            if(IsGarena)
+            string CurrentLocation = Path.Combine(LocationTextbox.Text, "LESsBackup");
+            string[] targetVersions = Directory.GetDirectories(CurrentLocation);
+            for (int i = 0; i < targetVersions.Length; i++)
             {
-                DisableButtons();
-                Uri lolLocation = new Uri(LocationTextbox.Text);
-                if(!Directory.Exists(Path.Combine(lolLocation.LocalPath, "LESsBackup")))
-                {
-                    StatusLabel.Content = "Backup file not found.";
-                    EnableButtons();
-                    return;
-                }
-                //Strip /Air from location string
-                lolLocation = new Uri(lolLocation.LocalPath.Replace(lolLocation.Segments.Last(), String.Empty));
-                if(File.Exists(Path.Combine(lolLocation.LocalPath, "LESs_recent.version")))
-                {
-                    // This LoL installation appears to be patched at least once
-                    String RecentVersion = File.ReadAllText(Path.Combine(lolLocation.LocalPath, "LESs_recent.version"));
-                    String CurrentVersion = File.ReadAllText(Path.Combine(lolLocation.LocalPath, "lol.version"));
-                    if(!RecentVersion.Equals(CurrentVersion))
-                    {
-                        MessageBoxResult diagRst = MessageBox.Show("Current LoL version is not the same version as your backup file." + Environment.NewLine + "This can cause some damage." + Environment.NewLine + "Would you like to continue?", "Different version found!", MessageBoxButton.YesNo);
-                        if(diagRst == MessageBoxResult.Yes)
-                        {
-                            GarenaBackupWorker.RunWorkerAsync();
-                        }
-                        else
-                        {
-                            StatusLabel.Content = "Aborted";
-                            EnableButtons();
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        GarenaBackupWorker.RunWorkerAsync();
-                    }
-                }
-                else
-                {
-                    GarenaBackupWorker.RunWorkerAsync();
-                }
+                targetVersions[i] = targetVersions[i].Remove(0, CurrentLocation.Length).Replace("\\", "").Replace("/", "");
             }
-            else
-            {
-                /*This works by removing S_OK from the AIR installation. This has the same effect as clicking "Repair" in the patcher
-                except it only makes it check the AIR installation, not the entire game. This speeds it up from 10-20 minutes
-                to only a minute max.*/
-                if (File.Exists(Path.Combine(LocationTextbox.Text.Substring(0, LocationTextbox.Text.Length - 7), "S_OK")))
-                {
-                    File.Delete(Path.Combine(LocationTextbox.Text.Substring(0, LocationTextbox.Text.Length - 7), "S_OK"));
-                    MessageBox.Show("LESs will be removed next time League of Legends launches!");
-                    StatusLabel.Content = "Removed LESs";
-                }
-            }
+
+            RemovePopup popup = new RemovePopup(type, targetVersions, LocationTextbox.Text);
+            popup.Show();
         }
 
         /// <summary>
@@ -316,9 +258,12 @@ namespace LESs
 
             //Gets the list of mods
             ItemCollection modCollection = null;
+            string lolLocation = null;
+
             Dispatcher.Invoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 modCollection = ModsListBox.Items;
+                lolLocation = LocationTextbox.Text;
             }));
 
             SetStatusLabelAsync("Gathering mods...");
@@ -339,35 +284,8 @@ namespace LESs
                 }
             }
 
-            string lolLocation = null;
-            bool overwrite = true;
-            Dispatcher.Invoke(DispatcherPriority.Input, new ThreadStart(() =>
-            {
-                lolLocation = LocationTextbox.Text;
-            }));
-            if (IsGarena)
-            {
-                MessageBox.Show("Garena detected! Please note that you must uninstall LESs before patching your LoL with Garena." + Environment.NewLine + "Otherwise, your Garena LoL patcher will complain hard and we are not responsible for it ;).");
-                Uri lolRootLocation = new Uri(lolLocation);
-                lolRootLocation = new Uri(lolRootLocation.LocalPath.Replace(lolRootLocation.Segments.Last(), String.Empty));
-                // Get LoL latest patched date
-                String versionLocation = Path.Combine(lolRootLocation.LocalPath, "lol.version");
-                if (File.Exists(versionLocation))
-                {
-                    // Store the date in another file. It will be used in LESs removing.
-                    File.Copy(versionLocation, Path.Combine(lolRootLocation.LocalPath, "LESs_recent.version"), true);
-                }
-                if(Directory.Exists(Path.Combine(lolLocation, "LESsBackup")))
-                {
-                    MessageBoxResult diagRst = MessageBox.Show("We found that you already have backup files. Overwriting it may result in you losing your original files." + Environment.NewLine + "Would you like to overwrite your old files?", "You already have backup files", MessageBoxButton.YesNo);
-                    if (diagRst == MessageBoxResult.No)
-                    {
-                        overwrite = false;
-                    }
-                }
-            }
             Dictionary<string, SwfFile> swfs = new Dictionary<string, SwfFile>();
-            Stahpwatch = Stopwatch.StartNew();
+            timer = Stopwatch.StartNew();
             foreach (var lessMod in modsToPatch)
             {
                 Debug.Assert(lessMod.Patches.Length > 0);
@@ -380,32 +298,18 @@ namespace LESs
 
                         //Backup the SWF
                         string CurrentLocation = "";
-                        string[] FileLocation = patch.Swf.Split('/');
+                        string[] FileLocation = patch.Swf.Split('/', '\\');
                         foreach (string s in FileLocation.Take(FileLocation.Length - 1))
                         {
                             CurrentLocation = Path.Combine(CurrentLocation, s);
-                            if(IsGarena)
+                            if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation)))
                             {
-                                if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", CurrentLocation)))
-                                {
-                                    Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", CurrentLocation));
-                                }
-                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", patch.Swf)))
-                                {
-                                    if(overwrite) File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", patch.Swf));
-                                }
+                                Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation));
                             }
-                            else
-                            {
-                                if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation)))
-                                {
-                                    Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation));
-                                }
-                                if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
-                                {
-                                    File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf));
-                                }
-                            }                            
+                        }
+                        if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                        {
+                            File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf));
                         }
 
                         swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));
@@ -425,7 +329,7 @@ namespace LESs
 
                         ClassInfo cls = si.GetClassByClassName(patch.Class);
                         classFound = true;
-                        
+
                         Assembler asm;
                         switch (patch.Action)
                         {
@@ -493,7 +397,7 @@ namespace LESs
                             case "remove_instance_trait":
                                 throw new NotImplementedException();
                             default:
-                                throw new NotSupportedException("Unknown Action \"" + patch.Action + "\" in mod "+lessMod.Name);
+                                throw new NotSupportedException("Unknown Action \"" + patch.Action + "\" in mod " + lessMod.Name);
                         }
                     }
 
@@ -521,7 +425,7 @@ namespace LESs
                         throw;
                 }
             }
-            Stahpwatch.Stop();
+            timer.Stop();
         }
 
         /// <summary>
@@ -533,7 +437,7 @@ namespace LESs
             {
                 case ErrorLevel.NoError:
                     StatusLabel.Content = "Done patching!";
-                    MessageBox.Show("LESs has been successfully patched into League of Legends!\n(In " + Stahpwatch.ElapsedMilliseconds + "ms)");
+                    MessageBox.Show("LESs has been successfully patched into League of Legends!\n(In " + timer.ElapsedMilliseconds + "ms)");
                     break;
                 case ErrorLevel.UnableToPatch:
                     SetStatusLabelAsync("[Error] Please check debug.log for more information.");
@@ -545,47 +449,6 @@ namespace LESs
                     break;
             }
             PatchButton.IsEnabled = true;
-            RemoveButton.IsEnabled = true;
-        }
-
-        /// <summary>
-        /// Called on backup when Garena is detected.
-        /// </summary>
-        private void GarenaWorker_DoWork(object sender, DoWorkEventArgs args)
-        {
-            String lolPath = null;
-            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
-                {
-                    lolPath = LocationTextbox.Text;
-                }
-            ));
-            Thread.Sleep(1000);
-            String BackupPath = Path.Combine(lolPath, "LESsBackup");
-            String[] BackupFiles = Directory.GetFiles(BackupPath, "*.*", SearchOption.AllDirectories);
-            foreach(String file in BackupFiles)
-            {
-                Uri fileUri = new Uri(file);
-                FileAttributes attr = File.GetAttributes(file);
-                if(!((attr & FileAttributes.Directory) == FileAttributes.Directory))
-                {
-                    String newPath = file.Replace("\\LESsBackup", String.Empty);
-                    SetStatusLabelAsync("Copying : " + fileUri.Segments.Last());
-                    File.Copy(file, newPath, true);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Called once LESs has been removed from Garena LoL installation.
-        /// </summary>
-        private void GarenaWorker_WorkCompleted(object sender, RunWorkerCompletedEventArgs args)
-        {
-            SetStatusLabelAsync("Done removing!");
-            Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
-                {
-                    EnableButtons();
-                }
-                ));
         }
 
         /// <summary>
@@ -601,29 +464,12 @@ namespace LESs
         /// </summary>
         private void SetStatusLabelAsync(string text)
         {
-
             Dispatcher.BeginInvoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 StatusLabel.Content = text;
             }));
         }
 
-        /// <summary>
-        /// Disables PatchButton and RemoveButton.
-        /// </summary>
-        private void DisableButtons()
-        {
-            PatchButton.IsEnabled = false;
-            RemoveButton.IsEnabled = false;
-        }
 
-        /// <summary>
-        /// Enables PatchButton and RemoveButton.
-        /// </summary>
-        private void EnableButtons()
-        {
-            PatchButton.IsEnabled = true;
-            RemoveButton.IsEnabled = true;
-        }
     }
 }
