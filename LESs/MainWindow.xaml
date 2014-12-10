@@ -1,7 +1,7 @@
 ﻿<Window x:Class="LESs.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LoL Enhancement Suite Patcher" Width="608" Height="350" ResizeMode="CanMinimize" Icon="patch.ico">
+        Title="LoL Enhancement Suite Patcher" Width="608" Height="350" ResizeMode="CanMinimize">
     <Grid x:Name="MainGrid" VerticalAlignment="Stretch" Background="WhiteSmoke" Loaded="MainGrid_Loaded">
         <Label Content="Select your League of Legends folder" HorizontalAlignment="Left" Margin="6,2,0,0" VerticalAlignment="Top" FontWeight="Light" FontStyle="Italic" FontSize="14" Foreground="#FF595959"/>
         <Label Content="Created by Snowl" HorizontalAlignment="Right" Margin="0,2,6,0" VerticalAlignment="Top" FontWeight="Light" FontStyle="Italic" FontSize="14" Foreground="#FF595959"/>
