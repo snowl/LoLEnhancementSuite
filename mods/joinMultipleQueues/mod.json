@@ -1,0 +1,88 @@
+{
+	"Name": "Join Multiple Queues",
+	"Description": "Not sure which game mode you want to play today? Just join ALL the queues!",
+	"Author": "Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain.game:GameOptionsList",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.controllers:MasterGameViewController",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.lobby:ChooseGameViewLayoutPVP",
+			"Action": "replace_cinit",
+			"Code": "patch3.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.domain:GameQueueManager",
+			"Action": "add_instance_trait",
+			"Code": "patch4.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch5.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand",
+			"Action": "replace_trait",
+			"Code": "patch6.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch7.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch8.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch9.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch10.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch11.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch12.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Action": "replace_trait",
+			"Code": "patch13.asasm"
+		}
+	]
+}

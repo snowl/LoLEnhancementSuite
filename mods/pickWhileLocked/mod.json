@@ -1,0 +1,16 @@
+{
+	"Name": "Pick While Locked",
+	"Description": "Change the champion that you have currently selected while locked. Only works during inital champion select and not in ranked.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": true,
+	"Patches":
+	[
+		{
+			"Swf": "lib/ClientLibChampionSelectionCore.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.controllers:ChampionSelectionControllerNew",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}
