@@ -329,7 +329,7 @@ iinit
 						pushstring              "type"
 						getlex                  QName(PackageNamespace("mx.containers"), "Canvas")
 						pushstring              "id"
-						pushstring              "_TeamMemberRenderer2_Canvas4"
+						pushstring              "participant_canvas"
 						pushstring              "stylesFactory"
 						newfunction             
 						inlinemethod

@@ -21,11 +21,11 @@
       getproperty         QName(PackageNamespace(""), "TEAM_BLUE")
       ifne                L13
 
-      pushstring          "practiceGame_champSelect_blueTeamName"
+      pushstring          "practiceGame_new_teamAColumnHeader"
       jump                L14
 
 L13:
-      pushstring          "practiceGame_champSelect_purpleTeamName"
+      pushstring          "practiceGame_new_teamBColumnHeader"
 L14:
       coerce_s
       setlocal2
