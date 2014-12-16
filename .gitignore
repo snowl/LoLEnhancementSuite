@@ -2,6 +2,8 @@
 [Bb]in/
 [Oo]bj/
 
+mods/pickWhileLocked
+
 # mstest test results
 TestResults
 
