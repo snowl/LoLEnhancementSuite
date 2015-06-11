@@ -1,0 +1,59 @@
+trait method QName(PrivateNamespace(null, "63"), "endNameEditing")
+            method
+                returns QName(PackageNamespace(""), "void")
+                body
+                    maxstack 2
+                    localcount 3
+                    initscopedepth 12
+                    maxscopedepth 13
+                    code
+                        getlocal0
+                        pushscope
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "pageNameEditField")
+                        callproperty            QName(PackageNamespace(""), "getText"), 0
+                        coerce_s
+                        setlocal1
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "runesViewController")
+                        callproperty            QName(PackageNamespace(""), "getCurrentRuneBookPage"), 0
+                        getproperty             QName(PackageNamespace(""), "name")
+                        getlocal1
+                        ifne                    L40
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "pageNameEditSprite")
+                        pushstring              "inactive"
+                        callpropvoid            QName(PackageNamespace(""), "setCurrentState"), 1
+                        returnvoid
+                        L40:
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "runeBookController")
+                        getlocal1
+                        callproperty            QName(Namespace("com.riotgames.platform.common.provider:IRuneBookController"), "validateSpellBookName"), 1
+                        coerce_s
+                        setlocal2
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "errorLabel")
+                        pushfalse
+                        callpropvoid            QName(PackageNamespace(""), "setVisible"), 1
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "pageNameEditSprite")
+                        pushstring              "inactive"
+                        callpropvoid            QName(PackageNamespace(""), "setCurrentState"), 1
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "runesViewController")
+                        callproperty            QName(PackageNamespace(""), "getCurrentRuneBookPage"), 0
+                        getlocal1
+                        setproperty             QName(PackageNamespace(""), "name")
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "runesViewController")
+                        pushtrue
+                        callpropvoid            QName(PackageNamespace(""), "setHasUnsavedChanges"), 1
+                        getlocal0
+                        getproperty             QName(PrivateNamespace(null, "63"), "_runesTracker")
+                        callpropvoid            QName(Namespace("com.riotgames.pvpnet.tracking.trackers.runes:IRunesTracker"), "incrementRunes_PageRenamed_Count_InASession"), 0
+                        returnvoid
+                    end ;code
+                end ;body
+            end ;method
+        end ;trait

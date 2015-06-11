@@ -1,0 +1,22 @@
+{
+	"Name": "®ᵤȵệᵴ",
+	"Description": "Allows rune pages that allow any character/unlimited length.",
+	"Author": "Snowl",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/rune/mod_rune.dat",
+			"Class": "com.riotgames.pvpnet.runes.views:RunesView",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/rune/mod_rune.dat",
+			"Class": "com.riotgames.pvpnet.runes.views:RunesView",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		}
+	]
+}

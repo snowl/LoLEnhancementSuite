@@ -7,19 +7,19 @@
 	"Patches":
 	[
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendListRenderer",
 			"Action": "replace_trait",
 			"Code": "patch1.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu",
 			"Action": "replace_iinit",
 			"Code": "patch2.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendsListMenu",
 			"Action": "replace_trait",
 			"Code": "patch3.asasm"

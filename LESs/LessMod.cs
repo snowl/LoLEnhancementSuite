@@ -7,6 +7,7 @@
         public string Author { get; set; }
         public string Library { get; set; }
         public bool DisabledByDefault { get; set; }
+        public bool PermaDisable { get; set; }
         public string Directory { get; set; }
         public LessPatch[] Patches { get; set; }
     }

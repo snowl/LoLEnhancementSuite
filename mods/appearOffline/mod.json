@@ -13,61 +13,61 @@
 			"Code": "patch1.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
 			"Action": "replace_trait",
 			"Code": "patch2.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "replace_iinit",
 			"Code": "patch3.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "replace_trait",
 			"Code": "patch4.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "replace_trait",
 			"Code": "patch5.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "add_instance_trait",
 			"Code": "patch6.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "add_instance_trait",
 			"Code": "patch7.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "add_instance_trait",
 			"Code": "patch8.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "add_instance_trait",
 			"Code": "patch9.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller",
 			"Action": "add_instance_trait",
 			"Code": "patch10.asasm"
 		},
 		{
-			"Swf": "mod/cht2/mod_cht2.dat",
+			"Swf": "mod/cht/mod_cht.dat",
 			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
 			"Action": "replace_trait",
 			"Code": "patch11.asasm"

@@ -23,7 +23,8 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string INTENDED_VERSION = "0.0.1.120";
+        private const string INTENDED_VERSION = "0.0.1.148";
+        private string current_version;
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
         private ErrorLevel _errorLevel = ErrorLevel.NoError;
@@ -93,6 +94,11 @@ namespace LESs
 
                     CheckBox Check = new CheckBox();
                     Check.IsChecked = !lessMod.DisabledByDefault;
+                    if (lessMod.PermaDisable)
+                    {
+                        Check.IsChecked = false;
+                        Check.IsEnabled = false;
+                    }
                     Check.Content = lessMod.Name;
                     ModsListBox.Items.Add(Check);
 
@@ -155,6 +161,8 @@ namespace LESs
 
                 //Get the executable name to check for Garena
                 string LastSegment = Location.Segments.Last();
+                
+                current_version = INTENDED_VERSION;
 
                 if (!LastSegment.StartsWith("lol.launcher"))
                 {
@@ -211,6 +219,8 @@ namespace LESs
                             return;
                     }
 
+                    current_version = version;
+
                     type = ServerType.NORMAL;
                     PatchButton.IsEnabled = true;
                     RemoveButton.IsEnabled = true;
@@ -219,7 +229,7 @@ namespace LESs
                 }
 
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
-                Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", INTENDED_VERSION));
+                Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", current_version));
             }
         }
 
@@ -302,14 +312,14 @@ namespace LESs
                         foreach (string s in FileLocation.Take(FileLocation.Length - 1))
                         {
                             CurrentLocation = Path.Combine(CurrentLocation, s);
-                            if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation)))
+                            if (!Directory.Exists(Path.Combine(lolLocation, "LESsBackup", current_version, CurrentLocation)))
                             {
-                                Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, CurrentLocation));
+                                Directory.CreateDirectory(Path.Combine(lolLocation, "LESsBackup", current_version, CurrentLocation));
                             }
                         }
-                        if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf)))
+                        if (!File.Exists(Path.Combine(lolLocation, "LESsBackup", current_version, patch.Swf)))
                         {
-                            File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", INTENDED_VERSION, patch.Swf));
+                            File.Copy(Path.Combine(lolLocation, patch.Swf), Path.Combine(lolLocation, "LESsBackup", current_version, patch.Swf));
                         }
 
                         swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));

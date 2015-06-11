@@ -4,6 +4,7 @@
 	"Author": "Antropod",
 	"Library": "AbcSharp",
 	"DisabledByDefault": false,
+	"PermaDisable": true,
 	"Patches":
 	[
 		{
