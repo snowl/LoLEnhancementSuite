@@ -1,0 +1,16 @@
+{
+	"Name": "New Match History",
+	"Description": "Enables the new match history on servers that don't have it enabled",
+	"Author": "Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/mhi/mod_mhi.dat",
+			"Class": "com.riotgames.pvpnet.matchhistoryiron:ClientModuleMatchHistoryIron",
+			"Action": "replace_trait",
+			"Code": "patch1.asasm"
+		}
+	]
+}
