@@ -13,8 +13,6 @@ using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using System.Windows.Documents;
-using System.Windows.Media;
 
 namespace LESs
 {
@@ -23,8 +21,8 @@ namespace LESs
     /// </summary>
     public partial class MainWindow : Window
     {
-        private const string INTENDED_VERSION = "0.0.1.148";
-        private string current_version;
+        private const string INTENDED_VERSION = "0.0.1.152";
+        public static string current_version;
 
         private readonly BackgroundWorker _worker = new BackgroundWorker();
         private ErrorLevel _errorLevel = ErrorLevel.NoError;
@@ -136,6 +134,7 @@ namespace LESs
             //Disable patching if the user selects another league installation.
             PatchButton.IsEnabled = false;
             RemoveButton.IsEnabled = false;
+            HUDButton.IsEnabled = false;
 
             //Create a file dialog for the user to locate their league of legends installation.
             OpenFileDialog findLeagueDialog = new OpenFileDialog();
@@ -169,6 +168,7 @@ namespace LESs
                     type = ServerType.GARENA;
                     RemoveButton.IsEnabled = true;
                     PatchButton.IsEnabled = true;
+                    HUDButton.IsEnabled = false;
                     LocationTextbox.Text = Path.Combine(SelectedLocation, "Air");
                 }
                 else
@@ -224,6 +224,7 @@ namespace LESs
                     type = ServerType.NORMAL;
                     PatchButton.IsEnabled = true;
                     RemoveButton.IsEnabled = true;
+                    HUDButton.IsEnabled = true;
 
                     LocationTextbox.Text = Path.Combine(finalDirectory, "deploy");
                 }
@@ -480,6 +481,10 @@ namespace LESs
             }));
         }
 
-
+        private void HUDButton_Click(object sender, RoutedEventArgs e)
+        {
+            HUDWindow window = new HUDWindow(LocationTextbox.Text);
+            window.Show();
+        }
     }
 }

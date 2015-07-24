@@ -58,6 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AbcSharp.dll</HintPath>
     </Reference>
+    <Reference Include="RAFlibPlus">
+      <HintPath>..\..\OneDrive\Documents\Visual Studio 2015\Projects\raflib-plus-master\bin\Debug\RAFlibPlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web.Extensions" />
@@ -78,13 +81,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusyIndicatorControl.xaml.cs">
+      <DependentUpon>BusyIndicatorControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ClassNotFoundException.cs" />
     <Compile Include="ErrorLevel.cs" />
+    <Compile Include="HUD\ByteLabel.xaml.cs">
+      <DependentUpon>ByteLabel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HUD\HUDItem.cs" />
+    <Compile Include="HUD\HUDWindow.xaml.cs">
+      <DependentUpon>HUDWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RemovePopup.xaml.cs">
       <DependentUpon>RemovePopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="ServerType.cs" />
     <Compile Include="TraitNotFoundException.cs" />
+    <Page Include="BusyIndicatorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HUD\ByteLabel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HUD\HUDWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
