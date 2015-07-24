@@ -58,8 +58,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AbcSharp.dll</HintPath>
     </Reference>
-    <Reference Include="RAFlibPlus">
-      <HintPath>..\..\OneDrive\Documents\Visual Studio 2015\Projects\raflib-plus-master\bin\Debug\RAFlibPlus.dll</HintPath>
+    <Reference Include="RAFlibPlus, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\RAFlibPlus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

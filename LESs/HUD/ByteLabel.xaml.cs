@@ -11,7 +11,12 @@ namespace LESs
     /// </summary>
     public partial class ByteLabel : UserControl
     {
+        //Stores the original byte if the user enters invalid data
         public byte OriginalByte = 0;
+        
+        /// <summary>
+        /// The byte currently stored in the ByteLabel
+        /// </summary>
         public byte Byte
         {
             get { return byte.Parse(ByteTextBox.Text); }
@@ -22,9 +27,10 @@ namespace LESs
         {
             InitializeComponent();
         }
-
+        
         private void ByteTextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            //Reset the label if there is no data entered
             if (e.Key == Key.Enter)
             {
                 if (ByteTextBox.Text == "")
@@ -34,26 +40,31 @@ namespace LESs
 
         private void ByteTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            //Ensure that only allowed data (0-255) is entered into the textbox)
             e.Handled = !IsTextAllowed(e.Text);
         }
 
         private static bool IsTextAllowed(string text)
         {
+            //Test if the data is a number
             Regex regex = new Regex("[^0-9]+");
             return !regex.IsMatch(text);
         }
 
         private void ByteTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            //Reset the label if there is no data entered
             if (ByteTextBox.Text == "")
                 ByteTextBox.Text = OriginalByte.ToString();
         }
 
         private void ByteTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //Don't do anything if the label is empty
             if (ByteTextBox.Text == "")
                 return;
 
+            //Clamp the data to between 0 and 255 (a byte)
             int parse = int.Parse(ByteTextBox.Text);
             string PreClamp = Clamp<int>(parse, 0, 255).ToString();
             if (PreClamp != ByteTextBox.Text)

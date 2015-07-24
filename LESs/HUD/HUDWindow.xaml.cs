@@ -21,6 +21,8 @@ namespace LESs
         public HUDWindow(string location)
         {
             InitializeComponent();
+            
+            //Create a directory to store the current versions HUD data
             if (!Directory.Exists("HUD"))
             {
                 Directory.CreateDirectory("HUD");
@@ -31,26 +33,30 @@ namespace LESs
                 Directory.CreateDirectory(Path.Combine("HUD", MainWindow.current_version));
             }
 
+            //Set the location of the file archives
             _location = location;
             location = location.Substring(0, location.IndexOf("lol_air_client"));
             _LeagueLocation = Path.Combine(location, "lol_game_client", "filearchives");
 
+            //Create a new worker to fetch the config file (takes a few seconds to read through all archives)
             _hudItems = new List<HUDItem>();
             worker = new BackgroundWorker();
             worker.DoWork += Worker_DoWork;
-            worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
-
+            worker.RunWorkerCompleted += Worker_RunWorkerCompleted; 
             worker.RunWorkerAsync();
         }
 
         private void Worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            //Close the locating grid once the data has been retrieved
             LocatingGrid.Visibility = Visibility.Collapsed;
+            //Delete the row definitions to make the grid expand fully
             HolderGrid.RowDefinitions.Clear();
 
+            //Read the current HUD config file and add the items to the list
             using (BinaryReader b = new BinaryReader(File.Open(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin"), FileMode.Open)))
             {
-                b.ReadBytes(0x1501); //Garbage bytes?
+                b.ReadBytes(0x1501); //Garbage bytes? just skip them
                 bool read = true;
                 while (read)
                 {
@@ -60,11 +66,12 @@ namespace LESs
                     }
                     catch
                     {
+                        //Don't read once we exception (EOF)
                         read = false;
                     }
                 }
             }
-
+            
             CategoryComboBox.Items.Clear();
 
             foreach (var item in _hudItems)
@@ -78,9 +85,11 @@ namespace LESs
 
         private void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
+            //Don't read the config again if it already exists
             if (File.Exists(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin")))
                 return;
 
+            //Read the config from the RAF archives and copy it to the folder we created
             RAFMasterFileList list = new RAFMasterFileList(_LeagueLocation);
             var HUDConfig = list.SearchFileEntries("Clarity_RenderUI.bin")[0];
             File.WriteAllBytes(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin"), HUDConfig.GetContent());
@@ -102,6 +111,7 @@ namespace LESs
 
         private void ApplyButton_Click(object sender, RoutedEventArgs e)
         {
+            //Opens the config, applies the patch of the users co-ordinates
             using (Stream stream = File.Open(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin"), FileMode.Open))
             {
                 byte[] ReplacedBytes = _selectedItem.ReplaceCoordinates(new Tuple<byte, byte>(XOnePos.Byte, XTwoPos.Byte),
@@ -110,6 +120,7 @@ namespace LESs
                 stream.Write(ReplacedBytes, 0, ReplacedBytes.Length);
             }
 
+            //Save the file into the RAF archive
             RAFMasterFileList list = new RAFMasterFileList(_LeagueLocation);
             var HUDConfig = list.SearchFileEntries("Clarity_RenderUI.bin")[0];
             HUDConfig.ReplaceContent(File.ReadAllBytes(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin")));
@@ -120,6 +131,7 @@ namespace LESs
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            //Replaces the current HUDConfig with the backed-up one and resets the window
             RAFMasterFileList list = new RAFMasterFileList(_LeagueLocation);
             var HUDConfig = list.SearchFileEntries("Clarity_RenderUI.bin")[0];
             HUDConfig.ReplaceContent(File.ReadAllBytes(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin.bak")));
