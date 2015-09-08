@@ -1,175 +1,63 @@
-  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "updateSkin")
+  trait method QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), "updateSkinImage")
    method
     name ""
     returns QName(PackageNamespace(""), "void")
     body
      maxstack 3
-     localcount 4
-     initscopedepth 13
-     maxscopedepth 14
+     localcount 2
+     initscopedepth 12
+     maxscopedepth 13
      code
       getlocal0
       pushscope
 
-      pushnull
-      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      setlocal2
-
-      pushbyte            0
-      convert_u
-      setlocal3
-
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      pushnull
-      equals
-      convert_b
-      dup
-      convert_b
-      iftrue              L23
-
-      pop
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getproperty         QName(PackageNamespace(""), "selectedChild")
-      pushnull
-      equals
-      convert_b
-L23:
-      iffalse             L25
-
-      returnvoid
-
-L25:
-      pushbyte            0
-      convert_u
+      pushstring          ""
+      coerce_s
       setlocal1
 
-      jump                L54
-
-L29:
-      label
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getlocal1
-      callproperty        QName(PackageNamespace(""), "getChildAt"), 1
-      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      astypelate
-      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      setlocal2
-
-      getlocal2
-      convert_b
-      iffalse             L50
-
-      getlocal2
-      getlocal2
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getproperty         QName(PackageNamespace(""), "selectedChild")
-      equals
-      callproperty        QName(PackageNamespace(""), "setFocused"), 1
-      pop
-L50:
-      getlocal1
-      increment
-      convert_u
-      setlocal1
-
-L54:
-      getlocal1
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getproperty         QName(PackageNamespace(""), "numChildren")
-      iflt                L29
-
-      pushbyte            0
-      convert_u
-      setlocal1
-
-      jump                L82
-
-L63:
-      label
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getlocal1
-      callproperty        QName(PackageNamespace(""), "getChildAt"), 1
-      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      astypelate
-      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      setlocal2
-
-      getlocal2
-      convert_b
-      iffalse             L81
-
-      getlocal2
+      findpropstrict      QName(PackageNamespace(""), "data")
       getproperty         QName(PackageNamespace(""), "data")
-      getproperty         QName(PackageNamespace(""), "lastSelected")
-      iffalse             L81
-
-      inclocal_i          3
-L81:
-      inclocal_i          1
-L82:
-      getlocal1
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getproperty         QName(PackageNamespace(""), "numChildren")
-      iflt                L63
-
-      getlocal3
-      pushbyte            1
-      ifle                L124
-
-      pushbyte            0
-      convert_u
-      setlocal1
-
-      jump                L119
-
-L94:
-      label
-      getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getlocal1
-      callproperty        QName(PackageNamespace(""), "getChildAt"), 1
-      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      astypelate
-      coerce              QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), "CoverFlowChampionSkinRenderer")
-      setlocal2
-
-      getlocal2
       convert_b
-      iffalse             L118
+      iffalse             L30
 
-      getlocal2
+      getlocal0
       getproperty         QName(PackageNamespace(""), "data")
       getproperty         QName(PackageNamespace(""), "skinId")
       pushshort           1000
       modulo
       pushshort           999
-      ifne                L118
+      ifne                L19
 
-      getlocal2
-      getproperty         QName(PackageNamespace(""), "data")
-      pushfalse
-      setproperty         QName(PackageNamespace(""), "lastSelected")
+      pushstring          "/assets/images/champions/Random_0.jpg"
+      setlocal1
 
-L118:
-      inclocal_i          1
-L119:
-      getlocal1
+      jump                L30
+
+L19:
+      findpropstrict      QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.utils"), "ChampionImages")
+      getproperty         QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.utils"), "ChampionImages")
       getlocal0
-      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector"), "skinsCoverFlow")
-      getproperty         QName(PackageNamespace(""), "numChildren")
-      iflt                L94
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("championSkinName", [PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), PackageNamespace(""), PrivateNamespace("CoverFlowChampionSkinRenderer.as$799"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), PackageInternalNamespace("com.riotgames.platform.gameclient.controllers.game.views"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), StaticProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "data")
+      getproperty         Multiname("skinIndex", [PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), PackageNamespace(""), PrivateNamespace("CoverFlowChampionSkinRenderer.as$799"), PackageNamespace("com.riotgames.platform.gameclient.controllers.game.views"), PackageInternalNamespace("com.riotgames.platform.gameclient.controllers.game.views"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), StaticProtectedNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+      callproperty        QName(PackageNamespace(""), "getImagePath"), 2
+      coerce_s
+      setlocal1
 
-L124:
+L30:
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), "skinImage")
+      convert_b
+      iffalse             L38
+
+      getlocal0
+      getproperty         QName(PrivateNamespace("com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer"), "skinImage")
+      getlocal1
+      setproperty         QName(PackageNamespace(""), "source")
+
+L38:
       returnvoid
      end ; code
     end ; body

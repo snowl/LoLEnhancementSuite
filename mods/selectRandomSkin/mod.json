@@ -4,7 +4,7 @@
 	"Author": "Antropod",
 	"Library": "AbcSharp",
 	"DisabledByDefault": false,
-	"PermaDisable": true,
+	"PermaDisable": false,
 	"Patches":
 	[
 		{
@@ -15,27 +15,21 @@
 		},
 		{
 			"Swf": "lib/ClientLibChampionSelectionCore.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector",
+			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelectorRendererSupport",
 			"Action": "replace_trait",
 			"Code": "patch2.asasm"
 		},
 		{
 			"Swf": "lib/ClientLibChampionSelectionCore.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.game.views:ChampionSkinSelector",
-			"Action": "replace_trait",
-			"Code": "patch3.asasm"
-		},
-		{
-			"Swf": "lib/ClientLibChampionSelectionCore.dat",
 			"Class": "com.riotgames.platform.gameclient.controllers.game.views:CoverFlowChampionSkinRenderer",
 			"Action": "replace_trait",
-			"Code": "patch4.asasm"
+			"Code": "patch3.asasm"
 		},
 		{
 			"Swf": "mod/ser/mod_ser.dat",
 			"Class": "com.riotgames.platform.gameclient.module.services.lcds:GameServiceImpl",
 			"Action": "replace_trait",
-			"Code": "patch5.asasm"
+			"Code": "patch4.asasm"
 		}
 	]
 }
