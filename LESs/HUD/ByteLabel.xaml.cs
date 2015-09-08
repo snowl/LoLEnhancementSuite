@@ -17,7 +17,7 @@ namespace LESs
         /// <summary>
         /// The byte currently stored in the ByteLabel
         /// </summary>
-        public byte Byte
+        public int Byte
         {
             get { return byte.Parse(ByteTextBox.Text); }
             set { ByteTextBox.Text = value.ToString(); }
@@ -66,7 +66,7 @@ namespace LESs
 
             //Clamp the data to between 0 and 255 (a byte)
             int parse = int.Parse(ByteTextBox.Text);
-            string PreClamp = Clamp<int>(parse, 0, 255).ToString();
+            string PreClamp = Clamp<int>(parse, 0, 99999).ToString();
             if (PreClamp != ByteTextBox.Text)
             {
                 ByteTextBox.Text = PreClamp;

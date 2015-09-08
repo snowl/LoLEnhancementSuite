@@ -11,8 +11,8 @@ namespace LESs
         public string Name { get; set; }
         public string Category { get; set; }
 
-        public Tuple<byte, byte> X { get; set; }
-        public Tuple<byte, byte> Y { get; set; }
+        public Tuple<int, int> X { get; set; }
+        public Tuple<int, int> Y { get; set; }
 
         public byte[] Bytes { get; set; }
         public long Position { get; set; }
@@ -39,19 +39,16 @@ namespace LESs
 
                 //This is still broken ish - just my guess! Seems to kind of work
                 ReadToPattern(b, new byte[4] { 0xBC, 0xF0, 0x8F, 0x0D });
-                b.ReadBytes(2);
-                byte x1 = b.ReadByte();
-                b.ReadBytes(3);
-                byte y1 = b.ReadByte();
-                b.ReadBytes(3);
-                byte x2 = b.ReadByte();
-                b.ReadBytes(3);
-                byte y2 = b.ReadByte();
+                var x1 = BitConverter.ToInt32(b.ReadBytes(4), 0);
+                var y1 = BitConverter.ToInt32(b.ReadBytes(4), 0);
+                var x2 = BitConverter.ToInt32(b.ReadBytes(4), 0);
+                var y2 = BitConverter.ToInt32(b.ReadBytes(4), 0);
 
                 //set the item data to be manipulated later
-                item.X = new Tuple<byte, byte>(x1, x2);
-                item.Y = new Tuple<byte, byte>(y1, y2);
+                item.X = new Tuple<int, int>(x1, x2);
+                item.Y = new Tuple<int, int>(y1, y2);
             }
+
             return item;
         }
 
@@ -61,7 +58,7 @@ namespace LESs
         /// <param name="x">The tuple containing the width and x</param>
         /// <param name="y">The tuple containing with height and y</param>
         /// <returns></returns>
-        public byte[] ReplaceCoordinates(Tuple<byte, byte> x, Tuple<byte, byte> y)
+        public byte[] ReplaceCoordinates(Tuple<int, int> x, Tuple<int, int> y)
         {
             //Use ReallyBadHack to find the location of the co-ordinates
             long ReallyBadHack = 0;
@@ -73,13 +70,13 @@ namespace LESs
             }
 
             //Modify the bytes to the user supplied bytes
-            byte[] FinalBytes = (byte[])Bytes.Clone();
+            /*byte[] FinalBytes = (byte[])Bytes.Clone();
             FinalBytes[ReallyBadHack + 2] = x.Item1;
             FinalBytes[ReallyBadHack + 6] = y.Item1;
             FinalBytes[ReallyBadHack + 10] = x.Item2;
-            FinalBytes[ReallyBadHack + 14] = y.Item2;
+            FinalBytes[ReallyBadHack + 14] = y.Item2;*/
 
-            return FinalBytes;
+            return Bytes;
         }
 
         /// <summary>

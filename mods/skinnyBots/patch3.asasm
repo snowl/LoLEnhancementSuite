@@ -71,7 +71,7 @@ iinit
 									pushstring              "smoothBitmapContent"
 									pushfalse               
 									pushstring              "source"
-									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
+									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_125388417")
 									newobject               5
 									returnvalue             
 								end ;code
@@ -119,7 +119,7 @@ iinit
 									pushstring              "smoothBitmapContent"
 									pushfalse               
 									pushstring              "source"
-									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
+									getlex                  QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_560991945")
 									newobject               3
 									returnvalue             
 								end ;code
@@ -1154,11 +1154,11 @@ iinit
 			callproperty            QName(PackageNamespace("com.riotgames.util.logging"), "getLogger"), 1
 			initproperty            QName(PrivateNamespace("", "50"), "logger")
 			getlocal0               
-			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
-			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_440232390")
+			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_125388417")
+			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_customLobby_playerItemBackground_png_125388417")
 			getlocal0               
-			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
-			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_359335774")
+			getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), "TeamMemberRenderer2__embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_560991945")
+			initproperty            QName(PrivateNamespace("", "50"), "_embed_mxml________ClientAssets_imageEmbeds_teamSelection_separator_centered_blue_png_560991945")
 			getlocal0               
 			newarray                0
 			initproperty            QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "_bindings")

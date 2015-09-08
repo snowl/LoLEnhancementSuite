@@ -28,6 +28,9 @@ namespace LESs
                 Directory.CreateDirectory("HUD");
             }
 
+            if (!Directory.Exists(Path.Combine("HUD", "t")))
+                Directory.CreateDirectory(Path.Combine("HUD", "t"));
+
             if (!Directory.Exists(Path.Combine("HUD", MainWindow.current_version)))
             {
                 Directory.CreateDirectory(Path.Combine("HUD", MainWindow.current_version));
@@ -114,8 +117,8 @@ namespace LESs
             //Opens the config, applies the patch of the users co-ordinates
             using (Stream stream = File.Open(Path.Combine("HUD", MainWindow.current_version, "HUDConfig.bin"), FileMode.Open))
             {
-                byte[] ReplacedBytes = _selectedItem.ReplaceCoordinates(new Tuple<byte, byte>(XOnePos.Byte, XTwoPos.Byte),
-                                                               new Tuple<byte, byte>(YOnePos.Byte, YTwoPos.Byte));
+                byte[] ReplacedBytes = _selectedItem.ReplaceCoordinates(new Tuple<int, int>(XOnePos.Byte, XTwoPos.Byte),
+                                                               new Tuple<int, int>(YOnePos.Byte, YTwoPos.Byte));
                 stream.Position = _selectedItem.Position;
                 stream.Write(ReplacedBytes, 0, ReplacedBytes.Length);
             }
