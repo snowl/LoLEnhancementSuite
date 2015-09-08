@@ -53,12 +53,6 @@ namespace LESs
         {
             LeagueVersionLabel.Content = INTENDED_VERSION;
 
-            //Create the debug log. Delete it if it already exists.
-            if (File.Exists("debug.log"))
-                File.Delete("debug.log");
-
-            File.Create("debug.log").Dispose();
-
             //Set the events for the worker when the patching starts.
             _worker.DoWork += worker_DoWork;
             _worker.RunWorkerCompleted += worker_RunWorkerCompleted;
@@ -75,8 +69,12 @@ namespace LESs
 
             //Make sure that the mods exist in the directory. Warn the user if they dont.
             if (!Directory.Exists(_modsDirectory))
+            {
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
+                Environment.Exit(0);
+            }
 
+            //Get all mods within the mod directory
             var modList = Directory.GetDirectories(_modsDirectory);
 
             //Add each mod to the mod list.
@@ -91,12 +89,16 @@ namespace LESs
                     lessMod.Directory = mod;
 
                     CheckBox Check = new CheckBox();
+                    //Don't automatically check disabled by default mods
                     Check.IsChecked = !lessMod.DisabledByDefault;
+
+                    //If the mod is perma disabled, don't let the user click on it
                     if (lessMod.PermaDisable)
                     {
                         Check.IsChecked = false;
                         Check.IsEnabled = false;
                     }
+
                     Check.Content = lessMod.Name;
                     ModsListBox.Items.Add(Check);
 
@@ -123,7 +125,7 @@ namespace LESs
             if (!string.IsNullOrEmpty(lessMod.Author))
                 ModAuthorLabel.Content = "Author: " + lessMod.Author;
             else
-                ModAuthorLabel.Content = "Author: Dark Voodoo Magicks";
+                ModAuthorLabel.Content = "Author: Anonymous";
         }
 
         /// <summary>
@@ -145,6 +147,7 @@ namespace LESs
             else
                 findLeagueDialog.InitialDirectory = Path.GetFullPath(Path.Combine(Path.GetPathRoot(Environment.SystemDirectory), "Riot Games", "League of Legends"));
 
+            //Only show the league of legends executables
             findLeagueDialog.DefaultExt = ".exe";
             findLeagueDialog.Filter = "League of Legends Launcher|lol.launcher*.exe|Garena Launcher|lol.exe";
 
@@ -152,8 +155,6 @@ namespace LESs
 
             if (foundLeague == true)
             {
-                LogToFile("Selected Location", findLeagueDialog.FileName);
-
                 //Remove the executable from the location
                 Uri Location = new Uri(findLeagueDialog.FileName);
                 string SelectedLocation = Location.LocalPath.Replace(Location.Segments.Last(), string.Empty);
@@ -163,6 +164,7 @@ namespace LESs
                 
                 current_version = INTENDED_VERSION;
 
+                //If the file name is lol.exe, then it's garena
                 if (!LastSegment.StartsWith("lol.launcher"))
                 {
                     type = ServerType.GARENA;
@@ -176,8 +178,7 @@ namespace LESs
                     //Check each RADS installation to find the latest installation
                     string radsLocation = Path.Combine(SelectedLocation, "RADS", "projects", "lol_air_client", "releases");
 
-                    LogToFile("RADS Location", radsLocation);
-
+                    //Compare the version text with format x.x.x.x to get the largest directory
                     var versionDirectories = Directory.GetDirectories(radsLocation);
                     string finalDirectory = "";
                     string version = "";
@@ -207,20 +208,18 @@ namespace LESs
                             version = x.Replace(radsLocation + "\\", "");
                             finalDirectory = x;
                         }
-
-                        LogToFile("Version Found", CompareVersion.ToString());
                     }
 
+                    //If the version isn't the intended version, show a message to the user. This is just a warning and probably can be ignored
                     if (version != INTENDED_VERSION)
                     {
-                        string Message = string.Format("This version of LESs is intended for {0}. Your current version of League of Legends is {1}. Continue? This could harm your installation.", INTENDED_VERSION, version);
+                        string Message = $"This version of LESs is intended for {INTENDED_VERSION}. Your current version of League of Legends is {version}. Continue? This could harm your installation.";
                         MessageBoxResult versionMismatchResult = MessageBox.Show(Message, "Invalid Version", MessageBoxButton.YesNo);
                         if (versionMismatchResult == MessageBoxResult.No)
                             return;
                     }
 
                     current_version = version;
-
                     type = ServerType.NORMAL;
                     PatchButton.IsEnabled = true;
                     RemoveButton.IsEnabled = true;
@@ -229,6 +228,7 @@ namespace LESs
                     LocationTextbox.Text = Path.Combine(finalDirectory, "deploy");
                 }
 
+                //Create the LESsBackup directory to allow the user to uninstall if they wish to later on.
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup"));
                 Directory.CreateDirectory(Path.Combine(LocationTextbox.Text, "LESsBackup", current_version));
             }
@@ -240,7 +240,6 @@ namespace LESs
         private void PatchButton_Click(object sender, RoutedEventArgs e)
         {
             PatchButton.IsEnabled = false;
-            LogToFile("Patch", "Patching started");
             _worker.RunWorkerAsync();
         }
 
@@ -249,14 +248,7 @@ namespace LESs
         /// </summary>
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            string CurrentLocation = Path.Combine(LocationTextbox.Text, "LESsBackup");
-            string[] targetVersions = Directory.GetDirectories(CurrentLocation);
-            for (int i = 0; i < targetVersions.Length; i++)
-            {
-                targetVersions[i] = targetVersions[i].Remove(0, CurrentLocation.Length).Replace("\\", "").Replace("/", "");
-            }
-
-            RemovePopup popup = new RemovePopup(type, targetVersions, LocationTextbox.Text);
+            RemovePopup popup = new RemovePopup(type, LocationTextbox.Text);
             popup.Show();
         }
 
@@ -271,6 +263,7 @@ namespace LESs
             ItemCollection modCollection = null;
             string lolLocation = null;
 
+            //Get the data from the UI thread
             Dispatcher.Invoke(DispatcherPriority.Input, new ThreadStart(() =>
             {
                 modCollection = ModsListBox.Items;
@@ -278,6 +271,7 @@ namespace LESs
             }));
 
             SetStatusLabelAsync("Gathering mods...");
+
             //Gets the list of mods that have been checked.
             List<LessMod> modsToPatch = new List<LessMod>();
             foreach (var x in modCollection)
@@ -295,14 +289,21 @@ namespace LESs
                 }
             }
 
+            //Create a new dictionary to hold the SWF definitions in. This stops opening and closing the same SWF file if it's going to be modified more than once.
             Dictionary<string, SwfFile> swfs = new Dictionary<string, SwfFile>();
+
+            //Start the stopwatch to see how long it took to patch (aiming for ~5 sec or less on test machine)
             timer = Stopwatch.StartNew();
+
+            //Go through each modification
             foreach (var lessMod in modsToPatch)
             {
-                Debug.Assert(lessMod.Patches.Length > 0);
                 SetStatusLabelAsync("Patching mod: " + lessMod.Name);
+
+                //Go through each patch within the mod
                 foreach (var patch in lessMod.Patches)
                 {
+                    //If the swf hasn't been loaded, load it into the dictionary.
                     if (!swfs.ContainsKey(patch.Swf))
                     {
                         string fullPath = Path.Combine(lolLocation, patch.Swf);
@@ -326,7 +327,10 @@ namespace LESs
                         swfs.Add(patch.Swf, SwfFile.ReadFile(fullPath));
                     }
 
+                    //Get the SWF file that is being modified
                     SwfFile swf = swfs[patch.Swf];
+
+                    //Get the ABC tags (containing the code) from the swf file.
                     List<DoAbcTag> tags = swf.GetDoAbcTags();
                     bool classFound = false;
                     foreach (var tag in tags)
@@ -342,9 +346,11 @@ namespace LESs
                         classFound = true;
 
                         Assembler asm;
+                        //Perform the action based on what the patch defines
                         switch (patch.Action)
                         {
                             case "replace_trait": //replace trait (method)
+                                //Load the code from the patch and assemble it to be inserted into the code
                                 asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
                                 TraitInfo newTrait = asm.Assemble() as TraitInfo;
 
@@ -360,6 +366,7 @@ namespace LESs
                                     throw new TraitNotFoundException(String.Format("Can't find trait \"{0}\" in class \"{1}\"", newTrait.Name.Name, patch.Class));
                                 }
 
+                                //Modified the found trait
                                 if (classTrait)
                                 {
                                     cls.Traits[traitIndex] = newTrait;
@@ -370,14 +377,17 @@ namespace LESs
                                 }
                                 break;
                             case "replace_cinit"://replace class constructor
+                                //Load the code from the patch and assemble it to be inserted into the code
                                 asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
                                 cls.ClassInit = asm.Assemble() as MethodInfo;
                                 break;
                             case "replace_iinit"://replace instance constructor
+                                //Load the code from the patch and assemble it to be inserted into the code
                                 asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
                                 cls.Instance.InstanceInit = asm.Assemble() as MethodInfo;
                                 break;
                             case "add_class_trait": //add new class trait (method)
+                                //Load the code from the patch and assemble it to be inserted into the code
                                 asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
                                 newTrait = asm.Assemble() as TraitInfo;
                                 traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
@@ -391,6 +401,7 @@ namespace LESs
                                 }
                                 break;
                             case "add_instance_trait": //add new instance trait (method)
+                                //Load the code from the patch and assemble it to be inserted into the code
                                 asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
                                 newTrait = asm.Assemble() as TraitInfo;
                                 traitIndex = cls.Instance.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
@@ -408,19 +419,19 @@ namespace LESs
                             case "remove_instance_trait":
                                 throw new NotImplementedException();
                             default:
-                                throw new NotSupportedException("Unknown Action \"" + patch.Action + "\" in mod " + lessMod.Name);
+                                throw new NotSupportedException($"Unknown Action \"{patch.Action}\" in mod {lessMod.Name}");
                         }
                     }
 
                     if (!classFound)
                     {
                         _errorLevel = ErrorLevel.UnableToPatch;
-                        throw new ClassNotFoundException(string.Format("Class {0} not found in file {1}", patch.Class, patch.Swf));
+                        throw new ClassNotFoundException($"Class {patch.Class} not found in file {patch.Swf}");
                     }
                 }
             }
-            //return;
 
+            //Save the modified SWFS to their original location
             foreach (var patchedSwf in swfs)
             {
                 try
@@ -460,14 +471,6 @@ namespace LESs
                     break;
             }
             PatchButton.IsEnabled = true;
-        }
-
-        /// <summary>
-        /// Outputs debug information to a file.
-        /// </summary>
-        private void LogToFile(string subject, string message)
-        {
-            File.AppendAllText("debug.log", string.Format("[{0}] {1}{2}", subject, message, Environment.NewLine));
         }
 
         /// <summary>
