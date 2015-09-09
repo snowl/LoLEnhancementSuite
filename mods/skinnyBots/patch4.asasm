@@ -1,292 +1,293 @@
-trait method QName(PrivateNamespace("", "50"), "fillFakeParticipant")
-	method
-		param QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "PresenceStatusData")
-		param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "GameParticipant")
-		returns QName(PackageNamespace(""), "void")
-		body
-			maxstack 10
-			localcount 10
-			initscopedepth 13
-			maxscopedepth 14
-			code
-				getlocal0               
-				pushscope               
-				pushbyte                0
-				setlocal                7
-				newarray                0
-				setlocal                6
-				newarray                0
-				setlocal                8
-				findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData")
-				constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData"), 0
-				coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData")
-				setlocal3               
-				getlocal2               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
-				astypelate              
-				coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
-				setlocal                4
-				getlocal0               
-				getlocal1               
-				initproperty            QName(PrivateNamespace("", "50"), "presence")
-				getlocal1               
-				convert_b               
-				dup                     
-				iffalse                 L51
-				pop                     
-				getlocal                4
-				convert_b               
-				L51:
-				iffalse                 L173
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "level")
-				setproperty             QName(PackageNamespace(""), "level")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedLosses")
-				setproperty             QName(PackageNamespace(""), "rankedLosses")
-				getlocal3               
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "summonerId")
-				setproperty             QName(PackageNamespace(""), "summonerId")
-				getlocal3               
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "summonerName")
-				setproperty             QName(PackageNamespace(""), "summonerName")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "wins")
-				setproperty             QName(PackageNamespace(""), "wins")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "odinWins")
-				setproperty             QName(PackageNamespace(""), "odinWins")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedQueueName")
-				setproperty             QName(PackageNamespace(""), "rankedQueueType")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedRating")
-				setproperty             QName(PackageNamespace(""), "rankedRating")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedWins")
-				setproperty             QName(PackageNamespace(""), "rankedWins")
-				getlocal3               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.buddyImages"), "BuddyImages")
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "profileIconId")
-				callproperty            QName(PackageNamespace(""), "getSummonerIconSafely"), 1
-				setproperty             QName(PackageNamespace(""), "iconSource")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedLeagueName")
-				setproperty             QName(PackageNamespace(""), "rankedLeagueName")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedLeagueDivision")
-				setproperty             QName(PackageNamespace(""), "rankedLeagueDivision")
-				getlocal3               
-				getlocal1               
-				getproperty             QName(PackageNamespace(""), "rankedLeagueTier")
-				setproperty             QName(PackageNamespace(""), "rankedLeagueTier")
-				jump                    L283
-				L173:
-				getlocal3               
-				pushstring              ""
-				setproperty             QName(PackageNamespace(""), "rankedQueueType")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "rankedRating")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "rankedWins")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "wins")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "odinWins")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "rankedLosses")
-				getlocal                4
-				iffalse                 L253
-				getlocal3               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.buddyImages"), "BuddyImages")
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "profileIconId")
-				callproperty            QName(PackageNamespace(""), "getSummonerIconSafely"), 1
-				setproperty             QName(PackageNamespace(""), "iconSource")
-				getlocal3               
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "summonerLevel")
-				setproperty             QName(PackageNamespace(""), "level")
-				getlocal3               
-				getlocal                4
-				getproperty             QName(PackageNamespace(""), "summonerId")
-				setproperty             QName(PackageNamespace(""), "summonerId")
-				jump                    L270
-				L253:
-				getlocal3               
-				pushnull                
-				setproperty             QName(PackageNamespace(""), "iconSource")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "level")
-				getlocal3               
-				pushbyte                0
-				setproperty             QName(PackageNamespace(""), "summonerId")
-				L270:
-				getlocal2               
-				iffalse                 L283
-				getlocal3               
-				getlocal2               
-				getproperty             QName(PackageNamespace(""), "summonerName")
-				setproperty             QName(PackageNamespace(""), "summonerName")
-				L283:
-				getlocal2               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
-				astypelate              
-				coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
-				dup                     
-				setlocal                5
-				iffalse                 L585
-				getlocal3               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
-				pushstring              "name"
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "skinName")
-				pushstring              "**"
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "displayName")
-				add                     
-				callproperty            QName(PackageNamespace(""), "getChampionResourceString"), 3
-				setproperty             QName(PackageNamespace(""), "summonerName")
-				getlocal3               
-				getlocal3               
-				getproperty             QName(PackageNamespace(""), "summonerName")
-				pushstring              " ["
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "botSkillLevelName")
-				add                     
-				pushstring              "]"
-				add                     
-				add                     
-				setproperty             QName(PackageNamespace(""), "summonerName")
-				getlocal3               
-				getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "ChampionImages")
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "skinName")
-				callproperty            QName(PackageNamespace(""), "getIconPath"), 1
-				setproperty             QName(PackageNamespace(""), "iconSource")
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botChampions_cb")
-				getlocal0               
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "championId")
-				callproperty            QName(PrivateNamespace("", "50"), "getChampionSelectionIndex"), 1
-				setproperty             QName(PackageNamespace(""), "selectedIndex")
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botDifficulty_cb")
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "botSkillLevel")
-				setproperty             QName(PackageNamespace(""), "selectedIndex")
-				jump                    L429
-				L407:
-				label                   
-				getlocal                8
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "championSkins")
-				getlocal                7
-				getproperty             MultinameL([PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
-				callpropvoid            QName(PackageNamespace(""), "push"), 1
-				inclocal_i              7
-				L429:
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "championSkins")
-				getproperty             QName(PackageNamespace(""), "length")
-				getlocal                7
-				ifne                    L407
-				pushbyte                0
-				setlocal                7
-				getlocal                8
-				pushstring              "skinIndex"
-				newarray                1
-				getlex                  QName(PackageNamespace(""), "Array")
-				getproperty             QName(PackageNamespace(""), "ASCENDING")
-				newarray                1
-				callpropvoid            QName(PackageNamespace(""), "sortOn"), 2
-				jump                    L522
-				L471:
-				label                   
-				getlocal                6
-				getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
-				pushstring              "name"
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "skinName")
-				getlocal                8
-				getlocal                7
-				getproperty             MultinameL([PrivateNamespace("", "50"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "50"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
-				getproperty             QName(PackageNamespace(""), "skinIndex")
-				pushstring              "**"
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "champion")
-				getproperty             QName(PackageNamespace(""), "displayName")
-				add                     
-				getlocal                7
-				coerce_s                
-				add                     
-				callproperty            QName(PackageNamespace(""), "getChampionSkinResourceString"), 4
-				callpropvoid            QName(PackageNamespace(""), "push"), 1
-				inclocal_i              7
-				L522:
-				getlocal                8
-				getproperty             QName(PackageNamespace(""), "length")
-				getlocal                7
-				ifne                    L471
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botSkin_cb")
-				getlocal                6
-				setproperty             QName(PackageNamespace(""), "dataProvider")
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botSkin_cb")
-				getproperty             QName(PackageNamespace(""), "dropdown")
-				pushnull                
-				ifeq                    L565
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botSkin_cb")
-				getproperty             QName(PackageNamespace(""), "dropdown")
-				getlocal                6
-				setproperty             QName(PackageNamespace(""), "dataProvider")
-				L565:
-				getlocal0               
-				getproperty             QName(PackageNamespace(""), "botSkin_cb")
-				getlocal                5
-				getproperty             QName(PackageNamespace(""), "lastSelectedSkinIndex")
-				pushbyte                1
-				subtract                
-				setproperty             QName(PackageNamespace(""), "selectedIndex")
-				getlocal0               
-				pushtrue                
-				initproperty            QName(ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), "isBot")
-				L585:
-				getlocal0               
-				getlocal3               
-				initproperty            QName(PrivateNamespace("", "50"), "summonerData")
-				getlocal0               
-				callpropvoid            QName(PrivateNamespace("", "50"), "updateStatsText"), 0
-				returnvoid              
-			end ;code
-		end ;body
-	end ;method
+trait method QName(PrivateNamespace("", "1474"), "fillFakeParticipant")
+    method
+        param QName(PackageNamespace("com.riotgames.platform.gameclient.chat.domain"), "PresenceStatusData")
+        param QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "GameParticipant")
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 10
+            localcount 10
+            initscopedepth 13
+            maxscopedepth 14
+            code
+                getlocal0               
+                pushscope               
+                pushbyte                0
+                setlocal                7
+                newarray                0
+                setlocal                6
+                newarray                0
+                setlocal                8
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData"), 0
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.components.summoner"), "SummonerQuickViewData")
+                setlocal3               
+                getlocal2               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+                astypelate              
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "PlayerParticipant")
+                setlocal                4
+                getlocal0               
+                getlocal1               
+                initproperty            QName(PrivateNamespace("", "1474"), "presence")
+                getlocal1               
+                convert_b               
+                dup                     
+                iffalse                 L52
+                pop                     
+                getlocal                4
+                convert_b               
+                L52:
+                iffalse                 L175
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "level")
+                setproperty             QName(PackageNamespace(""), "level")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedLosses")
+                setproperty             QName(PackageNamespace(""), "rankedLosses")
+                getlocal3               
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "summonerId")
+                setproperty             QName(PackageNamespace(""), "summonerId")
+                getlocal3               
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "summonerName")
+                setproperty             QName(PackageNamespace(""), "summonerName")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "wins")
+                setproperty             QName(PackageNamespace(""), "wins")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "odinWins")
+                setproperty             QName(PackageNamespace(""), "odinWins")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedQueueName")
+                setproperty             QName(PackageNamespace(""), "rankedQueueType")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedRating")
+                setproperty             QName(PackageNamespace(""), "rankedRating")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedWins")
+                setproperty             QName(PackageNamespace(""), "rankedWins")
+                getlocal3               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.buddyImages"), "BuddyImages")
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "profileIconId")
+                callproperty            QName(PackageNamespace(""), "getSummonerIconSafely"), 1
+                setproperty             QName(PackageNamespace(""), "iconSource")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedLeagueName")
+                setproperty             QName(PackageNamespace(""), "rankedLeagueName")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedLeagueDivision")
+                setproperty             QName(PackageNamespace(""), "rankedLeagueDivision")
+                getlocal3               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "rankedLeagueTier")
+                setproperty             QName(PackageNamespace(""), "rankedLeagueTier")
+                jump                    L285
+                L175:
+                getlocal3               
+                pushstring              ""
+                setproperty             QName(PackageNamespace(""), "rankedQueueType")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "rankedRating")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "rankedWins")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "wins")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "odinWins")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "rankedLosses")
+                getlocal                4
+                iffalse                 L255
+                getlocal3               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.buddyImages"), "BuddyImages")
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "profileIconId")
+                callproperty            QName(PackageNamespace(""), "getSummonerIconSafely"), 1
+                setproperty             QName(PackageNamespace(""), "iconSource")
+                getlocal3               
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "summonerLevel")
+                setproperty             QName(PackageNamespace(""), "level")
+                getlocal3               
+                getlocal                4
+                getproperty             QName(PackageNamespace(""), "summonerId")
+                setproperty             QName(PackageNamespace(""), "summonerId")
+                jump                    L272
+                L255:
+                getlocal3               
+                pushnull                
+                setproperty             QName(PackageNamespace(""), "iconSource")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "level")
+                getlocal3               
+                pushbyte                0
+                setproperty             QName(PackageNamespace(""), "summonerId")
+                L272:
+                getlocal2               
+                iffalse                 L285
+                getlocal3               
+                getlocal2               
+                getproperty             QName(PackageNamespace(""), "summonerName")
+                setproperty             QName(PackageNamespace(""), "summonerName")
+                L285:
+                getlocal2               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+                astypelate              
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "BotParticipant")
+                dup                     
+                setlocal                5
+                iffalse                 L629
+                getlocal3               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+                pushstring              "name"
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "skinName")
+                pushstring              "**"
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "displayName")
+                add                     
+                callproperty            QName(PackageNamespace(""), "getChampionResourceString"), 3
+                setproperty             QName(PackageNamespace(""), "summonerName")
+                getlocal3               
+                getlocal3               
+                getproperty             QName(PackageNamespace(""), "summonerName")
+                pushstring              " ["
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "botSkillLevelName")
+                add                     
+                pushstring              "]"
+                add                     
+                add                     
+                setproperty             QName(PackageNamespace(""), "summonerName")
+                getlocal3               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "ChampionImages")
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "skinName")
+                callproperty            QName(PackageNamespace(""), "getIconPath"), 1
+                setproperty             QName(PackageNamespace(""), "iconSource")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botChampions_cb")
+                getlocal0               
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "championId")
+                callproperty            QName(PrivateNamespace("", "1474"), "getChampionSelectionIndex"), 1
+                setproperty             QName(PackageNamespace(""), "selectedIndex")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botDifficulty_cb")
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "botSkillLevel")
+                setproperty             QName(PackageNamespace(""), "selectedIndex")
+                getlocal                6
+                pushstring              "Default"
+                callpropvoid            QName(PackageNamespace(""), "push"), 1
+                jump                    L455
+                L430:
+                label                   
+                getlocal                8
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "championSkins")
+                getlocal                7
+                getproperty             MultinameL([PrivateNamespace("", "1474"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "1474"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+                callpropvoid            QName(PackageNamespace(""), "push"), 1
+                inclocal_i              7
+                L455:
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "championSkins")
+                getproperty             QName(PackageNamespace(""), "length")
+                getlocal                7
+                ifne                    L430
+                pushbyte                0
+                setlocal                7
+                getlocal                8
+                pushstring              "skinIndex"
+                newarray                1
+                getlex                  QName(PackageNamespace(""), "Array")
+                getproperty             QName(PackageNamespace(""), "ASCENDING")
+                newarray                1
+                callpropvoid            QName(PackageNamespace(""), "sortOn"), 2
+                jump                    L560
+                L502:
+                label                   
+                getlocal                6
+                getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+                pushstring              "name"
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "skinName")
+                getlocal                8
+                getlocal                7
+                getproperty             MultinameL([PrivateNamespace("", "1474"), PackageNamespace(""), PackageNamespace("mx.binding"), PrivateNamespace("", "1474"), PackageNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), PackageInternalNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection"), Namespace("http://adobe.com/AS3/2006/builtin"), PackageNamespace("flash.accessibility"), PackageNamespace("flash.data"), PackageNamespace("flash.debugger"), PackageNamespace("flash.desktop"), PackageNamespace("flash.display"), PackageNamespace("flash.errors"), PackageNamespace("flash.events"), PackageNamespace("flash.external"), PackageNamespace("flash.filesystem"), PackageNamespace("flash.filters"), PackageNamespace("flash.geom"), PackageNamespace("flash.html"), PackageNamespace("flash.html.script"), PackageNamespace("flash.media"), PackageNamespace("flash.net"), PackageNamespace("flash.printing"), PackageNamespace("flash.profiler"), PackageNamespace("flash.system"), PackageNamespace("flash.text"), PackageNamespace("flash.ui"), PackageNamespace("flash.utils"), PackageNamespace("flash.xml"), PackageNamespace("mx.styles"), ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), StaticProtectedNamespace("mx.containers:Canvas"), StaticProtectedNamespace("mx.core:Container"), StaticProtectedNamespace("mx.core:UIComponent"), StaticProtectedNamespace("mx.core:FlexSprite"), StaticProtectedNamespace("flash.display:Sprite"), StaticProtectedNamespace("flash.display:DisplayObjectContainer"), StaticProtectedNamespace("flash.display:InteractiveObject"), StaticProtectedNamespace("flash.display:DisplayObject"), StaticProtectedNamespace("flash.events:EventDispatcher"), StaticProtectedNamespace("Object")])
+                getproperty             QName(PackageNamespace(""), "skinIndex")
+                pushstring              "**"
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "champion")
+                getproperty             QName(PackageNamespace(""), "displayName")
+                add                     
+                getlocal                7
+                coerce_s                
+                add                     
+                callproperty            QName(PackageNamespace(""), "getChampionSkinResourceString"), 4
+                callpropvoid            QName(PackageNamespace(""), "push"), 1
+                inclocal_i              7
+                L560:
+                getlocal                8
+                getproperty             QName(PackageNamespace(""), "length")
+                getlocal                7
+                ifne                    L502
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botSkin_cb")
+                getlocal                6
+                setproperty             QName(PackageNamespace(""), "dataProvider")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botSkin_cb")
+                getproperty             QName(PackageNamespace(""), "dropdown")
+                pushnull                
+                ifeq                    L609
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botSkin_cb")
+                getproperty             QName(PackageNamespace(""), "dropdown")
+                getlocal                6
+                setproperty             QName(PackageNamespace(""), "dataProvider")
+                L609:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "botSkin_cb")
+                getlocal                5
+                getproperty             QName(PackageNamespace(""), "lastSelectedSkinIndex")
+                setproperty             QName(PackageNamespace(""), "selectedIndex")
+                getlocal0               
+                pushtrue                
+                initproperty            QName(ProtectedNamespace("com.riotgames.platform.gameclient.views.game.practice.teamselection:TeamMemberRenderer2"), "isBot")
+                L629:
+                getlocal0               
+                getlocal3               
+                initproperty            QName(PrivateNamespace("", "1474"), "summonerData")
+                getlocal0               
+                callpropvoid            QName(PrivateNamespace("", "1474"), "updateStatsText"), 0
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
 end ;trait
