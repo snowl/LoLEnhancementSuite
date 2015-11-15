@@ -3,9 +3,9 @@ LoLEnhancementSuite
 
 A set of bytecode patches for the League of Legends client to enhance and fix bugs. Download link is provided below.
 
-These mods are for the version `0.0.1.160`. This number wont be changed until ALL mods are updated. While the patcher WILL attempt to patch versions above it, bad things may happen.
+This patcher may not be updated for the latest version of League of Legends. It will display a warning message if it hasn't been. If so, patch at your own caution! There is an uninstallation feature built in to help you remove any changes that have been made.
 
-![Patcher](http://i.imgur.com/zcgxRIG.png)
+![Patcher](http://i.imgur.com/qRgnAZm.png)
 
 ## Downloads
 
