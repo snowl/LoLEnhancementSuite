@@ -30,7 +30,6 @@
 
         <StackPanel Margin="0,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right">
             <Label x:Name="LeagueVersionLabel" Margin="0,0,0,5" FontSize="14" HorizontalAlignment="Right" FontStyle="Italic"/>
-            <Button x:Name="HUDButton" Content="Modify HUD" Margin="0,0,0,5" Height="30" Width="100" Background="#FF98CB89" FontSize="16" FontWeight="Bold" Visibility="Collapsed" IsEnabled="False" Click="HUDButton_Click"/>
             <Button x:Name="RemoveButton" Content="Remove LES" Margin="0,0,0,5" Height="30" Width="100" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False" Click="RemoveButton_Click"/>
             <Button x:Name="PatchButton" Content="Patch!" Margin="0,0,0,5" Height="30" Width="100" Background="#FF98CB89" FontSize="16" FontWeight="Bold" IsEnabled="False" Click="PatchButton_Click"/>
         </StackPanel>
