@@ -179,7 +179,7 @@ trait method QName(PrivateNamespace("", "1474"), "fillFakeParticipant")
                 add                     
                 setproperty             QName(PackageNamespace(""), "summonerName")
                 getlocal3               
-                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.views.game.common"), "ChampionImages")
+                getlex                  QName(PackageNamespace("com.riotgames.platform.gameclient.controllers.game.utils"), "ChampionImages")
                 getlocal                5
                 getproperty             QName(PackageNamespace(""), "champion")
                 getproperty             QName(PackageNamespace(""), "skinName")
