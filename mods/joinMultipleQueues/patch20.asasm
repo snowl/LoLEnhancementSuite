@@ -1,0 +1,45 @@
+trait setter QName(PackageNamespace(""), "gameModeDisplayName")
+    method
+        param QName(PackageNamespace(""), "String")
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 6
+            localcount 3
+            initscopedepth 5
+            maxscopedepth 6
+            code
+                getlocal0               
+                pushscope               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameModeDisplayName")
+                coerce                  QName(PackageNamespace(""), "Object")
+                setlocal2               
+                getlocal2               
+                getlocal1               
+                ifstricteq              L54
+                getlocal1               
+                pushstring              "jmq_pvp"
+                ifne                    L34
+                getlocal0               
+                pushstring              "Join Multiple Queues!"
+                setproperty             QName(PrivateNamespace("", "630"), "_gameModeDisplayName")
+                jump                    L39
+                L34:
+                getlocal0               
+                getlocal1               
+                setproperty             QName(PrivateNamespace("", "630"), "_2051556744gameModeDisplayName")
+                L39:
+                getlocal0               
+                getlex                  QName(PackageNamespace("mx.events"), "PropertyChangeEvent")
+                getlocal0               
+                pushstring              "gameModeDisplayName"
+                getlocal2               
+                getlocal1               
+                callproperty            QName(PackageNamespace(""), "createUpdateEvent"), 4
+                callpropvoid            QName(PackageNamespace(""), "dispatchEvent"), 1
+                L54:
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

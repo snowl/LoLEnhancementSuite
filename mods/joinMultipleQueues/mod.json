@@ -120,6 +120,18 @@
 			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
 			"Action": "replace_cinit",
 			"Code": "patch19.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch20.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch21.asasm"
 		}
 	]
 }

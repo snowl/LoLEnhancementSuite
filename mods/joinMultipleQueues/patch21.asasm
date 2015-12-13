@@ -1,0 +1,82 @@
+trait method QName(PrivateNamespace("", "630"), "setupGameModeDescription")
+    method
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 4
+            localcount 4
+            initscopedepth 5
+            maxscopedepth 6
+            code
+                getlocal0               
+                pushscope               
+                pushnull                
+                coerce_s                
+                setlocal3               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "gameMode")
+                pushnull                
+                ifne                    L26
+                getlocal0               
+                pushstring              ""
+                initproperty            QName(PackageNamespace(""), "gameModeDisplayDescription")
+                returnvoid              
+                L26:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "gameMode")
+                pushstring              "_game_mode_description"
+                add                     
+                setlocal1               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "gameMode")
+                pushstring              "jmq_pvp"
+                ifne                    L64
+                pushstring              "Not sure what you want to play today?\rLet the server decide what you\'ll play!"
+                setlocal2               
+                jump                    L74
+                L64:
+                getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+                getlocal1               
+                callproperty            QName(PackageNamespace(""), "getString"), 1
+                coerce_s                
+                setlocal2               
+                L74:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "difficulty")
+                pushnull                
+                ifeq                    L126
+                getlocal1               
+                pushstring              "_"
+                add                     
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "difficulty")
+                callproperty            QName(Namespace("http://adobe.com/AS3/2006/builtin"), "toLowerCase"), 0
+                add                     
+                coerce_s                
+                setlocal3               
+                getlocal0               
+                getlex                  QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
+                getlocal3               
+                getlocal2               
+                callproperty            QName(PackageNamespace(""), "getString"), 2
+                initproperty            QName(PackageNamespace(""), "gameModeDisplayDescription")
+                jump                    L131
+                L126:
+                getlocal0               
+                getlocal2               
+                initproperty            QName(PackageNamespace(""), "gameModeDisplayDescription")
+                L131:
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

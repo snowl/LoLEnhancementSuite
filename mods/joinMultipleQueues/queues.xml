@@ -6,7 +6,7 @@
 	The escaped string needs to be pasted to patch19.asasm (line 38)
  -->
 
-<value data="multi_pvp" name="multi" localeKey="jmq_game_flow_mm_pvp_multi" gameKey="tagteam">
+<value data="jmq_pvp" name="pvp_jmq" localeKey="jmq_game_flow_mm_pvp_multi" gameKey="tagteam">
   <option name="matchmaking_map" properties="gameMap;numPlayersPerTeam" localeKey="game_flow_common_select_map">
     <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_sr">
       <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
