@@ -1,407 +1,223 @@
-cinit
+trait method QName(PackageNamespace(""), "selectQueue")
+    method
+        param QName(PackageNamespace(""), "int")
+        param QName(PackageNamespace(""), "Boolean")
+        returns QName(PackageNamespace(""), "void")
         body
-            maxstack 4
-            localcount 1
-            initscopedepth 3
-            maxscopedepth 4
+            maxstack 10
+            localcount 10
+            initscopedepth 5
+            maxscopedepth 6
             code
                 getlocal0               
                 pushscope               
-                findproperty            QName(PackageNamespace(""), "INTERNAL_NAME")
-                pushstring              "matchmaking_modePVP"
-                initproperty            QName(PackageNamespace(""), "INTERNAL_NAME")
-                findproperty            QName(PackageNamespace(""), "viewLayout")
-                getlex                  QName(PackageNamespace(""), "XML")
-                pushstring              "<option"
-                pushstring              " name=\"{INTERNAL_NAME}\" localeKey=\"game_flow_mm_pvp\" properties=\"gameMode\">\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"classic_pvp\" name=\"pvp_classic\" localeKey=\"game_flow_mm_pvp_classic\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;1\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;cap\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_cap\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"60\" partyid=\"60\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 1v1 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"0\" partyid=\"0\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;draft_mode\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 1v1 Normal Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"30\" partyid=\"30\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 1v1 Ranked Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"10\" partyid=\"10\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;2\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift_2v2\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 2v2 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1\" partyid=\"1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;cap\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_cap\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"61\" partyid=\"61\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 5v5 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"2\" partyid=\"2\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n                                <value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n                                    <!-- SR 5v5 Normal Blind DEVELOPMENT MAPS -->\r\n                                    <queue"
-                add                     
-                pushstring              " soloid=\"200\" partyid=\"200\"/>\r\n                                </value>\r\n\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;draft_mode\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 5v5 Normal Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"14\" partyid=\"14\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n                                <value"
-                add                     
-                pushstring              " data=\"false;draft_mode\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_draft_queue\">\r\n                                    <!-- SR 5v5 Normal Draft DEVELOPMENT MAPS -->\r\n                                    <queue"
-                add                     
-                pushstring              " soloid=\"201\" partyid=\"201\"/>\r\n                                </value>\r\n\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_duo_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 5v5 Ranked -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"4\" partyid=\"6\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n                                <value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_duo_queue\">\r\n                                    <!-- SR 5v5 Ranked DEVELOPMENT MAPS -->\r\n                                    <queue"
-                add                     
-                pushstring              " soloid=\"202\" partyid=\"202\"/>\r\n                                </value>\r\n\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_team_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 5v5 Ranked Team-->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"-1\" partyid=\"42\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n                                <value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_team_queue\">\r\n                                    <!-- SR 5v5 Ranked Team DEVELOPMENT MAPS -->\r\n                                    <queue"
-                add                     
-                pushstring              " soloid=\"-1\" partyid=\"203\"/>\r\n                                </value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"TwistedTreeline;3\" name=\"twisted_treeline\" localeKey=\"game_flow_common_twisted_treeline\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- TT 3v3 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"8\" partyid=\"8\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- TT 3v3 Ranked Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"11\" partyid=\"9\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_team_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- TT 3v3 Ranked Team -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"-1\" partyid=\"41\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"odin_pvp\" name=\"pvp_odin\" localeKey=\"game_flow_mm_pvp_odin\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"CrystalScar;1\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- CC 1v1 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"15\" partyid=\"15\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"CrystalScar;5\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- CC 5v5 Normal Blind -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"16\" partyid=\"16\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;draft_mode\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- CC 5v5 Normal Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"17\" partyid=\"17\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"true;draft_mode\" name=\"Ranked\" localeKey=\"game_flow_mm_pvp_ranked_draft_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- CC 5v5 Ranked -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"18\" partyid=\"19\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"aram_pvp\" name=\"freljord_mode\" localeKey=\"game_flow_mm_pvp_aram\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;1\" name=\"freljord_map\" localeKey=\"game_flow_common_howling_abyss_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM 1v1 Normal -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"62\" partyid=\"-1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;2\" name=\"freljord_map\" localeKey=\"game_flow_common_howling_abyss_2v2\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM 2v2 Normal -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"63\" partyid=\"63\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;3\" name=\"freljord_map\" localeKey=\"game_flow_common_howling_abyss_3v3\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM 3v3 Normal -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"64\" partyid=\"64\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;5\" name=\"freljord_map\" localeKey=\"game_flow_common_howling_abyss_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM 5v5 Normal -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"65\" partyid=\"65\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>                                                   `\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;6\" name=\"freljord_map\" localeKey=\"game_flow_common_howling_abyss_6v6\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM 6v6 Normal -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"66\" partyid=\"66\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n<value"
-                add                     
-                pushstring              " data=\"multi_pvp\" name=\"multi_mode\" localeKey=\"game_flow_mm_pvp_multi\" gameMutator=\"TagTeam\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"summoners_rift\" localeKey=\"game_flow_common_summoners_rift\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_n_draft\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_n_draft\">\r\n\t\t\t\t\t\t\t\t\t<!-- SR 5v5 Normal Blind and Draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1001\" partyid=\"1001\" multiple=\"2,14\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"CrystalScar;5\" name=\"crystal_scar\" localeKey=\"game_flow_common_crystal_scar\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_n_draft\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_n_draft\">\r\n\t\t\t\t\t\t\t\t\t<!-- CC 5v5 blind and draft -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1002\" partyid=\"1002\" multiple=\"16,17\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"sr_cs_ha\" localeKey=\"game_flow_common_sr_cs_ha\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;allq\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_allq\">\r\n\t\t\t\t\t\t\t\t\t<!-- All Normal Queues -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1003\" partyid=\"1003\" multiple=\"2,14,16,17,65\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;3\" name=\"sr_tt_cs_ha\" localeKey=\"game_flow_common_sr_tt_cs_ha\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;allq\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_all_3v3\">\r\n\t\t\t\t\t\t\t\t\t<!-- All 3v3 Queues -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1004\" partyid=\"1004\" multiple=\"2,8,14,16,17,65\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"cs_ha\" localeKey=\"game_flow_common_cs_ha\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_n_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_n_random\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM and Dominion -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1005\" partyid=\"1005\" multiple=\"16,65\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"sr_ha\" localeKey=\"game_flow_common_sr_ha\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_n_random\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_blind_n_random_sr_ha\">\r\n\t\t\t\t\t\t\t\t\t<!-- ARAM and Summoners Rift -->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"1006\" partyid=\"1006\" multiple=\"2,65\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_ofa_pvp\" name=\"featured_ofa\" localeKey=\"game_flow_mm_pvp_featured_ofa\" gameKey=\"ofa\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"featured_ofa\" localeKey=\"game_flow_featured_ofa_summoners_rift_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_for_one\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ofa\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"70\" partyid=\"70\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;1\" name=\"featured_ofa\" localeKey=\"game_flow_featured_ofa_summoners_rift_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_for_one\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ofa\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"71\" partyid=\"71\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_ofax_pvp\" name=\"featured_ofax\" localeKey=\"game_flow_mm_pvp_featured_ofax\" gameKey=\"ofax\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;5\" name=\"featured_ofax\" localeKey=\"game_flow_featured_ofax_howling_abyss_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_for_one\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ofax\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"78\" partyid=\"78\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;2\" name=\"featured_ofax\" localeKey=\"game_flow_featured_ofax_howling_abyss_2v2\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_for_one\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ofax\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"79\" partyid=\"79\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;1\" name=\"featured_ofax\" localeKey=\"game_flow_featured_ofax_howling_abyss_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;all_for_one\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ofax\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"80\" partyid=\"80\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_fbl_pvp\" name=\"featured_fbl\" localeKey=\"game_flow_mm_pvp_featured_fbl\" gameKey=\"fbl\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;1\" name=\"featured_fbl\" localeKey=\"game_flow_featured_fbl_howling_abyss_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;first_blood\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_fbl\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"72\" partyid=\"-1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;2\" name=\"featured_fbl\" localeKey=\"game_flow_featured_fbl_howling_abyss_2v2\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;first_blood\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_fbl\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"73\" partyid=\"73\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n                <!-- HEXAKILL IS CURRENTLY ON TWISTED TREELINE -->\r\n                <value"
-                add                     
-                pushstring              " data=\"featured_tt6_pvp\" name=\"featured_tt6\" localeKey=\"game_flow_mm_pvp_featured_tt6\" gameKey=\"tt6\">\r\n                    <option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n                        <value"
-                add                     
-                pushstring              " data=\"TwistedTreeline;6\" name=\"featured_tt6\" localeKey=\"game_flow_featured_twisted_treeline_6v6\">\r\n                            <option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n                                <value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"featured_tt6\" localeKey=\"game_flow_mm_pvp_normal_featured_tt6\">\r\n                                    <queue"
-                add                     
-                pushstring              " soloid=\"98\" partyid=\"98\"/>\r\n                                </value>\r\n                            </option>\r\n                        </value>\r\n                    </option>\r\n                </value>\r\n                <!-- IF HEXAKILL IS ON SUMMONER\'S RIFT, USE THE FOLLOWING DEFINITION INSTEAD\r\n                <value data=\"featured_sr6_pvp\" name=\"featured_sr6\" localeKey=\"game_flow_mm_pvp_featured_sr6\" gameKey=\"sr6\">\r\n                    <option name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n                        <value data=\"SummonersRift;6\" name=\"featured_sr6\" localeKey=\"game_flow_featured_summoners_rift_6v6\">\r\n                            <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n                                <value data=\"false;blind_pick\" name=\"featured_sr6\" localeKey=\"game_flow_mm_pvp_normal_featured_sr6\">\r\n                                    <queue soloid=\"75\" partyid=\"75\"/>\r\n                                </value>\r\n                            </option>\r\n                        </value>\r\n                    </option>\r\n                </value>\r\n                -->\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_tt5_pvp\" name=\"featured_tt5\" localeKey=\"game_flow_mm_pvp_featured_tt5\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"TwistedTreeline;5\" name=\"twisted_treeline\" localeKey=\"game_flow_featured_twisted_treeline_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;blind_pick\" name=\"featured_tt5\" localeKey=\"game_flow_mm_pvp_normal_blind_queue\">\r\n\t\t\t\t\t\t\t\t\t<!-- TT 5v5 Blind-->\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"74\" partyid=\"74\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_urf_pvp\" name=\"featured_urf\" localeKey=\"game_flow_mm_pvp_featured_urf\" gameKey=\"urf\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;1\" name=\"featured_urf\" localeKey=\"game_flow_featured_urf_summoners_rift_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;urf\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_urf\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"77\" partyid=\"-1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"featured_urf\" localeKey=\"game_flow_featured_urf_summoners_rift_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;urf\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_urf\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"76\" partyid=\"76\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_hy_pvp\" name=\"featured_hy\" localeKey=\"game_flow_mm_pvp_featured_hy\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;5\" name=\"featured_hy\" localeKey=\"game_flow_featured_hy_summoners_rift_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;hy\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_hy\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"81\" partyid=\"81\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"SummonersRift;1\" name=\"featured_hy\" localeKey=\"game_flow_featured_hy_summoners_rift_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;hy\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_hy\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"82\" partyid=\"82\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_asc_pvp\" name=\"featured_asc\" localeKey=\"game_flow_mm_pvp_featured_asc\" gameKey=\"asc\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"CrystalScar;5\" name=\"featured_asc\" localeKey=\"game_flow_featured_asc_crystal_scar_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;asc\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_asc\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"96\" partyid=\"96\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"CrystalScar;1\" name=\"featured_asc\" localeKey=\"game_flow_featured_asc_crystal_scar_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;asc\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_asc\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"97\" partyid=\"-1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\r\n\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"featured_ppp_pvp\" name=\"featured_ppp\" localeKey=\"game_flow_mm_pvp_featured_ppp\" gameKey=\"ppp\">\r\n\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;5\" name=\"featured_ppp\" localeKey=\"game_flow_featured_ppp_howling_abyss_5v5\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;ppp\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ppp\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"300\" partyid=\"300\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"HowlingAbyss;1\" name=\"featured_ppp\" localeKey=\"game_flow_featured_ppp_howling_abyss_1v1\">\r\n\t\t\t\t\t\t\t<option"
-                add                     
-                pushstring              " name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n\t\t\t\t\t\t\t\t<value"
-                add                     
-                pushstring              " data=\"false;ppp\" name=\"Normal\" localeKey=\"game_flow_mm_pvp_normal_featured_ppp\">\r\n\t\t\t\t\t\t\t\t\t<queue"
-                add                     
-                pushstring              " soloid=\"301\" partyid=\"-1\"/>\r\n\t\t\t\t\t\t\t\t</value>\r\n\t\t\t\t\t\t\t</option>\r\n\t\t\t\t\t\t</value>\r\n\t\t\t\t\t</option>\r\n\t\t\t\t</value>\r\n\t\t\t</option>"
-                add                     
-                construct               1
-                initproperty            QName(PackageNamespace(""), "viewLayout")
+                pushnull                
+                coerce                  QName(PackageNamespace("com.riotgames.pvpnet.system.alerter"), "AlertAction")
+                setlocal                9
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal1               
+                callproperty            QName(PackageNamespace(""), "getQueueForID"), 1
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                setlocal3               
+                getlocal1               
+                pushint                 1000000
+                ifne                    L49
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "jmqSelectedIds")
+                pushbyte                0
+                getproperty             MultinameL([PackageNamespace("")])
+                callproperty            QName(PackageNamespace(""), "getQueueForID"), 1
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                setlocal3               
+                L49:
+                getlocal3               
+                callproperty            QName(PackageNamespace(""), "isTBD"), 0
+                convert_b               
+                setlocal                4
+                getlocal3               
+                callproperty            QName(PackageNamespace(""), "isCap"), 0
+                convert_b               
+                setlocal                5
+                getlocal3               
+                getproperty             QName(PackageNamespace(""), "ranked")
+                convert_b               
+                setlocal                6
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                callproperty            QName(PackageNamespace(""), "isCoopVsAi"), 0
+                convert_b               
+                setlocal                7
+                pushnull                
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                getlocal                4
+                iffalse                 L131
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectTBDQueueCommand")
+                getlocal1               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "inviteProvider")
+                callproperty            QName(Namespace("com.riotgames.pvpnet.invite:IInviteProvider"), "getInviteGroup"), 0
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectTBDQueueCommand"), 4
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                jump                    L323
+                L131:
+                getlocal                5
+                iffalse                 L171
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectCapQueueCommand")
+                getlocal2               
+                getlocal1               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "inviteProvider")
+                callproperty            QName(Namespace("com.riotgames.pvpnet.invite:IInviteProvider"), "getInviteGroup"), 0
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectCapQueueCommand"), 5
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                jump                    L323
+                L171:
+                getlocal                6
+                iffalse                 L225
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectRankedQueue")
+                getlocal2               
+                getlocal1               
+                pushint                 1000000
+                ifeq                    L196
+                getlocal1               
+                newarray                1
+                jump                    L200
+                L196:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "jmqSelectedIds")
+                L200:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "inviteProvider")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectRankedQueue"), 5
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                jump                    L323
+                L225:
+                getlocal                7
+                iffalse                 L279
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectCoopVsAIQueueCommand")
+                getlocal2               
+                getlocal1               
+                pushint                 1000000
+                ifeq                    L250
+                getlocal1               
+                newarray                1
+                jump                    L254
+                L250:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "jmqSelectedIds")
+                L254:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "inviteProvider")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectCoopVsAIQueueCommand"), 5
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                jump                    L323
+                L279:
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectNormalQueueCommand")
+                getlocal2               
+                getlocal1               
+                pushint                 1000000
+                ifeq                    L298
+                getlocal1               
+                newarray                1
+                jump                    L302
+                L298:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "jmqSelectedIds")
+                L302:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "inviteProvider")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.commands.queueselection"), "SelectNormalQueueCommand"), 5
+                coerce                  QName(PackageNamespace("com.riotgames.platform.common.commands"), "ICommand")
+                setlocal                8
+                L323:
+                pushfalse               
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "hasDisplayedFWOTDLimitedInformationOnce")
+                strictequals            
+                dup                     
+                iffalse                 L350
+                pop                     
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "session")
+                getproperty             QName(PackageNamespace(""), "summonerLevel")
+                getproperty             QName(PackageNamespace(""), "summonerLevel")
+                getlocal3               
+                getproperty             QName(PackageNamespace(""), "maxSummonerLevelForFirstWinOfTheDay")
+                greaterthan             
+                L350:
+                iffalse                 L449
+                getlocal0               
+                pushtrue                
+                initproperty            QName(PrivateNamespace(null, "432"), "hasDisplayedFWOTDLimitedInformationOnce")
+                findpropstrict          QName(PackageNamespace("com.riotgames.pvpnet.system.alerter"), "AlertAction")
+                getlex                  QName(PackageNamespace("mx.resources"), "ResourceManager")
+                callproperty            QName(PackageNamespace(""), "getInstance"), 0
+                pushstring              "resources"
+                pushstring              "enterChampionSelect_noFWOTDBonusTitle"
+                callproperty            QName(Namespace("mx.resources:IResourceManager"), "getString"), 2
+                getlex                  QName(PackageNamespace("mx.resources"), "ResourceManager")
+                callproperty            QName(PackageNamespace(""), "getInstance"), 0
+                pushstring              "resources"
+                pushstring              "enterChampionSelect_noFWOTDBonusReason"
+                callproperty            QName(Namespace("mx.resources:IResourceManager"), "getString"), 2
+                constructprop           QName(PackageNamespace("com.riotgames.pvpnet.system.alerter"), "AlertAction"), 2
+                coerce                  QName(PackageNamespace("com.riotgames.pvpnet.system.alerter"), "AlertAction")
+                dup                     
+                setlocal                9
+                pushstring              "command"
+                getlocal                8
+                newobject               1
+                setproperty             QName(PackageNamespace(""), "data")
+                getlocal                9
+                pushtrue                
+                setproperty             QName(PackageNamespace(""), "showNegative")
+                getlocal                9
+                callpropvoid            QName(PackageNamespace(""), "setYesNoLabels"), 0
+                getlocal                9
+                callproperty            QName(PackageNamespace(""), "getCompleted"), 0
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "432"), "selectQueueMessagingHandler")
+                callpropvoid            QName(Namespace("blix.signals:ISignal"), "addOnce"), 1
+                getlocal                9
+                callpropvoid            QName(PackageNamespace(""), "add"), 0
+                jump                    L460
+                L449:
+                getlocal0               
+                callpropvoid            QName(PackageNamespace(""), "cancelFlow"), 0
+                getlocal                8
+                callpropvoid            QName(Namespace("com.riotgames.platform.common.commands:ICommand"), "execute"), 0
+                L460:
                 returnvoid              
             end ;code
         end ;body
-    end ;cinit
+    end ;method
+end ;trait

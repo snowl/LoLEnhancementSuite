@@ -1,0 +1,191 @@
+trait method QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "joinQueue_attach")
+    method
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 6
+            localcount 7
+            initscopedepth 4
+            maxscopedepth 5
+            code
+                getlocal0               
+                pushscope               
+                pushnull                
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer")
+                setlocal                4
+                pushnull                
+                coerce                  QName(PackageNamespace("mx.collections"), "ArrayCollection")
+                setlocal                5
+                pushnull                
+                coerce                  QName(PackageNamespace("mx.collections"), "ArrayCollection")
+                setlocal                6
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "isSolo")
+                not                     
+                iffalse                 L132
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                callproperty            QName(PackageNamespace(""), "getAcceptedParticipantCount"), 0
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getproperty             QName(PackageNamespace(""), "minimumParticipantListSize")
+                ifnlt                   L54
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                callproperty            QName(PackageNamespace(""), "joinEquivalentPremadeSoloQueue"), 0
+                pop                     
+                L54:
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                callproperty            QName(PackageNamespace(""), "getAcceptedParticipantCount"), 0
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getproperty             QName(PackageNamespace(""), "minimumParticipantListSize")
+                ifnlt                   L132
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer"), 0
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer")
+                setlocal                4
+                getlocal                4
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer")
+                getproperty             QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game.matched"), "FailedJoinPlayer")
+                getproperty             QName(PackageNamespace(""), "REASON_FAILED_QUEUE_PARTICIPANTS")
+                setproperty             QName(PackageNamespace(""), "reasonFailed")
+                findpropstrict          QName(PackageNamespace("mx.collections"), "ArrayCollection")
+                constructprop           QName(PackageNamespace("mx.collections"), "ArrayCollection"), 0
+                coerce                  QName(PackageNamespace("mx.collections"), "ArrayCollection")
+                setlocal                5
+                getlocal                5
+                getlocal                4
+                callproperty            QName(PackageNamespace(""), "addItem"), 1
+                pop                     
+                getlocal0               
+                getlocal                5
+                callproperty            QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "handleFailedJoinPlayers"), 1
+                pop                     
+                getlocal0               
+                pushfalse               
+                initproperty            QName(PackageNamespace(""), "isBusy")
+                returnvoid              
+                L132:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getproperty             QName(PackageNamespace(""), "id")
+                convert_d               
+                setlocal1               
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "MatchMakerParams")
+                constructprop           QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "MatchMakerParams"), 0
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain"), "MatchMakerParams")
+                setlocal2               
+                getlocal2               
+                findpropstrict          QName(PackageNamespace(""), "Array")
+                constructprop           QName(PackageNamespace(""), "Array"), 0
+                setproperty             QName(PackageNamespace(""), "queueIds")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "jmqSelectedQueues")
+                getproperty             QName(PackageNamespace(""), "length")
+                pushbyte                1
+                ifle                    L192
+                getlocal2               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "jmqSelectedQueues")
+                setproperty             QName(PackageNamespace(""), "queueIds")
+                jump                    L202
+                L192:
+                getlocal2               
+                getproperty             QName(PackageNamespace(""), "queueIds")
+                pushbyte                0
+                getlocal1               
+                setproperty             MultinameL([PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), PackageNamespace(""), ProtectedNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController"), PrivateNamespace("MasterGameViewController.as$317", "39"), PackageNamespace("com.riotgames.pvpnet.game.controllers"), PackageInternalNamespace("com.riotgames.pvpnet.game.controllers"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController")])
+                L202:
+                getlocal2               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "applicationController")
+                callproperty            QName(Namespace("com.riotgames.platform.common:IAppController"), "getLastInterestingMaestroMessage"), 0
+                setproperty             QName(PackageNamespace(""), "lastMaestroMessage")
+                getlocal2               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getproperty             QName(PackageNamespace(""), "difficulty")
+                setproperty             QName(PackageNamespace(""), "botDifficulty")
+                findpropstrict          QName(PackageNamespace(""), "Object")
+                constructprop           QName(PackageNamespace(""), "Object"), 0
+                coerce                  QName(PackageNamespace(""), "Object")
+                setlocal3               
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_leaverBusterAccessToken")
+                convert_b               
+                iffalse                 L254
+                getlocal3               
+                pushstring              "LEAVER_BUSTER_ACCESS_TOKEN"
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_leaverBusterAccessToken")
+                setproperty             MultinameL([PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), PackageNamespace(""), ProtectedNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController"), PrivateNamespace("MasterGameViewController.as$317", "39"), PackageNamespace("com.riotgames.pvpnet.game.controllers"), PackageInternalNamespace("com.riotgames.pvpnet.game.controllers"), Namespace("http://adobe.com/AS3/2006/builtin"), StaticProtectedNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController")])
+                L254:
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                getproperty             QName(PackageNamespace(""), "inviteId")
+                pushnull                
+                equals                  
+                not                     
+                convert_b               
+                dup                     
+                convert_b               
+                iffalse                 L283
+                pop                     
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                getproperty             QName(PackageNamespace(""), "inviteId")
+                getproperty             QName(PackageNamespace(""), "length")
+                pushbyte                0
+                greaterthan             
+                convert_b               
+                L283:
+                iffalse                 L325
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                callproperty            QName(PackageNamespace(""), "getParticipantIDCollection"), 0
+                coerce                  QName(PackageNamespace("mx.collections"), "ArrayCollection")
+                setlocal                6
+                getlocal2               
+                getlocal                6
+                setproperty             QName(PackageNamespace(""), "team")
+                getlocal2               
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_inviteGroup")
+                getproperty             QName(PackageNamespace(""), "inviteId")
+                setproperty             QName(PackageNamespace(""), "invitationId")
+                getlocal2               
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "rankedTeamId")
+                setproperty             QName(PackageNamespace(""), "teamId")
+                L325:
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "serviceProxy")
+                getproperty             QName(PackageNamespace(""), "matchMakerService")
+                getlocal2               
+                getlocal3               
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "onJoinQueueSuccess")
+                getlocal0               
+                getproperty             QName(PackageNamespace(""), "onJoinQueueComplete")
+                pushnull                
+                callproperty            QName(Namespace("com.riotgames.platform.gameclient.services:MatchMakerService"), "attachToQueue"), 5
+                pop                     
+                getlocal0               
+                pushfalse               
+                setproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "reQueueing")
+                getlocal0               
+                pushnull                
+                initproperty            QName(PrivateNamespace("com.riotgames.pvpnet.game.controllers:MasterGameViewController", "1"), "_leaverBusterAccessToken")
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

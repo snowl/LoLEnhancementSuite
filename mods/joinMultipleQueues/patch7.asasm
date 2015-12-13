@@ -1,87 +1,59 @@
-  trait setter QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_2051556744gameModeDisplayName")
-   method
-    param QName(PackageNamespace(""), "String")
-    returns QName(PackageNamespace(""), "void")
-    body
-     maxstack 4
-     localcount 2
-     initscopedepth 5
-     maxscopedepth 6
-     code
-      getlocal0
-      pushscope
-
-      getlocal1
-      pushstring          "multi_pvp"
-      ifne                L18
-
-      getlex              QName(PackageNamespace("com.riotgames.pvpnet.system.config"), "ClientConfig")
-      getproperty         QName(PackageNamespace(""), "instance")
-      getproperty         QName(PackageNamespace(""), "locale")
-      pushstring          "vi_VN"
-      ifne                L14
-
-      getlocal0
-      pushstring          "Đấu Trường Đẫm Máu!"
-      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
-
-      jump                L17
-
-L14:
-      getlocal0
-      pushstring          "Join Multiple Queues!"
-      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
-
-L17:
-      returnvoid
-
-L18:
-      getlocal1
-      pushnull
-      equals
-      not
-      dup
-      iffalse             L29
-
-      pop
-      getlocal1
-      pushstring          ""
-      equals
-      not
-L29:
-      iffalse             L38
-
-      getlocal0
-      getlex              QName(PackageNamespace("com.riotgames.platform.common.utils"), "RiotResourceLoader")
-      getlocal1
-      pushstring          "_game_mode_title"
-      add
-      callproperty        QName(PackageNamespace(""), "getString"), 1
-      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
-
-      jump                L41
-
-L38:
-      getlocal0
-      pushstring          ""
-      initproperty        QName(PrivateNamespace(null, "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController/instance#0"), "_gameModeDisplayName")
-
-L41:
-      getlocal0
-      getproperty         QName(PackageNamespace(""), "masterGameController")
-      getproperty         QName(PackageNamespace(""), "gameMap")
-      iffalse             L51
-
-      getlocal0
-      getlocal0
-      getproperty         QName(PackageNamespace(""), "masterGameController")
-      getproperty         QName(PackageNamespace(""), "gameMap")
-      getproperty         QName(PackageNamespace(""), "displayName")
-      initproperty        QName(PackageNamespace(""), "gameMapDisplayName")
-
-L51:
-      returnvoid
-     end ; code
-    end ; body
-   end ; method
-  end ; trait
+trait method QName(PackageNamespace(""), "execute") flag Override
+    method
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 4
+            localcount 3
+            initscopedepth 6
+            maxscopedepth 7
+            code
+                getlocal0               
+                pushscope               
+                pushnull                
+                coerce                  QName(PackageNamespace("blix.action"), "IAction")
+                setlocal2               
+                getlocal0               
+                callpropvoid            QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "doGameFlow"), 0
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+                callpropvoid            QName(PackageNamespace(""), "setSelectedQueueId"), 1
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "gameModel")
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getproperty             QName(PackageNamespace(""), "disallowFreeChampions")
+                not                     
+                setproperty             QName(PackageNamespace(""), "allowFreeChampions")
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "masterGameController")
+                getproperty             QName(PackageNamespace(""), "masterGameViewController")
+                callpropvoid            QName(PackageNamespace(""), "handleSelectMapContinue"), 0
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "gameQueueManager")
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "queueId")
+                pushbyte                0
+                getproperty             MultinameL([PackageNamespace("")])
+                callproperty            QName(PackageNamespace(""), "getQueueForID"), 1
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                setlocal1               
+                getlocal1               
+                getproperty             QName(PackageNamespace(""), "teamOnly")
+                iffalse                 L100
+                getlocal0               
+                getproperty             QName(ProtectedNamespace("com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand"), "inviteProvider")
+                callproperty            QName(Namespace("com.riotgames.pvpnet.invite:IInviteProvider"), "getOpenInvitePanelAction"), 0
+                coerce                  QName(PackageNamespace("blix.action"), "IAction")
+                setlocal2               
+                getlocal2               
+                callpropvoid            QName(Namespace("blix.action:IAction"), "invoke"), 0
+                L100:
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

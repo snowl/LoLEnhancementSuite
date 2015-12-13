@@ -1,0 +1,43 @@
+    cinit
+        body
+            maxstack 3
+            localcount 1
+            initscopedepth 4
+            maxscopedepth 5
+            code
+                getlocal0               
+                pushscope               
+                findproperty            QName(PackageNamespace(""), "COMMAND_JOIN")
+                pushstring              "join"
+                initproperty            QName(PackageNamespace(""), "COMMAND_JOIN")
+                findproperty            QName(PackageNamespace(""), "COMMAND_CREATE")
+                pushstring              "create"
+                initproperty            QName(PackageNamespace(""), "COMMAND_CREATE")
+                findproperty            QName(PackageNamespace(""), "COMMAND_BASIC_TUTORIAL")
+                pushstring              "basic_tutorial"
+                initproperty            QName(PackageNamespace(""), "COMMAND_BASIC_TUTORIAL")
+                findproperty            QName(PackageNamespace(""), "COMMAND_ADVANCED_TUTORIAL")
+                pushstring              "advanced_tutorial"
+                initproperty            QName(PackageNamespace(""), "COMMAND_ADVANCED_TUTORIAL")
+                findproperty            QName(PackageNamespace(""), "PARTY_QUEUE_PARTY")
+                pushstring              "party"
+                initproperty            QName(PackageNamespace(""), "PARTY_QUEUE_PARTY")
+                findproperty            QName(PackageNamespace(""), "PARTY_QUEUE_DUO")
+                pushstring              "duo"
+                initproperty            QName(PackageNamespace(""), "PARTY_QUEUE_DUO")
+                findproperty            QName(PackageNamespace(""), "PARTY_QUEUE_TEAM")
+                pushstring              "team"
+                initproperty            QName(PackageNamespace(""), "PARTY_QUEUE_TEAM")
+                findproperty            QName(PackageNamespace(""), "DRAFT_PICK_GAME_TYPE_ID")
+                pushbyte                2
+                initproperty            QName(PackageNamespace(""), "DRAFT_PICK_GAME_TYPE_ID")
+                findproperty            QName(PackageNamespace(""), "TBD_PICK_GAME_TYPE_ID")
+                pushbyte                18
+                initproperty            QName(PackageNamespace(""), "TBD_PICK_GAME_TYPE_ID")
+                findproperty            QName(PackageNamespace(""), "multiQueues")
+                pushstring              "<value data=\"multi_pvp\" name=\"multi\" localeKey=\"jmq_game_flow_mm_pvp_multi\" gameKey=\"tagteam\">\r\n  <option name=\"matchmaking_map\" properties=\"gameMap;numPlayersPerTeam\" localeKey=\"game_flow_common_select_map\">\r\n    <value data=\"SummonersRift;5\" name=\"jmq\" localeKey=\"jmq_game_flow_common_sr\">\r\n      <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n        <value data=\"false;jmq\" name=\"Normal\" localeKey=\"jmq_game_flow_common_sr_pick_1_2\">\r\n          <queue soloid=\"1000000\" partyid=\"1000000\" jmqarray=\"[2,14]\"/>\r\n        </value>\r\n      </option>\r\n    </value>\r\n    <value data=\"SummonersRift;5\" name=\"jmq\" localeKey=\"jmq_game_flow_common_sr_cs_ha\">\r\n      <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n        <value data=\"false;jmq\" name=\"Normal\" localeKey=\"jmq_game_flow_common_all_5x5\">\r\n          <queue soloid=\"1000000\" partyid=\"1000000\" jmqarray=\"[2,14,16,65]\"/>\r\n        </value>\r\n      </option>\r\n    </value>\r\n    <value data=\"SummonersRift;5\" name=\"jmq\" localeKey=\"jmq_game_flow_common_sr_cs_ha_tt\">\r\n      <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n        <value data=\"false;jmq\" name=\"Normal\" localeKey=\"jmq_game_flow_common_all_3x3\">\r\n          <queue soloid=\"1000000\" partyid=\"1000000\" jmqarray=\"[8,2,14,16,65]\"/>\r\n        </value>\r\n      </option>\r\n    </value>\r\n    <value data=\"SummonersRift;5\" name=\"jmq\" localeKey=\"jmq_game_flow_common_cs_ha\">\r\n      <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n        <value data=\"false;jmq\" name=\"Normal\" localeKey=\"jmq_game_flow_common_ha_cs_pick_1_4\">\r\n          <queue soloid=\"1000000\" partyid=\"1000000\" jmqarray=\"[16,65]\"/>\r\n        </value>\r\n      </option>\r\n    </value>\r\n    <value data=\"SummonersRift;5\" name=\"jmq\" localeKey=\"jmq_game_flow_common_sr_ha\">\r\n      <option name=\"matchmaking_type\" properties=\"ranked;gameType\" localeKey=\"game_flow_mm_common_type\">\r\n        <value data=\"false;jmq\" name=\"Normal\" localeKey=\"jmq_game_flow_common_ha_sr_pick_1_4\">\r\n          <queue soloid=\"1000000\" partyid=\"1000000\" jmqarray=\"[2,65]\"/>\r\n        </value>\r\n      </option>\r\n    </value>\r\n  </option>\r\n</value>"
+                initproperty            QName(PackageNamespace(""), "multiQueues")
+                returnvoid              
+            end ;code
+        end ;body
+    end ;cinit

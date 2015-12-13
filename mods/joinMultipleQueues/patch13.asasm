@@ -1,29 +1,69 @@
-  trait method QName(PackageNamespace(""),"showsGameFlowOptionsStar")
-   method
-    name ""
-	returns QName(PackageNamespace(""),"Boolean")
-    body
-     maxstack 2
-     localcount 9
-     initscopedepth 5
-     maxscopedepth 6
-     code
-      getlocal0
-      pushscope
-	  
-	  pushstring "TagTeam"
-	  getlocal0
-	  getproperty QName(PrivateNamespace("com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",""), "keyGameMutator")
-	  ifne L1
-	  
-	  pushfalse
-	  returnvalue
-	  
-	  L1:
-	  pushtrue
-	  returnvalue
-	  
-     end ; code
-    end ; body
-   end ; method
-  end ; trait
+trait method QName(PackageNamespace(""), "setSelectedQueueId")
+    method
+        param QName(PackageNamespace(""), "Array")
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 3
+            localcount 4
+            initscopedepth 4
+            maxscopedepth 5
+            code
+                getlocal0               
+                pushscope               
+                getlocal0               
+                getlocal1               
+                setproperty             QName(PackageNamespace(""), "jmqSelectedQueues")
+                pushnull                
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                setlocal2               
+                pushbyte                0
+                convert_i               
+                setlocal3               
+                jump                    L73
+                L19:
+                label                   
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.domain:GameQueueManager", "1"), "platformConfig")
+                getproperty             QName(PackageNamespace(""), "allGameQueues")
+                getlocal3               
+                callproperty            QName(PackageNamespace(""), "getItemAt"), 1
+                findpropstrict          QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                getproperty             QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                astypelate              
+                coerce                  QName(PackageNamespace("com.riotgames.platform.gameclient.domain.game"), "GameQueueConfig")
+                setlocal2               
+                getlocal2               
+                getproperty             QName(PackageNamespace(""), "id")
+                getlocal1               
+                pushbyte                0
+                getproperty             MultinameL([PackageNamespace("")])
+                ifne                    L69
+                getlocal0               
+                getlocal2               
+                initproperty            QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getlocal0               
+                findpropstrict          QName(PackageNamespace(""), "TEAM_NAME_UNSELECTED")
+                getproperty             QName(PackageNamespace(""), "TEAM_NAME_UNSELECTED")
+                setproperty             QName(PackageNamespace(""), "rankedTeamName")
+                getlocal0               
+                pushnull                
+                setproperty             QName(PackageNamespace(""), "rankedTeamId")
+                jump                    L85
+                L69:
+                getlocal3               
+                increment_i             
+                convert_i               
+                setlocal3               
+                L73:
+                getlocal3               
+                getlocal0               
+                getproperty             QName(PrivateNamespace("com.riotgames.pvpnet.game.domain:GameQueueManager", "1"), "platformConfig")
+                getproperty             QName(PackageNamespace(""), "allGameQueues")
+                getproperty             QName(PackageNamespace(""), "length")
+                iflt                    L19
+                L85:
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

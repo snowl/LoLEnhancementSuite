@@ -1,0 +1,47 @@
+<!--
+	This is the original xml file for the queue options.
+	
+	http://www.freeformatter.com/java-dotnet-escape.html
+	
+	The escaped string needs to be pasted to patch19.asasm (line 38)
+ -->
+
+<value data="multi_pvp" name="multi" localeKey="jmq_game_flow_mm_pvp_multi" gameKey="tagteam">
+  <option name="matchmaking_map" properties="gameMap;numPlayersPerTeam" localeKey="game_flow_common_select_map">
+    <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_sr">
+      <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
+        <value data="false;jmq" name="Normal" localeKey="jmq_game_flow_common_sr_pick_1_2">
+          <queue soloid="1000000" partyid="1000000" jmqarray="[2,14]"/>
+        </value>
+      </option>
+    </value>
+    <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_sr_cs_ha">
+      <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
+        <value data="false;jmq" name="Normal" localeKey="jmq_game_flow_common_all_5x5">
+          <queue soloid="1000000" partyid="1000000" jmqarray="[2,14,16,65]"/>
+        </value>
+      </option>
+    </value>
+    <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_sr_cs_ha_tt">
+      <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
+        <value data="false;jmq" name="Normal" localeKey="jmq_game_flow_common_all_3x3">
+          <queue soloid="1000000" partyid="1000000" jmqarray="[8,2,14,16,65]"/>
+        </value>
+      </option>
+    </value>
+    <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_cs_ha">
+      <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
+        <value data="false;jmq" name="Normal" localeKey="jmq_game_flow_common_ha_cs_pick_1_4">
+          <queue soloid="1000000" partyid="1000000" jmqarray="[16,65]"/>
+        </value>
+      </option>
+    </value>
+    <value data="SummonersRift;5" name="jmq" localeKey="jmq_game_flow_common_sr_ha">
+      <option name="matchmaking_type" properties="ranked;gameType" localeKey="game_flow_mm_common_type">
+        <value data="false;jmq" name="Normal" localeKey="jmq_game_flow_common_ha_sr_pick_1_4">
+          <queue soloid="1000000" partyid="1000000" jmqarray="[2,65]"/>
+        </value>
+      </option>
+    </value>
+  </option>
+</value>

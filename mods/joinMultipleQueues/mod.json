@@ -1,89 +1,125 @@
 {
 	"Name": "Join Multiple Queues",
-	"Description": "Not sure which game mode you want to play today? Just join ALL the queues!",
+	"Description": "Not sure which game mode you want to play today? Just join ALL the queues!\r[[[STILL BUGGY]]]",
 	"Author": "Antropod",
 	"Library": "AbcSharp",
-	"DisabledByDefault": false,
-	"PermaDisable": true,
+	"DisabledByDefault": true,
+	"PermaDisable": false,
 	"Patches":
 	[
 		{
-			"Swf": "lib/ClientLibDomain.dat",
-			"Class": "com.riotgames.platform.gameclient.domain.game:GameOptionsList",
-			"Action": "replace_trait",
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "add_class_trait",
 			"Code": "patch1.asasm"
 		},
 		{
-			"Swf": "lib/ClientLibGame.dat",
-			"Class": "com.riotgames.pvpnet.game.controllers:MasterGameViewController",
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
 			"Action": "replace_trait",
 			"Code": "patch2.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.views.lobby:ChooseGameViewLayoutPVP",
-			"Action": "replace_cinit",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
 			"Code": "patch3.asasm"
 		},
 		{
-			"Swf": "lib/ClientLibGame.dat",
-			"Class": "com.riotgames.pvpnet.game.domain:GameQueueManager",
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
 			"Action": "add_instance_trait",
 			"Code": "patch4.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand",
 			"Action": "replace_trait",
 			"Code": "patch5.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
 			"Class": "com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand",
-			"Action": "replace_trait",
+			"Action": "replace_iinit",
 			"Code": "patch6.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:BaseSelectNonCapQueueCommand",
 			"Action": "replace_trait",
 			"Code": "patch7.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
-			"Action": "replace_trait",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:SelectNormalQueueCommand",
+			"Action": "replace_iinit",
 			"Code": "patch8.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
-			"Action": "replace_trait",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:SelectCoopVsAIQueueCommand",
+			"Action": "replace_iinit",
 			"Code": "patch9.asasm"
 		},
 		{
 			"Swf": "mod/man/mod_man.dat",
-			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
-			"Action": "replace_trait",
+			"Class": "com.riotgames.platform.gameclient.commands.queueselection:SelectRankedQueue",
+			"Action": "replace_iinit",
 			"Code": "patch10.asasm"
 		},
 		{
-			"Swf": "lib/ClientLibGame.dat",
-			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.views.lobby:ChooseGameOptionsView",
 			"Action": "replace_trait",
 			"Code": "patch11.asasm"
 		},
 		{
 			"Swf": "lib/ClientLibGame.dat",
-			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
-			"Action": "replace_trait",
+			"Class": "com.riotgames.pvpnet.game.domain:GameQueueManager",
+			"Action": "add_instance_trait",
 			"Code": "patch12.asasm"
 		},
 		{
 			"Swf": "lib/ClientLibGame.dat",
-			"Class": "com.riotgames.pvpnet.game.variants:FeaturedGameFlowVariant",
+			"Class": "com.riotgames.pvpnet.game.domain:GameQueueManager",
 			"Action": "replace_trait",
 			"Code": "patch13.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibGame.dat",
+			"Class": "com.riotgames.pvpnet.game.controllers:MasterGameViewController",
+			"Action": "replace_trait",
+			"Code": "patch14.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_trait",
+			"Code": "patch15.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain.game:GameOptionsList",
+			"Action": "add_class_trait",
+			"Code": "patch16.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain.game:GameOptionsList",
+			"Action": "replace_cinit",
+			"Code": "patch17.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain.game:GameOptionsList",
+			"Action": "replace_trait",
+			"Code": "patch18.asasm"
+		},
+		{
+			"Swf": "mod/man/mod_man.dat",
+			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
+			"Action": "replace_cinit",
+			"Code": "patch19.asasm"
 		}
 	]
 }
