@@ -68,11 +68,16 @@ namespace LESs
             if (!Debugger.IsAttached)
                 AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
-            //try to find the mods in the base directory of the solution when the debugger is attached
+            //Try to find the mods in the base directory of the solution when the debugger is attached
             if (Debugger.IsAttached && !Directory.Exists(_modsDirectory) && Directory.Exists("../../../mods"))
             {
                 _modsDirectory = "../../../mods";
             }
+
+            //Add a reload button if we are debugging
+#if DEBUG
+            ReloadButton.Visibility = Visibility.Visible;
+#endif
 
             //Make sure that the mods exist in the directory. Warn the user if they dont.
             if (!Directory.Exists(_modsDirectory))
@@ -80,7 +85,25 @@ namespace LESs
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
                 Environment.Exit(0);
             }
+            
+            LoadMods();
 
+            try
+            {
+                using (WebClient c = new WebClient())
+                {
+                    _supportedVersions = serializer.Deserialize<List<int>>(await c.DownloadStringTaskAsync($"{VersionURL}{AssemblyVersion}"));
+                }
+            }
+            catch //Couldn't load versions...
+            { }
+        }
+
+        private void LoadMods()
+        {
+
+            ModsListBox.Items.Clear();
+            _lessMods.Clear();
             //Get all mods within the mod directory
             var modList = Directory.GetDirectories(_modsDirectory);
 
@@ -100,21 +123,11 @@ namespace LESs
                         IsEnabled = !lessMod.PermaDisable,
                         Content = lessMod.Name
                     };
-                
+
                     ModsListBox.Items.Add(ModCheckBox);
                     _lessMods.Add(ModCheckBox, lessMod);
                 }
             }
-
-            try
-            {
-                using (WebClient c = new WebClient())
-                {
-                    _supportedVersions = serializer.Deserialize<List<int>>(await c.DownloadStringTaskAsync($"{VersionURL}{AssemblyVersion}"));
-                }
-            }
-            catch //Couldn't load versions...
-            { }
         }
 
         /// <summary>
@@ -241,6 +254,7 @@ namespace LESs
         private void PatchButton_Click(object sender, RoutedEventArgs e)
         {
             PatchButton.IsEnabled = false;
+            ReloadButton.IsEnabled = false;
             _worker.RunWorkerAsync();
         }
 
@@ -471,6 +485,7 @@ namespace LESs
                     break;
             }
             PatchButton.IsEnabled = true;
+            ReloadButton.IsEnabled = true;
         }
 
         /// <summary>
@@ -482,6 +497,14 @@ namespace LESs
             {
                 StatusLabel.Content = text;
             }));
+        }
+
+        /// <summary>
+        /// Reloads all mods
+        /// </summary>
+        private void ReloadButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadMods();
         }
     }
 }

@@ -35,6 +35,9 @@
         </StackPanel>
         
         <Label x:Name="StatusLabel" Content="Waiting..." HorizontalAlignment="Left" Margin="6,0,0,0" VerticalAlignment="Bottom" FontWeight="Light" FontStyle="Italic" FontSize="14" Foreground="#FF595959"/>
-        <Label x:Name="ModAuthorLabel" Content="" HorizontalAlignment="Left" Margin="250,257,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <StackPanel  Margin="250,250,0,0" Orientation="Horizontal" Height="30" Width="220" HorizontalAlignment="Left">
+            <Button x:Name="ReloadButton" Content="Reload" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Height="30" Width="100" Visibility="Collapsed" Click="ReloadButton_Click"/>
+            <Label x:Name="ModAuthorLabel" Content="" HorizontalAlignment="Left" FontWeight="Bold" Margin="2,0,0,0" Height="30"/>
+        </StackPanel>
     </Grid>
 </Window>
