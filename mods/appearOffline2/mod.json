@@ -1,0 +1,46 @@
+{
+	"Name": "Appear Offline II",
+	"Description": "Mostly the same as appearOffline, but it won't remove the \"Show offline friends\" button",
+	"Author": "Snowl and Antropod",
+	"Library": "AbcSharp",
+	"DisabledByDefault": false,
+	"Patches":
+	[
+		{
+			"Swf": "mod/cht/themes/lolBrand/buddyPanelAssets.swf",
+			"Class": "486",
+			"Action": "replace_swf_character",
+			"Code": "sprite1.bin"
+		},
+		{
+			"Swf": "mod/cht/mod_cht.dat",
+			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
+			"Action": "add_instance_trait",
+			"Code": "patch1.asasm"
+		},
+		{
+			"Swf": "mod/cht/mod_cht.dat",
+			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
+			"Action": "replace_trait",
+			"Code": "patch2.asasm"
+		},
+		{
+			"Swf": "mod/cht/mod_cht.dat",
+			"Class": "com.riotgames.pvpnet.docked.chat.view.buddypanel:FriendsListOptionsPanel",
+			"Action": "add_instance_trait",
+			"Code": "patch3.asasm"
+		},
+		{
+			"Swf": "lib/ClientLibDomain.dat",
+			"Class": "com.riotgames.platform.gameclient.domain:UserPrefs",
+			"Action": "add_instance_trait",
+			"Code": "patch4.asasm"
+		},
+		{
+			"Swf": "mod/ser/mod_ser.dat",
+			"Class": "com.riotgames.platform.gameclient.module.services.lcds:ChatServiceImpl",
+			"Action": "replace_trait",
+			"Code": "patch5.asasm"
+		}
+	]
+}
