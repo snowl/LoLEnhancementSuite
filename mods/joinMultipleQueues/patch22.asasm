@@ -1,0 +1,64 @@
+trait method QName(PackageNamespace(""), "setSelectedGameQueueConfigById")
+    method
+        param QName(PackageNamespace(""), "int")
+        returns QName(PackageNamespace(""), "void")
+        body
+            maxstack 2
+            localcount 2
+            initscopedepth 4
+            maxscopedepth 5
+            code
+                getlocal0               
+                pushscope               
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameQueueManager")
+                convert_b               
+                dup                     
+                iffalse                 L21
+                pop                     
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameProvider")
+                getproperty             QName(Namespace("com.riotgames.pvpnet.system.game:IGameProvider"), "currentGame")
+                not                     
+                L21:
+                iffalse                 L40
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameQueueManager")
+                getlocal1               
+                newarray                1
+                callpropvoid            QName(PackageNamespace(""), "setSelectedQueueId"), 1
+                jump                    L55
+                L40:
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameProvider")
+                getproperty             QName(Namespace("com.riotgames.pvpnet.system.game:IGameProvider"), "currentGame")
+                iffalse                 L55
+                jump                    L55
+                L55:
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameProvider")
+                convert_b               
+                dup                     
+                iffalse                 L74
+                pop                     
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameProvider")
+                getproperty             QName(Namespace("com.riotgames.pvpnet.system.game:IGameProvider"), "gameModel")
+                convert_b               
+                L74:
+                iffalse                 L99
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameProvider")
+                getproperty             QName(Namespace("com.riotgames.pvpnet.system.game:IGameProvider"), "gameModel")
+                getlocal0               
+                getproperty             QName(PrivateNamespace(null, "95"), "_gameQueueManager")
+                getproperty             QName(PackageNamespace(""), "selectedGameQueueConfig")
+                getproperty             QName(PackageNamespace(""), "disallowFreeChampions")
+                not                     
+                setproperty             QName(PackageNamespace(""), "allowFreeChampions")
+                L99:
+                returnvoid              
+            end ;code
+        end ;body
+    end ;method
+end ;trait

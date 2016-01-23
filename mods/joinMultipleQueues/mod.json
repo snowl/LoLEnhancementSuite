@@ -132,6 +132,12 @@
 			"Class": "com.riotgames.platform.gameclient.controllers.lobby:ChooseGameFlowViewController",
 			"Action": "replace_trait",
 			"Code": "patch21.asasm"
+		},
+		{
+			"Swf": "mod/ivi/mod_ivi.dat",
+			"Class": "com.riotgames.pvpnet.invite.controller:InviteQueueManager",
+			"Action": "replace_trait",
+			"Code": "patch22.asasm"
 		}
 	]
 }
