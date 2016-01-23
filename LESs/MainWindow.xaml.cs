@@ -85,7 +85,7 @@ namespace LESs
                 MessageBox.Show("Missing mods directory. Ensure that all files were extracted properly.", "Missing files");
                 Environment.Exit(0);
             }
-            
+
             LoadMods();
 
             try
@@ -344,103 +344,118 @@ namespace LESs
                     //Get the SWF file that is being modified
                     SwfFile swf = swfs[patch.Swf];
 
-                    //Get the ABC tags (containing the code) from the swf file.
-                    List<DoAbcTag> tags = swf.GetDoAbcTags();
-                    bool classFound = false;
-                    foreach (var tag in tags)
+                    if (patch.Action == "replace_swf_character")// replace an swf-character (buttons, sprites, fonts etc.)
                     {
-                        //check if this tag contains our script
-                        ScriptInfo si = tag.GetScriptByClassName(patch.Class);
-
-                        //check next tag if it doesn't
-                        if (si == null)
-                            continue;
-
-                        ClassInfo cls = si.GetClassByClassName(patch.Class);
-                        classFound = true;
-
-                        Assembler asm;
-                        //Perform the action based on what the patch defines
-                        switch (patch.Action)
+                        ushort charId;
+                        if (ushort.TryParse(patch.Class, out charId) && swf.CharacterTags.ContainsKey(charId))
                         {
-                            case "replace_trait": //replace trait (method)
-                                //Load the code from the patch and assemble it to be inserted into the code
-                                asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
-                                TraitInfo newTrait = asm.Assemble() as TraitInfo;
-
-                                int traitIndex = cls.Instance.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
-                                bool classTrait = false;
-                                if (traitIndex < 0)
-                                {
-                                    traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
-                                    classTrait = true;
-                                }
-                                if (traitIndex < 0)
-                                {
-                                    throw new TraitNotFoundException(String.Format("Can't find trait \"{0}\" in class \"{1}\"", newTrait.Name.Name, patch.Class));
-                                }
-
-                                //Modified the found trait
-                                if (classTrait)
-                                {
-                                    cls.Traits[traitIndex] = newTrait;
-                                }
-                                else
-                                {
-                                    cls.Instance.Traits[traitIndex] = newTrait;
-                                }
-                                break;
-                            case "replace_cinit"://replace class constructor
-                                //Load the code from the patch and assemble it to be inserted into the code
-                                asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
-                                cls.ClassInit = asm.Assemble() as MethodInfo;
-                                break;
-                            case "replace_iinit"://replace instance constructor
-                                //Load the code from the patch and assemble it to be inserted into the code
-                                asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
-                                cls.Instance.InstanceInit = asm.Assemble() as MethodInfo;
-                                break;
-                            case "add_class_trait": //add new class trait (method)
-                                //Load the code from the patch and assemble it to be inserted into the code
-                                asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
-                                newTrait = asm.Assemble() as TraitInfo;
-                                traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
-                                if (traitIndex < 0)
-                                {
-                                    cls.Traits.Add(newTrait);
-                                }
-                                else
-                                {
-                                    cls.Traits[traitIndex] = newTrait;
-                                }
-                                break;
-                            case "add_instance_trait": //add new instance trait (method)
-                                //Load the code from the patch and assemble it to be inserted into the code
-                                asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
-                                newTrait = asm.Assemble() as TraitInfo;
-                                traitIndex = cls.Instance.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name);
-                                if (traitIndex < 0)
-                                {
-                                    cls.Instance.Traits.Add(newTrait);
-                                }
-                                else
-                                {
-                                    cls.Instance.Traits[traitIndex] = newTrait;
-                                }
-                                break;
-                            case "remove_class_trait":
-                                throw new NotImplementedException();
-                            case "remove_instance_trait":
-                                throw new NotImplementedException();
-                            default:
-                                throw new NotSupportedException($"Unknown Action \"{patch.Action}\" in mod {lessMod.Name}");
+                            swf.CharacterTags[charId].SetData(File.ReadAllBytes(Path.Combine(lessMod.Directory, patch.Code)));
+                        }
+                        else
+                        {
+                            _errorLevel = ErrorLevel.UnableToPatch;
+                            throw new TraitNotFoundException($"<{patch.Class}> is not a valid Character ID.");
                         }
                     }
-
-                    if (!classFound)
+                    else
                     {
-                        _errorLevel = ErrorLevel.UnableToPatch;
-                        throw new ClassNotFoundException($"Class {patch.Class} not found in file {patch.Swf}");
+                        //Get the ABC tags (containing the code) from the swf file.
+                        List<DoAbcTag> tags = swf.GetDoAbcTags();
+                        bool classFound = false;
+                        foreach (var tag in tags)
+                        {
+                            //check if this tag contains our script
+                            ScriptInfo si = tag.GetScriptByClassName(patch.Class);
+
+                            //check next tag if it doesn't
+                            if (si == null)
+                                continue;
+
+                            ClassInfo cls = si.FindClass(patch.Class);
+                            classFound = true;
+
+                            Assembler asm;
+                            //Perform the action based on what the patch defines
+                            switch (patch.Action)
+                            {
+                                case "replace_trait": //replace trait (method)
+                                                      //Load the code from the patch and assemble it to be inserted into the code
+                                    asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
+                                    TraitInfo newTrait = asm.Assemble() as TraitInfo;
+
+                                    int traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name, Scope.Instance);
+                                    bool classTrait = false;
+                                    if (traitIndex < 0)
+                                    {
+                                        traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name, Scope.Class);
+                                        classTrait = true;
+                                    }
+                                    if (traitIndex < 0)
+                                    {
+                                        throw new TraitNotFoundException(String.Format("Can't find trait \"{0}\" in class \"{1}\"", newTrait.Name.Name, patch.Class));
+                                    }
+
+                                    //Modified the found trait
+                                    if (classTrait)
+                                    {
+                                        cls.ClassTraits[traitIndex] = newTrait;
+                                    }
+                                    else
+                                    {
+                                        cls.InstanceTraits[traitIndex] = newTrait;
+                                    }
+                                    break;
+                                case "replace_cinit"://replace class constructor
+                                                     //Load the code from the patch and assemble it to be inserted into the code
+                                    asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
+                                    cls.ClassInit = asm.Assemble() as MethodInfo;
+                                    break;
+                                case "replace_iinit"://replace instance constructor
+                                                     //Load the code from the patch and assemble it to be inserted into the code
+                                    asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
+                                    cls.InstanceInit = asm.Assemble() as MethodInfo;
+                                    break;
+                                case "add_class_trait": //add new class trait (method)
+                                                        //Load the code from the patch and assemble it to be inserted into the code
+                                    asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
+                                    newTrait = asm.Assemble() as TraitInfo;
+                                    traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name, Scope.Class);
+                                    if (traitIndex < 0)
+                                    {
+                                        cls.ClassTraits.Add(newTrait);
+                                    }
+                                    else
+                                    {
+                                        cls.ClassTraits[traitIndex] = newTrait;
+                                    }
+                                    break;
+                                case "add_instance_trait": //add new instance trait (method)
+                                                           //Load the code from the patch and assemble it to be inserted into the code
+                                    asm = new Assembler(File.ReadAllText(Path.Combine(lessMod.Directory, patch.Code)));
+                                    newTrait = asm.Assemble() as TraitInfo;
+                                    traitIndex = cls.GetTraitIndexByTypeAndName(newTrait.Type, newTrait.Name.Name, Scope.Instance);
+                                    if (traitIndex < 0)
+                                    {
+                                        cls.InstanceTraits.Add(newTrait);
+                                    }
+                                    else
+                                    {
+                                        cls.InstanceTraits[traitIndex] = newTrait;
+                                    }
+                                    break;
+                                case "remove_class_trait":
+                                    throw new NotImplementedException();
+                                case "remove_instance_trait":
+                                    throw new NotImplementedException();
+                                default:
+                                    throw new NotSupportedException($"Unknown Action \"{patch.Action}\" in mod {lessMod.Name}");
+                            }
+                        }
+                        if (!classFound)
+                        {
+                            _errorLevel = ErrorLevel.UnableToPatch;
+                            throw new ClassNotFoundException($"Class {patch.Class} not found in file {patch.Swf}");
+                        }
                     }
                 }
             }
