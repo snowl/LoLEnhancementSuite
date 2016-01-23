@@ -1,1 +1,0 @@
-trait slot QName(PackageNamespace(""), "appearOffline") type QName(PackageNamespace(""), "Boolean") end

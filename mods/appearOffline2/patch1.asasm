@@ -1,1 +1,0 @@
-trait slot QName(PackageNamespace(""), "appearOfflineCheckBox") type QName(PackageNamespace("blix.components.button"), "CheckBoxX") end
