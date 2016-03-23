@@ -88,8 +88,9 @@ L50:
 
       getlocal0
       getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      getproperty         QName(PackageNamespace(""), "itemData")
       getlocal1
-      setproperty         QName(PackageNamespace(""), "itemData")
+      callpropvoid        QName(PackageNamespace(""), "setSource"), 1
 
       returnvoid
      end ; code

@@ -31,10 +31,10 @@
       callproperty        QName(Namespace("mx.resources:IResourceManager"), "getString"), 2
       callpropvoid        Multiname("setLabel", [PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageNamespace(""), PackageNamespace("com.riotgames.pvpnet.docked.friendlist.view"), PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller/instance/com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), PackageInternalNamespace("com.riotgames.pvpnet.docked.friendlist.view"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNamespace("com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), StaticProtectedNamespace("blix.components.scroll:ScrollArea"), StaticProtectedNamespace("blix.components.scroll:ScrollAreaBase"), StaticProtectedNamespace("blix.assets.proxy:SpriteProxy"), StaticProtectedNamespace("blix.assets.proxy:DisplayObjectContainerProxy"), StaticProtectedNamespace("blix.assets.proxy:InteractiveObjectProxy"), StaticProtectedNamespace("blix.assets.proxy:DisplayObjectProxy"), StaticProtectedNamespace("blix.view:View"), StaticProtectedNamespace("blix.context:Context")]), 1
 
-      getlocal0
-      getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
-      newarray            0
-      setproperty         QName(PackageNamespace(""), "itemData")
+      ;getlocal0
+      ;getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
+      ;newarray            0
+      ;setproperty         QName(PackageNamespace(""), "itemData")
 
       getlocal0
       getproperty         QName(PrivateNamespace(null, "com.riotgames.pvpnet.docked.friendlist.view:FriendScroller"), "offlineGroup")
